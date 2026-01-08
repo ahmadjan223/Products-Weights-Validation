@@ -84,16 +84,17 @@ SYSTEM_PROMPT = """
 class ModelAPIClient:
     """Handles communication with Claude API for weight estimation"""
     
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str, model_name: str = "claude-sonnet-4-5"):
         """
         Initialize Claude API client
         
         Args:
             api_key: Anthropic API key
+            model_name: Claude model to use (default: claude-sonnet-4-5)
         """
         self.client = anthropic.Anthropic(api_key=api_key)
-        self.model_name = "claude-sonnet-4-5"
-        logger.info("✅ Claude API client initialized")
+        self.model_name = model_name
+        logger.info(f"✅ Claude API client initialized with model: {model_name}")
     
     @staticmethod
     def prepare_product_data(products: List[Dict[str, Any]]) -> List[Dict[str, Any]]:

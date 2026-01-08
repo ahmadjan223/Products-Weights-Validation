@@ -1,8 +1,8 @@
 """
 Pydantic Models for Request/Response Validation
 """
-from typing import List, Optional, Dict, Any
-from pydantic import BaseModel, Field
+from typing import List, Optional, Dict, Any, Union
+from pydantic import BaseModel, Field, field_validator
 
 
 # ============ Request Models ============
@@ -10,17 +10,31 @@ from pydantic import BaseModel, Field
 class WeightEstimationRequest(BaseModel):
     """Request model for weight estimation endpoint"""
     offer_id: str = Field(..., description="The offer ID to process")
+    model_name: Optional[str] = Field(
+        default="claude-sonnet-4-5",
+        description="Claude model to use for estimation"
+    )
+    drop_similar_skus: bool = Field(
+        default=True,
+        description="Whether to remove duplicate SKUs with identical dimensions"
+    )
     
 
 # ============ Response Models ============
 
 class SKUDimensions(BaseModel):
     """Physical dimensions for a single SKU"""
-    sku_id: str = Field(..., alias="skuId")
+    sku_id: Union[str, int] = Field(..., alias="skuId")
     length_cm: float = Field(..., alias="length_cm")
     width_cm: float = Field(..., alias="width_cm")
     height_cm: float = Field(..., alias="height_cm")
     weight_g: float = Field(..., alias="weight_g")
+    
+    @field_validator('sku_id', mode='before')
+    @classmethod
+    def convert_sku_id_to_string(cls, v):
+        """Convert skuId to string if it's an integer"""
+        return str(v) if v is not None else v
     
     class Config:
         populate_by_name = True

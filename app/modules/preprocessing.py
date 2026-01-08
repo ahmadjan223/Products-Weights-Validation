@@ -98,16 +98,31 @@ class DataPreprocessor:
         return output_data
     
     @staticmethod
-    def remove_duplicate_skus(data: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
+    def remove_duplicate_skus(
+        data: List[Dict[str, Any]], 
+        drop_duplicates: bool = True
+    ) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
         """
         Remove duplicate SKUs when all SKUs have identical physical properties
         
         Args:
             data: List of processed product dicts
+            drop_duplicates: Whether to remove duplicate SKUs (default: True)
             
         Returns:
             Tuple of (processed_data, stats_dict)
         """
+        processed_data = deepcopy(data)
+        
+        # If not dropping duplicates, return data as-is with zero stats
+        if not drop_duplicates:
+            total_skus = sum(len(p.get('skus', [])) for p in data)
+            return processed_data, {
+                "total_skus_before": total_skus,
+                "total_skus_after": total_skus,
+                "skus_removed": 0
+            }
+        
         processed_data = deepcopy(data)
         stats = {
             "total_skus_before": 0,
@@ -170,12 +185,17 @@ class DataPreprocessor:
         return processed_data, stats
     
     @classmethod
-    def preprocess_pipeline(cls, raw_product: Dict[Any, Any]) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
+    def preprocess_pipeline(
+        cls, 
+        raw_product: Dict[Any, Any],
+        drop_duplicates: bool = True
+    ) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
         """
         Complete preprocessing pipeline
         
         Args:
             raw_product: Raw product data from MongoDB
+            drop_duplicates: Whether to remove duplicate SKUs (default: True)
             
         Returns:
             Tuple of (cleaned_data, preprocessing_stats)
@@ -187,7 +207,7 @@ class DataPreprocessor:
             raise ValueError("Failed to filter product data")
         
         # Step 2: Remove duplicate SKUs
-        cleaned_data, stats = cls.remove_duplicate_skus([filtered])
+        cleaned_data, stats = cls.remove_duplicate_skus([filtered], drop_duplicates)
         
         logger.info(f"Preprocessing complete: {stats['skus_removed']} SKUs removed")
         

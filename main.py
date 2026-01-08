@@ -25,7 +25,6 @@ logger = logging.getLogger(__name__)
 
 # Global instances
 data_retriever = None
-model_client = None
 
 
 @asynccontextmanager
@@ -49,9 +48,8 @@ async def lifespan(app: FastAPI):
         )
         logger.info("✅ MongoDB connection initialized")
         
-        # Initialize Model API client
-        model_client = ModelAPIClient(api_key=settings.anthropic_api_key)
-        logger.info("✅ Model API client initialized")
+        # Model API client will be initialized per request with user's model choice
+        logger.info("✅ Configuration loaded")
         
         logger.info("🎉 Application startup complete!")
         
@@ -114,7 +112,11 @@ async def estimate_weight(request: WeightEstimationRequest):
         WeightEstimationResponse with estimated weights and metadata
     """
     offer_id = request.offer_id
+    model_name = request.model_name
+    drop_similar_skus = request.drop_similar_skus
+    
     logger.info(f"📨 Received request for offer ID: {offer_id}")
+    logger.info(f"⚙️  Settings - Model: {model_name}, Drop duplicates: {drop_similar_skus}")
     
     try:
         # Step 1: Retrieve data from MongoDB
@@ -133,11 +135,19 @@ async def estimate_weight(request: WeightEstimationRequest):
         
         # Step 2: Preprocess data
         logger.info("Step 2/4: Preprocessing data...")
-        preprocessed_data, preprocessing_stats = DataPreprocessor.preprocess_pipeline(raw_data)
+        preprocessed_data, preprocessing_stats = DataPreprocessor.preprocess_pipeline(
+            raw_data, 
+            drop_duplicates=drop_similar_skus
+        )
         logger.info(f"✅ Preprocessing complete - {preprocessing_stats['skus_removed']} SKUs removed")
         
-        # Step 3: Call model API for weight estimation
-        logger.info("Step 3/4: Calling AI model for weight estimation...")
+        # Step 3: Initialize model client with user's choice and call API
+        logger.info(f"Step 3/4: Calling AI model ({model_name}) for weight estimation...")
+        settings = get_settings()
+        model_client = ModelAPIClient(
+            api_key=settings.anthropic_api_key,
+            model_name=model_name
+        )
         estimated_data, api_stats = model_client.estimate_weights(preprocessed_data)
         logger.info(f"✅ Model estimation complete - Used {api_stats['total_tokens']} tokens")
         
@@ -201,11 +211,12 @@ async def health_check():
         health_status["components"]["mongodb"] = f"error: {str(e)}"
         health_status["status"] = "unhealthy"
     
-    # Check Model API client
-    if model_client:
-        health_status["components"]["model_api"] = "initialized"
+    # Check Model API configuration
+    settings = get_settings()
+    if settings.anthropic_api_key:
+        health_status["components"]["model_api"] = "configured"
     else:
-        health_status["components"]["model_api"] = "not initialized"
+        health_status["components"]["model_api"] = "not configured"
         health_status["status"] = "degraded"
     
     status_code = 200 if health_status["status"] == "healthy" else 503
