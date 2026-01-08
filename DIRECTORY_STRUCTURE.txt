@@ -1,0 +1,110 @@
+weight estimation/
+│
+├── 📄 main.py                              # Main FastAPI application
+├── 📄 requirements.txt                     # Python dependencies
+├── 📄 .env                                 # Environment variables (YOUR CREDENTIALS)
+├── 📄 .env.example                         # Template for .env
+├── 📄 .gitignore                           # Git ignore rules
+│
+├── 🚀 start.py                             # Quick start script
+├── 🧪 test_api.py                          # API testing script
+│
+├── 📖 README.md                            # Main documentation
+├── 📖 PROJECT_SUMMARY.md                   # Complete project overview
+├── 📖 ARCHITECTURE.md                      # System design & flow
+├── 📖 MODULE_UPGRADE_GUIDE.md              # How to modify modules
+├── 📖 API_EXAMPLES.md                      # Usage examples
+├── 📖 QUICK_REFERENCE.md                   # Quick commands & tips
+│
+├── 📁 app/                                 # Application package
+│   │
+│   ├── 📄 __init__.py                      # Package marker
+│   ├── 📄 config.py                        # Configuration management
+│   │
+│   ├── 📁 modules/                         # Business logic modules
+│   │   ├── 📄 __init__.py
+│   │   ├── 📄 data_retrieval.py           # Step 1: Fetch from MongoDB
+│   │   ├── 📄 preprocessing.py            # Step 2: Clean & filter data
+│   │   ├── 📄 model_api.py                # Step 3: Call AI model
+│   │   └── 📄 response_builder.py         # Step 4: Format response
+│   │
+│   ├── 📁 models/                          # Pydantic models
+│   │   ├── 📄 __init__.py
+│   │   └── 📄 schemas.py                  # Request/Response models
+│   │
+│   └── 📁 utils/                           # Utilities
+│       ├── 📄 __init__.py
+│       └── 📄 helpers.py                  # Logging & helpers
+│
+├── 📁 logs/                                # Application logs
+│   └── 📄 app.log                         # Rotating log file
+│
+├── 📁 venv/                                # Virtual environment (if created)
+│
+├── 📄 preprocessing.ipynb                  # Original notebook
+├── 📄 cleaned_products.json                # Sample data
+├── 📄 preprocessed.json                    # Sample data
+│
+└── 📁 .git/                                # Git repository
+
+
+═══════════════════════════════════════════════════════════════
+
+KEY FILES EXPLAINED:
+
+🎯 ENTRY POINTS:
+   main.py              → Start here: FastAPI server
+   start.py             → Alternative: Automated setup
+   test_api.py          → Test the API after starting
+
+📚 DOCUMENTATION (Read in this order):
+   1. README.md         → Setup & installation
+   2. PROJECT_SUMMARY.md → What was built & why
+   3. ARCHITECTURE.md   → How it works
+   4. MODULE_UPGRADE_GUIDE.md → How to modify
+   5. API_EXAMPLES.md   → Usage examples
+   6. QUICK_REFERENCE.md → Commands & tips
+
+🔧 CORE MODULES (Modify these to customize):
+   data_retrieval.py    → Change data source
+   preprocessing.py     → Add data cleaning steps
+   model_api.py         → Change AI model
+   response_builder.py  → Modify response format
+   schemas.py           → Change data structure
+
+⚙️ CONFIGURATION:
+   .env                 → Your credentials (NEVER COMMIT!)
+   config.py            → Settings management
+
+📊 GENERATED:
+   logs/app.log         → Runtime logs
+   test_response.json   → Test output (after running test_api.py)
+
+═══════════════════════════════════════════════════════════════
+
+MODULE FLOW:
+
+Request
+   ↓
+main.py (FastAPI)
+   ↓
+data_retrieval.py (MongoDB) ──→ Raw Data
+   ↓
+preprocessing.py (Clean) ──→ Cleaned Data
+   ↓
+model_api.py (AI) ──→ Estimated Weights
+   ↓
+response_builder.py (Format) ──→ Final Response
+   ↓
+Client
+
+═══════════════════════════════════════════════════════════════
+
+QUICK START:
+
+1. pip install -r requirements.txt
+2. Edit .env with your credentials
+3. python main.py
+4. python test_api.py (in another terminal)
+
+═══════════════════════════════════════════════════════════════
