@@ -36,7 +36,7 @@ async def lifespan(app: FastAPI):
     global data_retriever, model_client
     
     # Startup
-    logger.info("🚀 Starting Weight Estimation API...")
+    logger.info("Starting Weight Estimation API...")
     settings = get_settings()
     
     try:
@@ -46,12 +46,12 @@ async def lifespan(app: FastAPI):
             database_name=settings.mongodb_database_name,
             collection_name=settings.mongodb_collection_name
         )
-        logger.info("✅ MongoDB connection initialized")
+        logger.info("MongoDB connection initialized")
         
         # Model API client will be initialized per request with user's model choice
-        logger.info("✅ Configuration loaded")
+        logger.info("Configuration loaded")
         
-        logger.info("🎉 Application startup complete!")
+        logger.info("Application startup complete")
         
     except Exception as e:
         logger.error(f"❌ Failed to initialize application: {e}")
@@ -60,11 +60,11 @@ async def lifespan(app: FastAPI):
     yield
     
     # Shutdown
-    logger.info("🛑 Shutting down application...")
+    logger.info("Shutting down application...")
     if data_retriever:
         data_retriever.close()
-        logger.info("✅ MongoDB connection closed")
-    logger.info("👋 Application shutdown complete")
+        logger.info("MongoDB connection closed")
+    logger.info("Application shutdown complete")
 
 
 # Initialize FastAPI app
@@ -115,12 +115,10 @@ async def estimate_weight(request: WeightEstimationRequest):
     model_name = request.model_name
     drop_similar_skus = request.drop_similar_skus
     
-    logger.info(f"📨 Received request for offer ID: {offer_id}")
-    logger.info(f"⚙️  Settings - Model: {model_name}, Drop duplicates: {drop_similar_skus}")
+    logger.info(f"Received request for offer ID: {offer_id} | Model: {model_name} | Drop duplicates: {drop_similar_skus}")
     
     try:
         # Step 1: Retrieve data from MongoDB
-        logger.info(f"Step 1/4: Retrieving data for offer ID: {offer_id}")
         raw_data = data_retriever.fetch_by_offer_id(offer_id)
         
         if not raw_data:
@@ -131,28 +129,25 @@ async def estimate_weight(request: WeightEstimationRequest):
                 detail=error_msg
             )
         
-        logger.info("✅ Data retrieved successfully")
+        logger.info("Data retrieved successfully")
         
         # Step 2: Preprocess data
-        logger.info("Step 2/4: Preprocessing data...")
         preprocessed_data, preprocessing_stats = DataPreprocessor.preprocess_pipeline(
             raw_data, 
             drop_duplicates=drop_similar_skus
         )
-        logger.info(f"✅ Preprocessing complete - {preprocessing_stats['skus_removed']} SKUs removed")
+        logger.info(f"Preprocessing complete - {preprocessing_stats['skus_removed']} SKUs removed")
         
         # Step 3: Initialize model client with user's choice and call API
-        logger.info(f"Step 3/4: Calling AI model ({model_name}) for weight estimation...")
         settings = get_settings()
         model_client = ModelAPIClient(
             api_key=settings.anthropic_api_key,
             model_name=model_name
         )
         estimated_data, api_stats = model_client.estimate_weights(preprocessed_data)
-        logger.info(f"✅ Model estimation complete - Used {api_stats['total_tokens']} tokens")
+        logger.info(f"Model estimation complete - {api_stats['total_tokens']} tokens used")
         
         # Step 4: Build response with metadata
-        logger.info("Step 4/4: Building response...")
         response = ResponseBuilder.build_success_response(
             offer_id=offer_id,
             raw_data=raw_data,
@@ -162,7 +157,7 @@ async def estimate_weight(request: WeightEstimationRequest):
             api_stats=api_stats
         )
         
-        logger.info(f"✅ Request completed successfully for offer ID: {offer_id}")
+        logger.info(f"Request completed successfully for offer ID: {offer_id}")
         return response
         
     except HTTPException:

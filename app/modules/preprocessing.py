@@ -127,7 +127,8 @@ class DataPreprocessor:
         stats = {
             "total_skus_before": 0,
             "total_skus_after": 0,
-            "skus_removed": 0
+            "skus_removed": 0,
+            "skus_were_identical": False
         }
         
         for product in processed_data:
@@ -177,6 +178,7 @@ class DataPreprocessor:
                 logger.info(f"Product {product.get('name', 'Unknown')}: Reduced from {len(skus)} to 1 SKU")
                 product['skus'] = [first_sku]
                 stats["total_skus_after"] += 1
+                stats["skus_were_identical"] = True
             else:
                 stats["total_skus_after"] += len(skus)
         

@@ -85,4 +85,4 @@ class DataRetriever:
         """Close MongoDB connection"""
         if self.client:
             self.client.close()
-            logger.info("🔌 MongoDB connection closed")
+            logger.info("MongoDB connection closed")

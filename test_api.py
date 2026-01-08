@@ -61,11 +61,6 @@ def test_estimate_weight(offer_id: str):
                 print(f"      Width: {sku.get('width_cm', 'N/A')} cm")
                 print(f"      Height: {sku.get('height_cm', 'N/A')} cm")
                 print(f"      Weight: {sku.get('weight_g', 'N/A')} g")
-        
-        # Save full response
-        with open("test_response.json", "w") as f:
-            json.dump(result, f, indent=2)
-        print("\n💾 Full response saved to test_response.json")
     else:
         print("❌ Error!")
         print(f"Response: {response.text}")

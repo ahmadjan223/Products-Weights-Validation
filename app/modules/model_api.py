@@ -73,7 +73,14 @@ SYSTEM_PROMPT = """
                             "height_cm": Float,
                             "weight_g": Float
                         }
-                    ]
+                    ],
+                    "imputation_stats": {
+                        "total_fields_processed": Integer (total SKU fields checked),
+                        "fields_imputed": Integer (null/missing values filled),
+                        "fields_corrected": Integer (outliers fixed),
+                        "unit_conversions": Integer (values converted to cm/g),
+                        "success": Boolean (true if process completed successfully)
+                    }
                 }
             ]
         </output_rules>
@@ -94,7 +101,7 @@ class ModelAPIClient:
         """
         self.client = anthropic.Anthropic(api_key=api_key)
         self.model_name = model_name
-        logger.info(f"✅ Claude API client initialized with model: {model_name}")
+        logger.info(f"Claude API client initialized with model: {model_name}")
     
     @staticmethod
     def prepare_product_data(products: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -153,7 +160,7 @@ class ModelAPIClient:
 
 Return only the processed JSON array with the specified structure."""
 
-            logger.info(f"🔄 Processing {len(products)} products with Claude API...")
+            logger.info(f"Processing {len(products)} products with Claude API...")
             
             # Make API call
             start_time = time.time()
@@ -179,8 +186,8 @@ Return only the processed JSON array with the specified structure."""
             output_tokens = response.usage.output_tokens
             total_tokens = input_tokens + output_tokens
             
-            logger.info(f"✅ API call completed in {processing_time:.2f}s")
-            logger.info(f"📊 Tokens - Input: {input_tokens}, Output: {output_tokens}, Total: {total_tokens}")
+            logger.info(f"API call completed in {processing_time:.2f}s")
+            logger.info(f"Tokens - Input: {input_tokens}, Output: {output_tokens}, Total: {total_tokens}")
             
             # Parse response
             response_text = response.content[0].text.strip()
@@ -195,7 +202,7 @@ Return only the processed JSON array with the specified structure."""
             try:
                 estimated_data = json.loads(response_text)
             except json.JSONDecodeError as e:
-                logger.error(f"❌ Failed to parse JSON response: {e}")
+                logger.error(f"Failed to parse JSON response: {e}")
                 logger.error(f"Raw response: {response_text[:500]}...")
                 raise ValueError(f"Failed to parse API response: {e}")
             
@@ -212,8 +219,8 @@ Return only the processed JSON array with the specified structure."""
             return estimated_data, api_stats
             
         except anthropic.APIError as e:
-            logger.error(f"❌ Claude API error: {e}")
+            logger.error(f"Claude API error: {e}")
             raise Exception(f"Claude API error: {e}")
         except Exception as e:
-            logger.error(f"❌ Error in weight estimation: {e}")
+            logger.error(f"Error in weight estimation: {e}")
             raise Exception(f"Weight estimation failed: {e}")

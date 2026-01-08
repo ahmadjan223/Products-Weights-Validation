@@ -9,6 +9,8 @@ from pydantic import BaseModel, Field, field_validator
 
 class WeightEstimationRequest(BaseModel):
     """Request model for weight estimation endpoint"""
+    model_config = {"protected_namespaces": ()}
+    
     offer_id: str = Field(..., description="The offer ID to process")
     model_name: Optional[str] = Field(
         default="claude-sonnet-4-5",
@@ -40,9 +42,19 @@ class SKUDimensions(BaseModel):
         populate_by_name = True
 
 
+class ImputationStats(BaseModel):
+    """Statistics about data imputation and corrections"""
+    total_fields_processed: int = 0
+    fields_imputed: int = 0
+    fields_corrected: int = 0
+    unit_conversions: int = 0
+    success: bool = True
+
+
 class ProcessedProduct(BaseModel):
     """Processed product with SKU dimensions"""
     skus: List[SKUDimensions]
+    imputation_stats: Optional[ImputationStats] = None
 
 
 class PreprocessingStats(BaseModel):
@@ -71,6 +83,10 @@ class WeightEstimationResponse(BaseModel):
     
     success: bool
     offer_id: str
+    skus_were_identical: bool = Field(
+        default=False,
+        description="True if multiple SKUs were reduced to 1 due to identical dimensions"
+    )
     
     # Main data
     estimated_weights: List[ProcessedProduct]
@@ -78,6 +94,7 @@ class WeightEstimationResponse(BaseModel):
     # Metadata
     preprocessing_stats: PreprocessingStats
     model_api_stats: ModelAPIStats
+    model_imputation_summary: Optional[ImputationStats] = None
     
     # Raw input sizes for reference
     raw_data_size_chars: int
