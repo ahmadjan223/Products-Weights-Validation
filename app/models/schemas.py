@@ -20,6 +20,21 @@ class WeightEstimationRequest(BaseModel):
         default=True,
         description="Whether to remove duplicate SKUs with identical dimensions"
     )
+
+
+class BatchWeightEstimationRequest(BaseModel):
+    """Request model for batch weight estimation endpoint"""
+    model_config = {"protected_namespaces": ()}
+    
+    offer_ids: List[str] = Field(..., description="List of offer IDs to process")
+    model_name: Optional[str] = Field(
+        default="claude-sonnet-4-5",
+        description="Claude model to use for estimation"
+    )
+    drop_similar_skus: bool = Field(
+        default=True,
+        description="Whether to remove duplicate SKUs with identical dimensions"
+    )
     
 
 # ============ Response Models ============
@@ -107,3 +122,15 @@ class ErrorResponse(BaseModel):
     success: bool = False
     error: str
     offer_id: Optional[str] = None
+
+
+class BatchWeightEstimationResponse(BaseModel):
+    """Response model for batch weight estimation"""
+    model_config = {"protected_namespaces": ()}
+    
+    success: bool
+    total_offers: int
+    successful_offers: int
+    failed_offers: int
+    results: List[Union[WeightEstimationResponse, ErrorResponse]]
+    model_api_stats: ModelAPIStats

@@ -3,7 +3,7 @@ Data Retrieval Module
 Handles MongoDB connection and data fetching by offer ID
 """
 from pymongo import MongoClient
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 import logging
 
 logger = logging.getLogger(__name__)
@@ -80,6 +80,57 @@ class DataRetriever:
         except Exception as e:
             logger.error(f"❌ Error fetching data: {e}")
             raise Exception(f"Database error: {e}") from e
+    
+    def fetch_by_offer_ids(self, offer_ids: List[str]) -> Dict[str, Optional[Dict[Any, Any]]]:
+        """Fetch product data for multiple offer IDs
+        
+        Args:
+            offer_ids: List of offer IDs to search for
+            
+        Returns:
+            Dict mapping offer_id to document (None if not found)
+        """
+        if not self.client:
+            raise ConnectionError("MongoDB client not initialized")
+        
+        results = {}
+        offer_id_ints = []
+        
+        # Convert all offer IDs to integers
+        for offer_id in offer_ids:
+            try:
+                offer_id_ints.append((offer_id, int(offer_id)))
+            except ValueError:
+                logger.error(f"❌ Invalid offer ID format: {offer_id}")
+                results[offer_id] = None
+        
+        # Batch query for all valid offer IDs
+        try:
+            db = self.client[self.database_name]
+            collection = db[self.collection_name]
+            
+            # Query all at once
+            query_ids = [oid_int for _, oid_int in offer_id_ints]
+            logger.info(f"🔍 Batch searching for {len(query_ids)} offer IDs")
+            
+            documents = list(collection.find({"offerId": {"$in": query_ids}}))
+            
+            # Create mapping of offerId to document
+            doc_map = {doc["offerId"]: doc for doc in documents}
+            
+            # Map back to original string offer IDs
+            for offer_id_str, offer_id_int in offer_id_ints:
+                results[offer_id_str] = doc_map.get(offer_id_int)
+                if results[offer_id_str]:
+                    logger.info(f"✅ Document found for offer ID: {offer_id_str}")
+                else:
+                    logger.warning(f"❌ No document found for offer ID: {offer_id_str}")
+            
+        except Exception as e:
+            logger.error(f"❌ Error in batch fetch: {e}")
+            raise Exception(f"Database error: {e}")
+        
+        return results
     
     def close(self) -> None:
         """Close MongoDB connection"""
