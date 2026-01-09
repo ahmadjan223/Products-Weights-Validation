@@ -151,7 +151,7 @@ Basic health check endpoint.
 ### 2. Preprocessing (`app/modules/preprocessing.py`)
 - Filters and structures product data
 - Extracts SKU attributes and dimensions
-- Removes duplicate SKUs with identical physical properties
+- Removes duplicate SKUs with identical weight (only when weight is non-null and non-zero)
 - Tracks preprocessing statistics
 
 ### 3. Model API Client (`app/modules/model_api.py`)

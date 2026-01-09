@@ -1,91 +1,507 @@
 [
   {
-    "id": "68f9dfdaa6622c46b9819828",
+    "id": "68f9dfbca6622c46b9819812",
     "categories": [
       {
-        "categoryId": 1042954,
-        "categoryName": "luggage and leather goods"
+        "categoryId": 10165,
+        "categoryName": "Menswear"
       },
       {
-        "categoryId": 201956604,
-        "categoryName": "Backpack"
-      },
-      {
-        "categoryId": 122220001,
-        "categoryName": "Universal Backpack"
+        "categoryId": 1036995,
+        "categoryName": "men's sweater"
       }
     ],
-    "name": "Korean Version of College and High School Student Schoolbags for Men and Women, British College Style Backpacks, Simple Computer Bags, Large Capacity Backpacks",
+    "name": "2024 cross-border autumn and winter new men's fashion casual cardigan hooded sweater youth men's jacket factory direct sales",
     "Product info": {
-      "length": null,
-      "weight": null,
-      "height": null,
-      "width": null,
+      "length": 17.39581140350877,
+      "weight": 0.564994298245614,
+      "height": 4.004824561403509,
+      "width": 13.477982456140353,
       "aiWeight": null
     },
     "skus": [
       {
-        "skuId": 3321429205914,
+        "skuId": 5294894569430,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Burgundy"
+            "value": "Navy blue"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.72
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.342
       },
       {
-        "skuId": 3322592552949,
+        "skuId": 5294894569431,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Burgundy"
+            "value": "Navy blue"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.736
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.355
       },
       {
-        "skuId": 3321429205915,
+        "skuId": 5294894569432,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Purple"
+            "value": "Navy blue"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.704
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.373
       },
       {
-        "skuId": 3321429205916,
+        "skuId": 5294894569433,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Navy blue"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.384
+      },
+      {
+        "skuId": 5294894569434,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Navy blue"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.404
+      },
+      {
+        "skuId": 5294894569435,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Navy blue"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.426
+      },
+      {
+        "skuId": 5294894569436,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Army Green"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.342
+      },
+      {
+        "skuId": 5294894569437,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Army Green"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.361
+      },
+      {
+        "skuId": 5294894569438,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Army Green"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.376
+      },
+      {
+        "skuId": 5294894569439,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Army Green"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.399
+      },
+      {
+        "skuId": 5294894569440,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Army Green"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.419
+      },
+      {
+        "skuId": 5294894569441,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Army Green"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.438
+      },
+      {
+        "skuId": 5294894569442,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Reddish Brown"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.341
+      },
+      {
+        "skuId": 5294894569443,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Reddish Brown"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.356
+      },
+      {
+        "skuId": 5294894569444,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Reddish Brown"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.37
+      },
+      {
+        "skuId": 5294894569445,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Reddish Brown"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.383
+      },
+      {
+        "skuId": 5294894569446,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Reddish Brown"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.402
+      },
+      {
+        "skuId": 5294894569447,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Reddish Brown"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.419
+      },
+      {
+        "skuId": 5294894569448,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Khaki"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.341
+      },
+      {
+        "skuId": 5294894569449,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Khaki"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.356
+      },
+      {
+        "skuId": 5294894569450,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Khaki"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.373
+      },
+      {
+        "skuId": 5294894569451,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Khaki"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.384
+      },
+      {
+        "skuId": 5294894569452,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Khaki"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.407
+      },
+      {
+        "skuId": 5294894569453,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Khaki"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.42
+      },
+      {
+        "skuId": 5294894569454,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -93,19 +509,19 @@
             "value": "Light gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.708
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.343
       },
       {
-        "skuId": 3322592552951,
+        "skuId": 5294894569455,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -113,19 +529,339 @@
             "value": "Light gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.723
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.355
       },
       {
-        "skuId": 3321429205917,
+        "skuId": 5294894569456,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light gray"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.375
+      },
+      {
+        "skuId": 5294894569457,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light gray"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.388
+      },
+      {
+        "skuId": 5294894569458,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light gray"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.405
+      },
+      {
+        "skuId": 5294894569459,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light gray"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.425
+      },
+      {
+        "skuId": 5742048486800,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "White"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.335
+      },
+      {
+        "skuId": 5742048486805,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "White"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.357
+      },
+      {
+        "skuId": 5742048486810,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "White"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.371
+      },
+      {
+        "skuId": 5742048486815,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "White"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.389
+      },
+      {
+        "skuId": 5742048486820,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "White"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.399
+      },
+      {
+        "skuId": 5742048486825,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "White"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.418
+      },
+      {
+        "skuId": 5742048486801,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Red"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.345
+      },
+      {
+        "skuId": 5742048486806,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Red"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.363
+      },
+      {
+        "skuId": 5742048486811,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Red"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.38
+      },
+      {
+        "skuId": 5742048486816,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Red"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.394
+      },
+      {
+        "skuId": 5742048486821,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Red"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.41
+      },
+      {
+        "skuId": 5742048486826,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Red"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.431
+      },
+      {
+        "skuId": 5742048486802,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -133,19 +869,19 @@
             "value": "Blue"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.736
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.346
       },
       {
-        "skuId": 3322592552952,
+        "skuId": 5742048486807,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -153,19 +889,99 @@
             "value": "Blue"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.705
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.36
       },
       {
-        "skuId": 4882145094038,
+        "skuId": 5742048486812,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Blue"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.378
+      },
+      {
+        "skuId": 5742048486817,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Blue"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.394
+      },
+      {
+        "skuId": 5742048486822,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Blue"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.408
+      },
+      {
+        "skuId": 5742048486827,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Blue"
+          },
+          {
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
+          }
+        ],
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.434
+      },
+      {
+        "skuId": 5742048486803,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -173,19 +989,19 @@
             "value": "Black"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": null
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.345
       },
       {
-        "skuId": 4882145094037,
+        "skuId": 5742048486808,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -193,119 +1009,99 @@
             "value": "Black"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": null
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.359
       },
       {
-        "skuId": 3321429205918,
+        "skuId": 5742048486813,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Dark Blue"
+            "value": "Black"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.707
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.378
       },
       {
-        "skuId": 3322592552953,
+        "skuId": 5742048486818,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Dark Blue"
+            "value": "Black"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.706
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.392
       },
       {
-        "skuId": 3321429205919,
+        "skuId": 5742048486823,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Light green"
+            "value": "Black"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.705
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.407
       },
       {
-        "skuId": 3322592552954,
+        "skuId": 5742048486828,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Light green"
+            "value": "Black"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.724
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.432
       },
       {
-        "skuId": 3321429205922,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "Peacock Blue"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.665
-      },
-      {
-        "skuId": 3321429205920,
+        "skuId": 5742048486804,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -313,19 +1109,19 @@
             "value": "Dark gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "S"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.722
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.339
       },
       {
-        "skuId": 3322592552955,
+        "skuId": 5742048486809,
         "skuAttributes": [
           {
             "attributeId": 3216,
@@ -333,256 +1129,96 @@
             "value": "Dark gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "M"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.725
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.355
       },
       {
-        "skuId": 3321429205921,
+        "skuId": 5742048486814,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "All Black"
+            "value": "Dark gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "L"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.72
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.37
       },
       {
-        "skuId": 3322592552948,
+        "skuId": 5742048486819,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "All Black"
+            "value": "Dark gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XL"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.699
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.387
       },
       {
-        "skuId": 3496909648752,
+        "skuId": 5742048486824,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "BLACK ZIPPER Burgundy"
+            "value": "Dark gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXL"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.699
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.404
       },
       {
-        "skuId": 3496909648747,
+        "skuId": 5742048486829,
         "skuAttributes": [
           {
             "attributeId": 3216,
             "attributeName": "Color",
-            "value": "Purple black zipper"
+            "value": "Dark gray"
           },
           {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
+            "attributeId": 450,
+            "attributeName": "Size",
+            "value": "XXXL"
           }
         ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.719
-      },
-      {
-        "skuId": 3496909648746,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "Gray black zipper"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.704
-      },
-      {
-        "skuId": 3496909648748,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "BLACK ZIPPER BLUE"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.694
-      },
-      {
-        "skuId": 3496909648751,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "Dark blue black zipper"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.696
-      },
-      {
-        "skuId": 3496909648750,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "Black zipper light green"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.728
-      },
-      {
-        "skuId": 3496909648755,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "Dark gray black zipper"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.701
-      },
-      {
-        "skuId": 3496909648753,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "Black zipper All Black"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.723
-      },
-      {
-        "skuId": 3496909648743,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "Black zipper All Black"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "14 inch"
-          }
-        ],
-        "length": 45.8,
-        "weight": 0.715,
-        "height": 7.3,
-        "width": 34.3,
-        "aiWeight": 0.696
-      },
-      {
-        "skuId": 3496909648754,
-        "skuAttributes": [
-          {
-            "attributeId": 3216,
-            "attributeName": "Color",
-            "value": "PEACCOCK BLUE BLACK ZIPPER"
-          },
-          {
-            "attributeId": 446,
-            "attributeName": "Dimensions",
-            "value": "16 inch"
-          }
-        ],
-        "length": 45.0,
-        "weight": 0.68,
-        "height": 5.0,
-        "width": 33.0,
-        "aiWeight": 0.674
+        "length": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "aiWeight": 0.424
       }
     ]
   }

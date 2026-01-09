@@ -142,38 +142,31 @@ class DataPreprocessor:
             
             first_sku = skus[0]
             
-            # Extract physical properties from first SKU
-            first_props = {
-                'weight': first_sku.get('weight'),
-                'length': first_sku.get('length'),
-                'height': first_sku.get('height'),
-                'width': first_sku.get('width'),
-                'aiWeight': first_sku.get('aiWeight')
-            }
+            # Extract weight from first SKU
+            first_weight = first_sku.get('weight')
             
-            # Check if all properties are null
-            all_props_null = all(value is None for value in first_props.values())
-            if all_props_null:
-                logger.info(f"Product {product.get('name', 'Unknown')}: Skipping duplicate removal - all properties null")
+            # Check if weight is null or zero - if so, skip duplicate removal
+            if first_weight is None or first_weight == 0:
+                logger.info(f"Product {product.get('name', 'Unknown')}: Skipping duplicate removal - weight is null or zero")
                 stats["total_skus_after"] += len(skus)
                 continue
             
-            # Check if all SKUs have identical physical properties
+            # Check if all SKUs have identical weight
             all_identical = True
             for sku in skus[1:]:
-                sku_props = {
-                    'weight': sku.get('weight'),
-                    'length': sku.get('length'),
-                    'height': sku.get('height'),
-                    'width': sku.get('width'),
-                    'aiWeight': sku.get('aiWeight')
-                }
+                sku_weight = sku.get('weight')
                 
-                if sku_props != first_props:
+                # If any SKU has null or zero weight, don't drop
+                if sku_weight is None or sku_weight == 0:
+                    all_identical = False
+                    break
+                
+                # If weights differ, don't drop
+                if sku_weight != first_weight:
                     all_identical = False
                     break
             
-            # If all identical, keep only first SKU
+            # If all weights are identical and valid, keep only first SKU
             if all_identical:
                 logger.info(f"Product {product.get('name', 'Unknown')}: Reduced from {len(skus)} to 1 SKU")
                 product['skus'] = [first_sku]

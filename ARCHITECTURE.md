@@ -41,7 +41,7 @@
 │  ┌────────────────────────────────────────┐            │
 │  │ • Filter relevant fields                │            │
 │  │ • Extract SKU attributes                │            │
-│  │ • Remove duplicate SKUs                 │            │
+│  │ • Remove duplicate SKUs (by weight)     │            │
 │  │ • Track statistics                      │            │
 │  └────────────────────────────────────────┘            │
 └──────┬──────────────────────────────────────────────────┘
@@ -115,7 +115,7 @@
 
 - ✅ Extract relevant fields (categories, name, SKUs)
 - ✅ Parse nested MongoDB structures
-- ✅ Remove duplicate SKUs (identical dimensions)
+- ✅ Remove duplicate SKUs (identical weight, non-null/non-zero only)
 - ✅ Track preprocessing statistics
 
 **Input**: Raw MongoDB document  

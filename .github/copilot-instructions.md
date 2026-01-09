@@ -58,7 +58,7 @@ Products in MongoDB have **nested SKU arrays** with inconsistent field presence:
 **Critical preprocessing pattern** (see `preprocessing.py:filter_product_data`):
 1. Extract nested MongoDB objects: `raw_id.get('$oid')` for IDs
 2. Handle null SKU lists: always check `isinstance(sku_infos, list)`
-3. Remove duplicate SKUs with identical dimensions before sending to AI
+3. Remove duplicate SKUs with identical weight (non-null, non-zero) before sending to AI
 
 ## AI Model Integration Pattern
 
