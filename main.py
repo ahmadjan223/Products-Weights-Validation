@@ -177,11 +177,27 @@ async def estimate_weight(request: WeightEstimationRequest):
         
     except ValueError as e:
         # Handle validation errors
-        error_msg = f"Validation error: {str(e)}"
-        logger.error(error_msg)
+        error_msg = str(e)
+        
+        # Check if it's a Pydantic validation error about null values
+        if "Input should be a valid number" in error_msg and "input_value=None" in error_msg:
+            user_friendly_msg = (
+                "Model returned null values for dimension fields. "
+                "This may indicate the model couldn't estimate dimensions from the available data. "
+                "Try: 1) Using a different model (e.g., claude-opus-4), "
+                "2) Ensuring the product has valid data in MongoDB, or "
+                "3) Retrying the request."
+            )
+            logger.error(f"Model validation error: {error_msg}")
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail=user_friendly_msg
+            )
+        
+        logger.error(f"Validation error: {error_msg}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=error_msg
+            detail=f"Validation error: {error_msg}"
         )
         
     except Exception as e:
