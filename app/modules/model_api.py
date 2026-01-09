@@ -61,7 +61,8 @@ SYSTEM_PROMPT = """
             Return a JSON List of objects (one object per product processed).
             - Do NOT include markdown formatting (like ```json).
             - Output strict JSON only.
-
+            - skus are multiple per product give all skus in a list.
+            - donot return null values for any dimension or weight field.
             Output JSON Structure:
             [
                 {
@@ -73,14 +74,7 @@ SYSTEM_PROMPT = """
                             "height_cm": Float,
                             "weight_g": Float
                         }
-                    ],
-                    "imputation_stats": {
-                        "total_fields_processed": Integer (total SKU fields checked),
-                        "fields_imputed": Integer (null/missing values filled),
-                        "fields_corrected": Integer (outliers fixed),
-                        "unit_conversions": Integer (values converted to cm/g),
-                        "success": Boolean (true if process completed successfully)
-                    }
+                    ]
                 }
             ]
         </output_rules>
@@ -136,7 +130,7 @@ class ModelAPIClient:
     def estimate_weights(
         self, 
         products: List[Dict[str, Any]]
-    ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    ) -> Tuple[List[Dict[str, Any]], Dict[str, Any], str]:
         """
         Call Claude API to estimate weights for products
         
@@ -144,7 +138,7 @@ class ModelAPIClient:
             products: List of preprocessed products
             
         Returns:
-            Tuple of (estimated_data, api_stats)
+            Tuple of (estimated_data, api_stats, raw_model_text)
             
         Raises:
             Exception: If API call fails
@@ -190,7 +184,8 @@ Return only the processed JSON array with the specified structure."""
             logger.info(f"Tokens - Input: {input_tokens}, Output: {output_tokens}, Total: {total_tokens}")
             
             # Parse response
-            response_text = response.content[0].text.strip()
+            raw_response_text = response.content[0].text
+            response_text = raw_response_text.strip()
             
             # Remove markdown formatting if present
             if response_text.startswith('```json'):
@@ -204,7 +199,7 @@ Return only the processed JSON array with the specified structure."""
             except json.JSONDecodeError as e:
                 logger.error(f"Failed to parse JSON response: {e}")
                 logger.error(f"Raw response: {response_text[:500]}...")
-                raise ValueError(f"Failed to parse API response: {e}")
+                raise ValueError(f"Failed to parse API response: {e}\nRaw response: {raw_response_text}")
             
             # Compile stats
             api_stats = {
@@ -216,7 +211,7 @@ Return only the processed JSON array with the specified structure."""
                 "model_name": self.model_name
             }
             
-            return estimated_data, api_stats
+            return estimated_data, api_stats, raw_response_text
             
         except anthropic.APIError as e:
             logger.error(f"Claude API error: {e}")

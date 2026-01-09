@@ -1,0 +1,20 @@
+[
+  {
+    "skus": [
+      {
+        "skuId": "4712603881561",
+        "length_cm": 65.0,
+        "width_cm": 55.0,
+        "height_cm": 5.0,
+        "weight_g": 487.0
+      },
+      {
+        "skuId": "4712603881563",
+        "length_cm": 65.0,
+        "width_cm": 55.0,
+        "height_cm": 5.0,
+        "weight_g": 499.0
+      }
+    ]
+  }
+]

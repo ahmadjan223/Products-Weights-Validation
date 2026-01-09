@@ -5,6 +5,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 import os
 import json
+import csv
 
 
 def setup_logging(log_file: str = "app.log", level: int = logging.INFO) -> None:
@@ -66,6 +67,57 @@ def save_to_json(data, filename: str) -> None:
         logging.getLogger(__name__).info(f"Saved JSON snapshot to {filename}")
     except Exception as exc:
         logging.getLogger(__name__).error(f"Failed to save JSON to {filename}: {exc}")
+
+
+def save_text(content: str, filename: str) -> None:
+    """Persist raw text content to a file, creating parent dirs if needed."""
+    try:
+        os.makedirs(os.path.dirname(filename) or ".", exist_ok=True)
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(content)
+        logging.getLogger(__name__).info(f"Saved text snapshot to {filename}")
+    except Exception as exc:
+        logging.getLogger(__name__).error(f"Failed to save text to {filename}: {exc}")
+
+
+def save_model_response_as_csv(estimated_data: list, filename: str) -> None:
+    """Save model response SKU data as CSV for easy analysis.
+    
+    Flattens the nested SKU structure into a tabular format with columns:
+    product_index, sku_id, length_cm, width_cm, height_cm, weight_g
+    """
+    try:
+        os.makedirs(os.path.dirname(filename) or ".", exist_ok=True)
+        
+        with open(filename, "w", encoding="utf-8", newline="") as f:
+            writer = csv.writer(f)
+            
+            # Write header
+            writer.writerow([
+                "product_index", 
+                "sku_id", 
+                "length_cm", 
+                "width_cm", 
+                "height_cm", 
+                "weight_g"
+            ])
+            
+            # Write rows
+            for product_idx, product in enumerate(estimated_data):
+                if "skus" in product:
+                    for sku in product["skus"]:
+                        writer.writerow([
+                            product_idx,
+                            sku.get("skuId", ""),
+                            sku.get("length_cm", ""),
+                            sku.get("width_cm", ""),
+                            sku.get("height_cm", ""),
+                            sku.get("weight_g", "")
+                        ])
+        
+        logging.getLogger(__name__).info(f"Saved CSV snapshot to {filename}")
+    except Exception as exc:
+        logging.getLogger(__name__).error(f"Failed to save CSV to {filename}: {exc}")
 
 
 def format_bytes(num_bytes: int) -> str:

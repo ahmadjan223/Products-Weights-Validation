@@ -17,7 +17,7 @@ from app.modules.data_retrieval import DataRetriever
 from app.modules.preprocessing import DataPreprocessor
 from app.modules.model_api import ModelAPIClient
 from app.modules.response_builder import ResponseBuilder
-from app.utils.helpers import setup_logging, save_to_json
+from app.utils.helpers import setup_logging, save_to_json, save_model_response_as_csv, save_text
 
 # Setup logging
 setup_logging("logs/app.log")
@@ -152,9 +152,13 @@ async def estimate_weight(request: WeightEstimationRequest):
             api_key=settings.anthropic_api_key,
             model_name=model_name
         )
-        estimated_data, api_stats = model_client.estimate_weights(preprocessed_data)
+        estimated_data, api_stats, raw_model_text = model_client.estimate_weights(preprocessed_data)
         logger.info(f"Model estimation complete - {api_stats['total_tokens']} tokens used")
-        save_to_json(estimated_data, f"artifacts/estimated.json")
+        
+        # Save model response in JSON, CSV, and raw text formats
+        save_to_json(estimated_data, f"artifacts/{offer_id}_model_response.json")
+        save_model_response_as_csv(estimated_data, f"artifacts/{offer_id}_model_response.csv")
+        save_text(raw_model_text, f"artifacts/{offer_id}_model_response_raw.txt")
         
         # Step 4: Build response with metadata
         response = ResponseBuilder.build_success_response(

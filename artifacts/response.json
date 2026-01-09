@@ -40,7 +40,7 @@
     "input_tokens": 1695,
     "output_tokens": 224,
     "total_tokens": 1919,
-    "processing_time_seconds": 4.15,
+    "processing_time_seconds": 4.83,
     "model_name": "claude-sonnet-4-5"
   },
   "model_imputation_summary": {
