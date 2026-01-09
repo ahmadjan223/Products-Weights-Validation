@@ -68,25 +68,6 @@ class ResponseBuilder:
             ProcessedProduct(**product) for product in estimated_data
         ]
         
-        # Calculate overall imputation summary
-        imputation_summary = None
-        if processed_products and processed_products[0].imputation_stats:
-            # Aggregate stats from all products
-            total_fields = sum(p.imputation_stats.total_fields_processed for p in processed_products if p.imputation_stats)
-            fields_imputed = sum(p.imputation_stats.fields_imputed for p in processed_products if p.imputation_stats)
-            fields_corrected = sum(p.imputation_stats.fields_corrected for p in processed_products if p.imputation_stats)
-            unit_conversions = sum(p.imputation_stats.unit_conversions for p in processed_products if p.imputation_stats)
-            all_success = all(p.imputation_stats.success for p in processed_products if p.imputation_stats)
-            
-            from app.models.schemas import ImputationStats
-            imputation_summary = ImputationStats(
-                total_fields_processed=total_fields,
-                fields_imputed=fields_imputed,
-                fields_corrected=fields_corrected,
-                unit_conversions=unit_conversions,
-                success=all_success
-            )
-        
         # Build complete response
         response = WeightEstimationResponse(
             success=True,
@@ -95,7 +76,6 @@ class ResponseBuilder:
             estimated_weights=processed_products,
             preprocessing_stats=prep_stats,
             model_api_stats=model_stats,
-            model_imputation_summary=imputation_summary,
             raw_data_size_chars=raw_data_size,
             preprocessed_data_size_chars=preprocessed_data_size
         )

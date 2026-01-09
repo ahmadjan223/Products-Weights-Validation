@@ -1,63 +1,3267 @@
 {
-  "id": "68f9e17b5dc1e9728a133c05",
+  "id": "68f9e1845dc1e9728a133c09",
   "categories": [
     {
-      "categoryId": 10166,
-      "categoryName": "Women's Clothing"
+      "categoryId": 311,
+      "categoryName": "Children's clothing"
     },
     {
-      "categoryId": 127386001,
-      "categoryName": "women's sweater"
+      "categoryId": 201551614,
+      "categoryName": "Children's coat/jacket/coat"
+    },
+    {
+      "categoryId": 201554510,
+      "categoryName": "Ordinary coat"
     }
   ],
-  "name": "New Autumn and Winter Pullover Knitwear Women's Bottoming Shirt 2025Bf Loose Lazy Style Hong Kong Style Jacquard Quilted Knitwear Women",
+  "name": "Cross-Border Children's Jacket for Girls, Thin Spring and Autumn Stylish Girls' Windbreaker, 2025 New Outdoor Jacket, Windproof Coat",
   "Product info": {
-    "length": null,
-    "weight": null,
-    "height": null,
-    "width": null,
+    "length": 25.0,
+    "weight": 0.25,
+    "height": 2.0,
+    "width": 25.0,
     "aiWeight": null
   },
   "skus": [
     {
-      "skuId": 4712603881561,
+      "skuId": 4228484624802,
       "skuAttributes": [
         {
           "attributeId": 3216,
           "attributeName": "Color",
-          "value": "Beige + Orange"
+          "value": "Pink"
         },
         {
-          "attributeId": 450,
-          "attributeName": "Size",
-          "value": "All yards"
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
         }
       ],
-      "length": null,
-      "weight": null,
-      "height": null,
-      "width": null,
-      "aiWeight": 0.487
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
     },
     {
-      "skuId": 4712603881563,
+      "skuId": 4228484624801,
       "skuAttributes": [
         {
           "attributeId": 3216,
           "attributeName": "Color",
-          "value": "Gray + Wine Red"
+          "value": "Pink"
         },
         {
-          "attributeId": 450,
-          "attributeName": "Size",
-          "value": "All yards"
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
         }
       ],
-      "length": null,
-      "weight": null,
-      "height": null,
-      "width": null,
-      "aiWeight": 0.499
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.204
+    },
+    {
+      "skuId": 4228484624803,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.253
+    },
+    {
+      "skuId": 4228484624798,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.269
+    },
+    {
+      "skuId": 4228484624799,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4228484624800,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.277
+    },
+    {
+      "skuId": 4362153746578,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Light Blue"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4362153746579,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Light Blue"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.218
+    },
+    {
+      "skuId": 4362153746580,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Light Blue"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.257
+    },
+    {
+      "skuId": 4362153746581,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Light Blue"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.273
+    },
+    {
+      "skuId": 4362153746582,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Light Blue"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4362153746583,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Light Blue"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.283
+    },
+    {
+      "skuId": 4485954406340,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Fawn)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.17
+    },
+    {
+      "skuId": 4485954406339,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Fawn)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.219
+    },
+    {
+      "skuId": 4485954406341,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Fawn)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.249
+    },
+    {
+      "skuId": 4485954406336,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Fawn)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.262
+    },
+    {
+      "skuId": 4485954406337,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Fawn)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.267
+    },
+    {
+      "skuId": 4485954406338,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Fawn)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.285
+    },
+    {
+      "skuId": 4485954406346,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Chick)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.172
+    },
+    {
+      "skuId": 4485954406345,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Chick)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4485954406347,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Chick)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.261
+    },
+    {
+      "skuId": 4485954406342,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Chick)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4485954406343,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Chick)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.272
+    },
+    {
+      "skuId": 4485954406344,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink (Chick)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.28
+    },
+    {
+      "skuId": 4485954406328,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (Dove)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.176
+    },
+    {
+      "skuId": 4485954406327,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (Dove)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.219
+    },
+    {
+      "skuId": 4485954406329,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (Dove)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.25
+    },
+    {
+      "skuId": 4485954406324,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (Dove)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.264
+    },
+    {
+      "skuId": 4485954406325,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (Dove)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4485954406326,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (Dove)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.282
+    },
+    {
+      "skuId": 4485954406334,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (balloon)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.16
+    },
+    {
+      "skuId": 4485954406333,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (balloon)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.174
+    },
+    {
+      "skuId": 4485954406335,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (balloon)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.223
+    },
+    {
+      "skuId": 4485954406330,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (balloon)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4485954406331,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (balloon)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.257
+    },
+    {
+      "skuId": 4485954406332,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue (balloon)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.262
+    },
+    {
+      "skuId": 4412150905564,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Little Rainbow Elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.183
+    },
+    {
+      "skuId": 4412150905563,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Little Rainbow Elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.233
+    },
+    {
+      "skuId": 4412150905565,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Little Rainbow Elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905560,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Little Rainbow Elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.267
+    },
+    {
+      "skuId": 4412150905561,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Little Rainbow Elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.276
+    },
+    {
+      "skuId": 4412150905562,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Little Rainbow Elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905582,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Gray sunflower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.174
+    },
+    {
+      "skuId": 4412150905581,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Gray sunflower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905583,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Gray sunflower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905578,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Gray sunflower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.254
+    },
+    {
+      "skuId": 4412150905579,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Gray sunflower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.261
+    },
+    {
+      "skuId": 4412150905580,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Gray sunflower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.273
+    },
+    {
+      "skuId": 4412150905576,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Small rainbow flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.159
+    },
+    {
+      "skuId": 4412150905575,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Small rainbow flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905577,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Small rainbow flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.246
+    },
+    {
+      "skuId": 4412150905572,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Small rainbow flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905573,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Small rainbow flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.259
+    },
+    {
+      "skuId": 4412150905574,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Small rainbow flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.267
+    },
+    {
+      "skuId": 4412150905588,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White plant flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905587,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White plant flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.183
+    },
+    {
+      "skuId": 4412150905589,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White plant flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.233
+    },
+    {
+      "skuId": 4412150905584,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White plant flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4412150905585,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White plant flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.261
+    },
+    {
+      "skuId": 4412150905586,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White plant flower"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.275
+    },
+    {
+      "skuId": 5737137251145,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink green elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.173
+    },
+    {
+      "skuId": 5737137251144,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink green elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.216
+    },
+    {
+      "skuId": 5737137251146,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink green elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 5737137251141,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink green elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.256
+    },
+    {
+      "skuId": 5737137251142,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink green elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.263
+    },
+    {
+      "skuId": 5737137251143,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink green elephant"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.276
+    },
+    {
+      "skuId": 4412150905570,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White Lion"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.169
+    },
+    {
+      "skuId": 4412150905569,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White Lion"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.21
+    },
+    {
+      "skuId": 4412150905571,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White Lion"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.25
+    },
+    {
+      "skuId": 4412150905566,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White Lion"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.267
+    },
+    {
+      "skuId": 4412150905567,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White Lion"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.274
+    },
+    {
+      "skuId": 4412150905568,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White Lion"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.277
+    },
+    {
+      "skuId": 4412150905552,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink snail on white background"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.173
+    },
+    {
+      "skuId": 4412150905551,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink snail on white background"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.208
+    },
+    {
+      "skuId": 4412150905553,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink snail on white background"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.233
+    },
+    {
+      "skuId": 4412150905548,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink snail on white background"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.25
+    },
+    {
+      "skuId": 4412150905549,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink snail on white background"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.261
+    },
+    {
+      "skuId": 4412150905550,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink snail on white background"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4440756952200,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.158
+    },
+    {
+      "skuId": 4440756952199,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4440756952201,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.242
+    },
+    {
+      "skuId": 4440756952196,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4440756952197,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.263
+    },
+    {
+      "skuId": 4440756952198,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.28
+    },
+    {
+      "skuId": 4440756952206,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Western Red Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.161
+    },
+    {
+      "skuId": 4440756952205,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Western Red Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4440756952207,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Western Red Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4440756952202,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Western Red Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4440756952203,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Western Red Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.261
+    },
+    {
+      "skuId": 4440756952204,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Western Red Bee"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.278
+    },
+    {
+      "skuId": 4703350336007,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Rice White Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336006,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Rice White Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336008,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Rice White Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.272
+    },
+    {
+      "skuId": 4703350336003,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Rice White Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.282
+    },
+    {
+      "skuId": 4703350336004,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Rice White Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.287
+    },
+    {
+      "skuId": 4703350336005,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Rice White Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.306
+    },
+    {
+      "skuId": 4703350336019,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.163
+    },
+    {
+      "skuId": 4703350336018,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.207
+    },
+    {
+      "skuId": 4703350336020,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336015,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336016,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.28
+    },
+    {
+      "skuId": 4703350336017,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.298
+    },
+    {
+      "skuId": 4703350336001,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.172
+    },
+    {
+      "skuId": 4708377506000,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336002,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.272
+    },
+    {
+      "skuId": 4708377505997,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4708377505998,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.28
+    },
+    {
+      "skuId": 4708377505999,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336013,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.168
+    },
+    {
+      "skuId": 4703350336012,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336014,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.27
+    },
+    {
+      "skuId": 4703350336009,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 4703350336010,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.284
+    },
+    {
+      "skuId": 4703350336011,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Blue Graffiti New"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.302
+    },
+    {
+      "skuId": 5104247351103,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy 2023003"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.194
+    },
+    {
+      "skuId": 5104247351102,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy 2023003"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 5104247351104,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy 2023003"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.26
+    },
+    {
+      "skuId": 5104247351099,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy 2023003"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 5104247351100,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy 2023003"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.268
+    },
+    {
+      "skuId": 5104247351101,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy 2023003"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.286
+    },
+    {
+      "skuId": 5104247351091,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Green 2023002"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.183
+    },
+    {
+      "skuId": 5104247351090,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Green 2023002"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.228
+    },
+    {
+      "skuId": 5104247351092,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Green 2023002"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.249
+    },
+    {
+      "skuId": 5104247351087,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Green 2023002"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.263
+    },
+    {
+      "skuId": 5104247351088,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Green 2023002"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.258
+    },
+    {
+      "skuId": 5104247351089,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Green 2023002"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.268
+    },
+    {
+      "skuId": 5104247351097,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink 2023001"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 5104247351096,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink 2023001"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 5104247351098,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink 2023001"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.247
+    },
+    {
+      "skuId": 5104247351093,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink 2023001"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.263
+    },
+    {
+      "skuId": 5104247351094,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink 2023001"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.257
+    },
+    {
+      "skuId": 5104247351095,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink 2023001"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.266
+    },
+    {
+      "skuId": 5383704981407,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Rainbow Horse"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 5383704981406,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Rainbow Horse"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 5383704981408,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Rainbow Horse"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.242
+    },
+    {
+      "skuId": 5383704981403,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Rainbow Horse"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.259
+    },
+    {
+      "skuId": 5383704981404,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Rainbow Horse"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.262
+    },
+    {
+      "skuId": 5383704981405,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Purple Rainbow Horse"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": 0.278
+    },
+    {
+      "skuId": 6041785247707,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy blue rabbit"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247706,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy blue rabbit"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247708,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy blue rabbit"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247703,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy blue rabbit"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247704,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy blue rabbit"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247705,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Navy blue rabbit"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247701,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink masonry girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247700,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink masonry girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247702,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink masonry girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247697,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink masonry girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247698,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink masonry girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247699,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink masonry girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247713,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink all over printed girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247712,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink all over printed girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247714,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink all over printed girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247709,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink all over printed girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247710,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink all over printed girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6041785247711,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Pink all over printed girl"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6065626379043,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White (mouse head)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "90cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6065626379042,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White (mouse head)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "100cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6065626379044,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White (mouse head)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "110cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6065626379039,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White (mouse head)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "120cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6065626379040,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White (mouse head)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "130cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
+    },
+    {
+      "skuId": 6065626379041,
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "White (mouse head)"
+        },
+        {
+          "attributeId": 100019113,
+          "attributeName": "Suitable for height",
+          "value": "140cm"
+        }
+      ],
+      "length": 0.0,
+      "weight": 0.25,
+      "height": 0.0,
+      "width": 0.0,
+      "aiWeight": null
     }
   ]
 }

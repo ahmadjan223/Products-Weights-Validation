@@ -54,7 +54,6 @@ class ImputationStats(BaseModel):
 class ProcessedProduct(BaseModel):
     """Processed product with SKU dimensions"""
     skus: List[SKUDimensions]
-    imputation_stats: Optional[ImputationStats] = None
 
 
 class PreprocessingStats(BaseModel):
@@ -94,7 +93,6 @@ class WeightEstimationResponse(BaseModel):
     # Metadata
     preprocessing_stats: PreprocessingStats
     model_api_stats: ModelAPIStats
-    model_imputation_summary: Optional[ImputationStats] = None
     
     # Raw input sizes for reference
     raw_data_size_chars: int

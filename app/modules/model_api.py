@@ -52,17 +52,19 @@ SYSTEM_PROMPT = """
         - Flag Outliers: Detect values that violate the "Valid Range" established in Step 1.
 
         STEP 4: FINAL IMPUTATION & STANDARDIZATION
-        - Iterate SKUs:
-          - Missing Values: If null/0, impute using the average of valid SKUs *within the same attribute cluster* (e.g., use other "Z Fold 7" weights for a missing "Z Fold 7" weight). If no cluster match exists, use the global product average.
-          - Outlier Correction: Replace impossible values (e.g., "3kg" for a case) with the calculated baseline.
-          - Standardization: Convert EVERYTHING to Centimeters (cm) and Grams (g).
+        - Iterate SKUs to fill missing values using this strict Priority Hierarchy:
+          1. Cluster Average: Use average of valid SKUs *within the same attribute cluster*.
+          2. Main Info: If no cluster match, use valid data from 'main_info'.
+          3. Global Average: If 'main_info' is missing/invalid, use the average of *any* valid SKUs for this product.
+          4. Semantic Estimation (Fallback): If ALL input data (SKUs and main_info) is missing or invalid, estimate reasonable dimensions/weight based strictly on the 'name' and 'category' profile (e.g., if it's a "Phone Case", force 15x8x1cm / 50g).
+        - Standardization: Convert EVERYTHING to Centimeters (cm) and Grams (g).
     </reasoning_process>
     <output_rules>
             Return a JSON List of objects (one object per product processed).
             - Do NOT include markdown formatting (like ```json).
             - Output strict JSON only.
             - skus are multiple per product give all skus in a list.
-            - donot return null values for any dimension or weight field.
+            - We donot want null values for any dimension or weight field.
             Output JSON Structure:
             [
                 {

@@ -3,27 +3,20 @@
   {
     "skus": [
       {
-        "skuId": "4712603881561",
-        "length_cm": null,
-        "width_cm": null,
-        "height_cm": null,
-        "weight_g": 487
+        "skuId": 4712603881561,
+        "length_cm": 65.0,
+        "width_cm": 55.0,
+        "height_cm": 5.0,
+        "weight_g": 487.0
       },
       {
-        "skuId": "4712603881563",
-        "length_cm": null,
-        "width_cm": null,
-        "height_cm": null,
-        "weight_g": 499
+        "skuId": 4712603881563,
+        "length_cm": 65.0,
+        "width_cm": 55.0,
+        "height_cm": 5.0,
+        "weight_g": 499.0
       }
-    ],
-    "imputation_stats": {
-      "total_fields_processed": 8,
-      "fields_imputed": 0,
-      "fields_corrected": 0,
-      "unit_conversions": 2,
-      "success": true
-    }
+    ]
   }
 ]
 ```

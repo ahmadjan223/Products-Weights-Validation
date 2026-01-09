@@ -1,56 +1,35 @@
 {
   "success": true,
-  "offer_id": "653479347253",
-  "skus_were_identical": false,
+  "offer_id": "600116413912",
+  "skus_were_identical": true,
   "estimated_weights": [
     {
       "skus": [
         {
-          "skuId": "4712603881561",
-          "length_cm": 65.0,
-          "width_cm": 50.0,
-          "height_cm": 3.0,
-          "weight_g": 487.0
-        },
-        {
-          "skuId": "4712603881563",
-          "length_cm": 65.0,
-          "width_cm": 50.0,
-          "height_cm": 3.0,
-          "weight_g": 499.0
+          "skuId": "4228484624802",
+          "length_cm": 25.0,
+          "width_cm": 25.0,
+          "height_cm": 2.0,
+          "weight_g": 250.0
         }
-      ],
-      "imputation_stats": {
-        "total_fields_processed": 8,
-        "fields_imputed": 6,
-        "fields_corrected": 0,
-        "unit_conversions": 2,
-        "success": true
-      }
+      ]
     }
   ],
   "preprocessing_stats": {
-    "total_skus_before": 2,
-    "total_skus_after": 2,
-    "skus_removed": 0,
-    "duplicate_removal_applied": false
+    "total_skus_before": 162,
+    "total_skus_after": 1,
+    "skus_removed": 161,
+    "duplicate_removal_applied": true
   },
   "model_api_stats": {
     "api_calls_count": 1,
-    "input_tokens": 1695,
-    "output_tokens": 224,
-    "total_tokens": 1919,
-    "processing_time_seconds": 4.83,
-    "model_name": "claude-sonnet-4-5"
+    "input_tokens": 1604,
+    "output_tokens": 94,
+    "total_tokens": 1698,
+    "processing_time_seconds": 1.44,
+    "model_name": "claude-haiku-4-5"
   },
-  "model_imputation_summary": {
-    "total_fields_processed": 8,
-    "fields_imputed": 6,
-    "fields_corrected": 0,
-    "unit_conversions": 2,
-    "success": true
-  },
-  "raw_data_size_chars": 20228,
-  "preprocessed_data_size_chars": 974,
+  "raw_data_size_chars": 4403750,
+  "preprocessed_data_size_chars": 772,
   "error": null
 }
