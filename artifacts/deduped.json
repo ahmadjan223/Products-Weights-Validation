@@ -1,0 +1,589 @@
+[
+  {
+    "id": "68f9dfdaa6622c46b9819828",
+    "categories": [
+      {
+        "categoryId": 1042954,
+        "categoryName": "luggage and leather goods"
+      },
+      {
+        "categoryId": 201956604,
+        "categoryName": "Backpack"
+      },
+      {
+        "categoryId": 122220001,
+        "categoryName": "Universal Backpack"
+      }
+    ],
+    "name": "Korean Version of College and High School Student Schoolbags for Men and Women, British College Style Backpacks, Simple Computer Bags, Large Capacity Backpacks",
+    "Product info": {
+      "length": null,
+      "weight": null,
+      "height": null,
+      "width": null,
+      "aiWeight": null
+    },
+    "skus": [
+      {
+        "skuId": 3321429205914,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Burgundy"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.72
+      },
+      {
+        "skuId": 3322592552949,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Burgundy"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.736
+      },
+      {
+        "skuId": 3321429205915,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Purple"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.704
+      },
+      {
+        "skuId": 3321429205916,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light gray"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.708
+      },
+      {
+        "skuId": 3322592552951,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light gray"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.723
+      },
+      {
+        "skuId": 3321429205917,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Blue"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.736
+      },
+      {
+        "skuId": 3322592552952,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Blue"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.705
+      },
+      {
+        "skuId": 4882145094038,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Black"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": null
+      },
+      {
+        "skuId": 4882145094037,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Black"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": null
+      },
+      {
+        "skuId": 3321429205918,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Dark Blue"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.707
+      },
+      {
+        "skuId": 3322592552953,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Dark Blue"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.706
+      },
+      {
+        "skuId": 3321429205919,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light green"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.705
+      },
+      {
+        "skuId": 3322592552954,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Light green"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.724
+      },
+      {
+        "skuId": 3321429205922,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Peacock Blue"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.665
+      },
+      {
+        "skuId": 3321429205920,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Dark gray"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.722
+      },
+      {
+        "skuId": 3322592552955,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Dark gray"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.725
+      },
+      {
+        "skuId": 3321429205921,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "All Black"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.72
+      },
+      {
+        "skuId": 3322592552948,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "All Black"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.699
+      },
+      {
+        "skuId": 3496909648752,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "BLACK ZIPPER Burgundy"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.699
+      },
+      {
+        "skuId": 3496909648747,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Purple black zipper"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.719
+      },
+      {
+        "skuId": 3496909648746,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Gray black zipper"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.704
+      },
+      {
+        "skuId": 3496909648748,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "BLACK ZIPPER BLUE"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.694
+      },
+      {
+        "skuId": 3496909648751,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Dark blue black zipper"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.696
+      },
+      {
+        "skuId": 3496909648750,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Black zipper light green"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.728
+      },
+      {
+        "skuId": 3496909648755,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Dark gray black zipper"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.701
+      },
+      {
+        "skuId": 3496909648753,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Black zipper All Black"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.723
+      },
+      {
+        "skuId": 3496909648743,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "Black zipper All Black"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "14 inch"
+          }
+        ],
+        "length": 45.8,
+        "weight": 0.715,
+        "height": 7.3,
+        "width": 34.3,
+        "aiWeight": 0.696
+      },
+      {
+        "skuId": 3496909648754,
+        "skuAttributes": [
+          {
+            "attributeId": 3216,
+            "attributeName": "Color",
+            "value": "PEACCOCK BLUE BLACK ZIPPER"
+          },
+          {
+            "attributeId": 446,
+            "attributeName": "Dimensions",
+            "value": "16 inch"
+          }
+        ],
+        "length": 45.0,
+        "weight": 0.68,
+        "height": 5.0,
+        "width": 33.0,
+        "aiWeight": 0.674
+      }
+    ]
+  }
+]

@@ -17,7 +17,7 @@ from app.modules.data_retrieval import DataRetriever
 from app.modules.preprocessing import DataPreprocessor
 from app.modules.model_api import ModelAPIClient
 from app.modules.response_builder import ResponseBuilder
-from app.utils.helpers import setup_logging
+from app.utils.helpers import setup_logging, save_to_json
 
 # Setup logging
 setup_logging("logs/app.log")
@@ -131,12 +131,20 @@ async def estimate_weight(request: WeightEstimationRequest):
         
         logger.info("Data retrieved successfully")
         
-        # Step 2: Preprocess data
-        preprocessed_data, preprocessing_stats = DataPreprocessor.preprocess_pipeline(
-            raw_data, 
-            drop_duplicates=drop_similar_skus
+        # Persist raw Mongo payload
+        save_to_json(raw_data, f"artifacts/raw.json")
+
+        # Step 2: Preprocess data (filter + optional duplicate removal)
+        filtered_data = DataPreprocessor.filter_product_data(raw_data)
+        if not filtered_data:
+            raise ValueError("Failed to filter product data")
+        save_to_json(filtered_data, f"artifacts/filtered.json")
+
+        preprocessed_data, preprocessing_stats = DataPreprocessor.remove_duplicate_skus(
+            [filtered_data], drop_duplicates=drop_similar_skus
         )
         logger.info(f"Preprocessing complete - {preprocessing_stats['skus_removed']} SKUs removed")
+        save_to_json(preprocessed_data, f"artifacts/deduped.json")
         
         # Step 3: Initialize model client with user's choice and call API
         settings = get_settings()
@@ -146,6 +154,7 @@ async def estimate_weight(request: WeightEstimationRequest):
         )
         estimated_data, api_stats = model_client.estimate_weights(preprocessed_data)
         logger.info(f"Model estimation complete - {api_stats['total_tokens']} tokens used")
+        save_to_json(estimated_data, f"artifacts/estimated.json")
         
         # Step 4: Build response with metadata
         response = ResponseBuilder.build_success_response(
@@ -157,6 +166,8 @@ async def estimate_weight(request: WeightEstimationRequest):
             api_stats=api_stats
         )
         
+        save_to_json(response.model_dump(by_alias=True), f"artifacts/response.json")
+
         logger.info(f"Request completed successfully for offer ID: {offer_id}")
         return response
         

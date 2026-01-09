@@ -4,6 +4,7 @@ Utility functions for logging and other common operations
 import logging
 from logging.handlers import RotatingFileHandler
 import os
+import json
 
 
 def setup_logging(log_file: str = "app.log", level: int = logging.INFO) -> None:
@@ -49,8 +50,22 @@ def setup_logging(log_file: str = "app.log", level: int = logging.INFO) -> None:
     )
     file_handler.setFormatter(file_formatter)
     logger.addHandler(file_handler)
-    
-    logger.info("Logging configured successfully")
+
+
+def save_to_json(data, filename: str) -> None:
+    """Persist Python data to a JSON file with safety defaults.
+
+    - Creates parent directories if they don't exist
+    - Uses ``default=str`` so ObjectId and other non-serializable values are stringified
+    - Pretty-prints with indent=2 for readability
+    """
+    try:
+        os.makedirs(os.path.dirname(filename) or ".", exist_ok=True)
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, default=str)
+        logging.getLogger(__name__).info(f"Saved JSON snapshot to {filename}")
+    except Exception as exc:
+        logging.getLogger(__name__).error(f"Failed to save JSON to {filename}: {exc}")
 
 
 def format_bytes(num_bytes: int) -> str:

@@ -1,0 +1,238 @@
+{
+  "success": true,
+  "offer_id": "547896237507",
+  "skus_were_identical": false,
+  "estimated_weights": [
+    {
+      "skus": [
+        {
+          "skuId": "3321429205914",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3322592552949",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205915",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205916",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3322592552951",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205917",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3322592552952",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "4882145094038",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "4882145094037",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205918",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3322592552953",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205919",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3322592552954",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205922",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205920",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3322592552955",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3321429205921",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3322592552948",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648752",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648747",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648746",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648748",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648751",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648750",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648755",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648753",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        },
+        {
+          "skuId": "3496909648743",
+          "length_cm": 45.8,
+          "width_cm": 34.3,
+          "height_cm": 7.3,
+          "weight_g": 715.0
+        },
+        {
+          "skuId": "3496909648754",
+          "length_cm": 45.0,
+          "width_cm": 33.0,
+          "height_cm": 5.0,
+          "weight_g": 680.0
+        }
+      ],
+      "imputation_stats": {
+        "total_fields_processed": 108,
+        "fields_imputed": 0,
+        "fields_corrected": 0,
+        "unit_conversions": 54,
+        "success": true
+      }
+    }
+  ],
+  "preprocessing_stats": {
+    "total_skus_before": 28,
+    "total_skus_after": 28,
+    "skus_removed": 0,
+    "duplicate_removal_applied": false
+  },
+  "model_api_stats": {
+    "api_calls_count": 1,
+    "input_tokens": 5719,
+    "output_tokens": 1966,
+    "total_tokens": 7685,
+    "processing_time_seconds": 8.34,
+    "model_name": "claude-haiku-4-5"
+  },
+  "model_imputation_summary": {
+    "total_fields_processed": 108,
+    "fields_imputed": 0,
+    "fields_corrected": 0,
+    "unit_conversions": 54,
+    "success": true
+  },
+  "raw_data_size_chars": 286619,
+  "preprocessed_data_size_chars": 8187,
+  "error": null
+}
