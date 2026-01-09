@@ -25,12 +25,10 @@ build/
 logs/
 *.log
 
-# Generated JSON files
-*.json
-!requirements.txt
+# Generated batch results JSON files
+batch_results_*.json
 
 # OS
 .DS_Store
 Thumbs.db
 
-preprocessing.ipynb
