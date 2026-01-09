@@ -6,20 +6,30 @@ from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 import logging
+import time
+import asyncio
 
 from app.config import get_settings
 from app.models.schemas import (
     WeightEstimationRequest,
     WeightEstimationResponse,
     BatchWeightEstimationRequest,
-    BatchWeightEstimationResponse,
+    BatchSubmissionResponse,
+    BatchStatusResponse,
+    BatchResultsResponse,
     ErrorResponse
 )
 from app.modules.data_retrieval import DataRetriever
 from app.modules.preprocessing import DataPreprocessor
 from app.modules.model_api import ModelAPIClient
 from app.modules.response_builder import ResponseBuilder
-from app.utils.helpers import setup_logging, save_to_json, save_model_response_as_csv, save_text
+from app.utils.helpers import (
+    setup_logging,
+    save_to_json,
+    save_model_response_as_csv,
+    save_text,
+    remove_files_by_glob,
+)
 
 # Setup logging
 setup_logging("logs/app.log")
@@ -27,6 +37,8 @@ logger = logging.getLogger(__name__)
 
 # Global instances
 data_retriever = None
+active_batch_id: str | None = None
+batch_lock = asyncio.Lock()
 
 
 @asynccontextmanager
@@ -134,19 +146,19 @@ async def estimate_weight(request: WeightEstimationRequest):
         logger.info("Data retrieved successfully")
         
         # Persist raw Mongo payload
-        save_to_json(raw_data, f"artifacts/raw.json")
+        # save_to_json(raw_data, f"artifacts/raw.json")
 
         # Step 2: Preprocess data (filter + optional duplicate removal)
         filtered_data = DataPreprocessor.filter_product_data(raw_data)
         if not filtered_data:
             raise ValueError("Failed to filter product data")
-        save_to_json(filtered_data, f"artifacts/filtered.json")
+        # save_to_json(filtered_data, f"artifacts/filtered.json")
 
         preprocessed_data, preprocessing_stats = DataPreprocessor.remove_duplicate_skus(
             [filtered_data], drop_duplicates=drop_similar_skus
         )
         logger.info(f"Preprocessing complete - {preprocessing_stats['skus_removed']} SKUs removed")
-        save_to_json(preprocessed_data, f"artifacts/deduped.json")
+        # save_to_json(preprocessed_data, f"artifacts/deduped.json")
         
         # Step 3: Initialize model client with user's choice and call API
         settings = get_settings()
@@ -158,9 +170,9 @@ async def estimate_weight(request: WeightEstimationRequest):
         logger.info(f"Model estimation complete - {api_stats['total_tokens']} tokens used")
         
         # Save model response in JSON, CSV, and raw text formats
-        save_to_json(estimated_data, f"artifacts/{offer_id}_model_response.json")
-        save_model_response_as_csv(estimated_data, f"artifacts/{offer_id}_model_response.csv")
-        save_text(raw_model_text, f"artifacts/{offer_id}_model_response_raw.txt")
+        # save_to_json(estimated_data, f"artifacts/{offer_id}_model_response.json")
+        # save_model_response_as_csv(estimated_data, f"artifacts/{offer_id}_model_response.csv")
+        # save_text(raw_model_text, f"artifacts/{offer_id}_model_response_raw.txt")
         
         # Step 4: Build response with metadata
         response = ResponseBuilder.build_success_response(
@@ -172,7 +184,7 @@ async def estimate_weight(request: WeightEstimationRequest):
             api_stats=api_stats
         )
         
-        save_to_json(response.model_dump(by_alias=True), f"artifacts/response.json")
+        # save_to_json(response.model_dump(by_alias=True), f"artifacts/response.json")
 
         logger.info(f"Request completed successfully for offer ID: {offer_id}")
         return response
@@ -216,6 +228,275 @@ async def estimate_weight(request: WeightEstimationRequest):
         )
 
 
+@app.post(
+    "/batch-submit",
+    response_model=BatchSubmissionResponse,
+    responses={
+        200: {"description": "Batch job submitted successfully"},
+        500: {"model": ErrorResponse, "description": "Internal server error"}
+    }
+)
+async def batch_submit(request: BatchWeightEstimationRequest):
+    """
+    Submit a batch job for async processing with 50% cost savings
+    
+    Process:
+    1. Fetch and preprocess all offer IDs
+    2. Create Claude Batch API job
+    3. Return batch_id for status tracking
+    
+    Note: Results are not immediate - use /batch-status and /batch-results endpoints
+    
+    Args:
+        request: BatchWeightEstimationRequest with offer_ids
+        
+    Returns:
+        BatchSubmissionResponse with batch_id
+    """
+    offer_ids = request.offer_ids
+    model_name = request.model_name
+    drop_similar_skus = request.drop_similar_skus
+    
+    logger.info(f"Submitting batch job for {len(offer_ids)} offer IDs | Model: {model_name}")
+    
+    global active_batch_id
+    try:
+        # Enforce single in-flight batch
+        async with batch_lock:
+            if active_batch_id:
+                settings = get_settings()
+                model_client_check = ModelAPIClient(
+                    api_key=settings.anthropic_api_key,
+                    model_name=model_name
+                )
+                status_info = model_client_check.get_batch_status(active_batch_id)
+                if status_info.get("processing_status") not in {"ended", "expired", "canceled"}:
+                    raise HTTPException(
+                        status_code=status.HTTP_409_CONFLICT,
+                        detail=f"Another batch is running (batch_id={active_batch_id}, status={status_info.get('processing_status')}). Wait until it ends."
+                    )
+                # clear stale marker
+                active_batch_id = None
+
+            # keep only latest results by removing old batch result artifacts
+            remove_files_by_glob(["artifacts/batch_*_results.json"])
+
+        # Step 1: Fetch and preprocess all offers
+        batch_requests = []
+        failed_offers = []
+        
+        for offer_id in offer_ids:
+            try:
+                # Retrieve data
+                raw_data = data_retriever.fetch_by_offer_id(offer_id)
+                if not raw_data:
+                    logger.warning(f"No product found for offer ID: {offer_id}")
+                    failed_offers.append(offer_id)
+                    continue
+                
+                # Preprocess
+                filtered_data = DataPreprocessor.filter_product_data(raw_data)
+                if not filtered_data:
+                    logger.warning(f"Failed to filter data for offer ID: {offer_id}")
+                    failed_offers.append(offer_id)
+                    continue
+                
+                preprocessed_data, _ = DataPreprocessor.remove_duplicate_skus(
+                    [filtered_data], drop_duplicates=drop_similar_skus
+                )
+                
+                # Add to batch requests
+                batch_requests.append({
+                    "custom_id": offer_id,
+                    "products": preprocessed_data
+                })
+                
+                # Save preprocessed data
+                # save_to_json(preprocessed_data, f"artifacts/batch_{offer_id}_preprocessed.json")
+                
+            except Exception as e:
+                logger.error(f"Error preprocessing offer ID {offer_id}: {e}")
+                failed_offers.append(offer_id)
+        
+        if not batch_requests:
+            raise ValueError("No valid offers to process")
+        
+        # Step 2: Create batch job
+        settings = get_settings()
+        model_client = ModelAPIClient(
+            api_key=settings.anthropic_api_key,
+            model_name=model_name
+        )
+        
+        batch_id = model_client.create_batch_job(batch_requests)
+        
+        logger.info(f"✅ Batch job created: {batch_id} ({len(batch_requests)} requests)")
+
+        async with batch_lock:
+            active_batch_id = batch_id
+        
+        return BatchSubmissionResponse(
+            success=True,
+            batch_id=batch_id,
+            total_requests=len(batch_requests),
+            message=f"Batch job submitted successfully. {len(failed_offers)} offers failed preprocessing.",
+            model_name=model_name,
+            drop_similar_skus=drop_similar_skus
+        )
+        
+    except Exception as e:
+        error_msg = f"Batch submission error: {str(e)}"
+        logger.error(error_msg, exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=error_msg
+        )
+
+
+@app.get(
+    "/batch-status/{batch_id}",
+    response_model=BatchStatusResponse,
+    responses={
+        200: {"description": "Batch status retrieved"},
+        500: {"model": ErrorResponse, "description": "Internal server error"}
+    }
+)
+async def batch_status(batch_id: str):
+    """
+    Check status of a batch job
+    
+    Status values:
+    - queued: Job is waiting to be processed
+    - in_progress: Job is currently being processed
+    - ended: Job has completed (check request_counts for details)
+    
+    Args:
+        batch_id: The batch job ID from /batch-submit
+        
+    Returns:
+        BatchStatusResponse with current status
+    """
+    try:
+        settings = get_settings()
+        model_client = ModelAPIClient(
+            api_key=settings.anthropic_api_key,
+            model_name="claude-sonnet-4-5"
+        )
+        
+        global active_batch_id
+        status_info = model_client.get_batch_status(batch_id)
+
+        if status_info.get("processing_status") == "ended" and active_batch_id == batch_id:
+            async with batch_lock:
+                active_batch_id = None
+        
+        return BatchStatusResponse(
+            success=True,
+            batch_id=status_info["id"],
+            status=status_info["processing_status"],
+            request_counts=status_info["request_counts"],
+            ended_at=str(status_info["ended_at"]) if status_info["ended_at"] else None,
+            expires_at=str(status_info["expires_at"]) if status_info["expires_at"] else None
+        )
+        
+    except Exception as e:
+        error_msg = f"Error checking batch status: {str(e)}"
+        logger.error(error_msg)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=error_msg
+        )
+
+
+@app.get(
+    "/batch-results/{batch_id}",
+    response_model=BatchResultsResponse,
+    responses={
+        200: {"description": "Batch results retrieved"},
+        500: {"model": ErrorResponse, "description": "Internal server error"}
+    }
+)
+async def batch_results(batch_id: str):
+    """
+    Retrieve results from a completed batch job
+    
+    Note: Only works for jobs with status='ended'
+    
+    Args:
+        batch_id: The batch job ID from /batch-submit
+        
+    Returns:
+        BatchResultsResponse with results for all offers
+    """
+    try:
+        settings = get_settings()
+        model_client = ModelAPIClient(
+            api_key=settings.anthropic_api_key,
+            model_name="claude-sonnet-4-5"
+        )
+        
+        # Ensure batch is finished before fetching results
+        status_info = model_client.get_batch_status(batch_id)
+        if status_info.get("processing_status") != "ended":
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail=f"Batch is not finished yet (status={status_info.get('processing_status')}). Retry after it ends."
+            )
+        
+        global active_batch_id
+        # Get batch results
+        batch_results_data = model_client.get_batch_results(batch_id)
+        
+        # Build response for each offer
+        results = []
+        successful_count = 0
+        failed_count = 0
+        
+        for result in batch_results_data:
+            offer_id = result["custom_id"]
+            
+            if result["success"]:
+                # Build success response (simplified - you may want to load preprocessing stats)
+                results.append({
+                    "success": True,
+                    "offer_id": offer_id,
+                    "estimated_weights": result["data"],
+                    "usage": result["usage"]
+                })
+                successful_count += 1
+            else:
+                results.append({
+                    "success": False,
+                    "offer_id": offer_id,
+                    "error": result["error"]
+                })
+                failed_count += 1
+        
+        # Save batch results (only latest kept; older cleared at submit time)
+        save_to_json(results, f"artifacts/batch_{batch_id}_results.json")
+
+        async with batch_lock:
+            if active_batch_id == batch_id:
+                active_batch_id = None
+        
+        return BatchResultsResponse(
+            success=True,
+            batch_id=batch_id,
+            total_offers=len(results),
+            successful_offers=successful_count,
+            failed_offers=failed_count,
+            results=results
+        )
+        
+    except Exception as e:
+        error_msg = f"Error retrieving batch results: {str(e)}"
+        logger.error(error_msg)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=error_msg
+        )
+
+
 @app.get("/health")
 async def health_check():
     """
@@ -249,169 +530,6 @@ async def health_check():
     
     status_code = 200 if health_status["status"] == "healthy" else 503
     return JSONResponse(content=health_status, status_code=status_code)
-
-
-@app.post(
-    "/estimate-weight-batch",
-    response_model=BatchWeightEstimationResponse,
-    responses={
-        200: {"description": "Batch weight estimation completed"},
-        500: {"model": ErrorResponse, "description": "Internal server error"}
-    }
-)
-async def estimate_weight_batch(request: BatchWeightEstimationRequest):
-    """
-    Estimate product weights for multiple offer IDs in a single batch request
-    
-    Process:
-    1. Retrieve all product data from MongoDB in one batch query
-    2. Preprocess all products (filter, clean, remove duplicates)
-    3. Call Claude API once with all products for efficient processing
-    4. Return individual results for each offer ID
-    
-    Args:
-        request: BatchWeightEstimationRequest containing list of offer_ids
-        
-    Returns:
-        BatchWeightEstimationResponse with results for all offers
-    """
-    offer_ids = request.offer_ids
-    model_name = request.model_name
-    drop_similar_skus = request.drop_similar_skus
-    
-    logger.info(f"Received batch request for {len(offer_ids)} offer IDs | Model: {model_name}")
-    
-    results = []
-    successful_count = 0
-    failed_count = 0
-    all_preprocessed_data = []
-    offer_to_preprocessed_index = {}  # Map offer_id to index in preprocessed list
-    
-    try:
-        # Step 1: Batch fetch all data from MongoDB
-        raw_data_map = data_retriever.fetch_by_offer_ids(offer_ids)
-        logger.info(f"Fetched {len([v for v in raw_data_map.values() if v])} products from database")
-        
-        # Step 2: Preprocess all products
-        for offer_id in offer_ids:
-            raw_data = raw_data_map.get(offer_id)
-            
-            if not raw_data:
-                # Record error for missing offer
-                failed_count += 1
-                results.append(ErrorResponse(
-                    success=False,
-                    error=f"No product found with offer ID: {offer_id}",
-                    offer_id=offer_id
-                ))
-                continue
-            
-            try:
-                # Preprocess this product
-                filtered_data = DataPreprocessor.filter_product_data(raw_data)
-                if not filtered_data:
-                    raise ValueError("Failed to filter product data")
-                
-                preprocessed_data, preprocessing_stats = DataPreprocessor.remove_duplicate_skus(
-                    [filtered_data], drop_duplicates=drop_similar_skus
-                )
-                
-                # Store mapping of offer_id to its index in the batch
-                offer_to_preprocessed_index[offer_id] = len(all_preprocessed_data)
-                all_preprocessed_data.extend(preprocessed_data)
-                
-                logger.info(f"Preprocessed offer {offer_id} - {preprocessing_stats['skus_removed']} SKUs removed")
-                
-            except Exception as e:
-                failed_count += 1
-                logger.error(f"Preprocessing failed for offer {offer_id}: {e}")
-                results.append(ErrorResponse(
-                    success=False,
-                    error=f"Preprocessing error: {str(e)}",
-                    offer_id=offer_id
-                ))
-        
-        # Step 3: Call Claude API once with all preprocessed products
-        if all_preprocessed_data:
-            settings = get_settings()
-            model_client = ModelAPIClient(
-                api_key=settings.anthropic_api_key,
-                model_name=model_name
-            )
-            
-            estimated_data, api_stats, raw_model_text = model_client.estimate_weights(all_preprocessed_data)
-            logger.info(f"Batch model estimation complete - {api_stats['total_tokens']} tokens used for {len(all_preprocessed_data)} products")
-            
-            # Save batch model response
-            save_to_json(estimated_data, f"artifacts/batch_model_response.json")
-            save_text(raw_model_text, f"artifacts/batch_model_response_raw.txt")
-            
-            # Step 4: Map results back to individual offers
-            for offer_id in offer_ids:
-                if offer_id not in offer_to_preprocessed_index:
-                    continue  # Already recorded as error
-                
-                try:
-                    idx = offer_to_preprocessed_index[offer_id]
-                    estimated_product = estimated_data[idx]
-                    
-                    # Get original data for this offer
-                    raw_data = raw_data_map[offer_id]
-                    filtered_data = DataPreprocessor.filter_product_data(raw_data)
-                    preprocessed_data, preprocessing_stats = DataPreprocessor.remove_duplicate_skus(
-                        [filtered_data], drop_duplicates=drop_similar_skus
-                    )
-                    
-                    # Build individual response
-                    response = ResponseBuilder.build_success_response(
-                        offer_id=offer_id,
-                        raw_data=raw_data,
-                        preprocessed_data=preprocessed_data,
-                        estimated_data=[estimated_product],
-                        preprocessing_stats=preprocessing_stats,
-                        api_stats=api_stats  # Same stats for all in batch
-                    )
-                    
-                    results.append(response)
-                    successful_count += 1
-                    
-                except Exception as e:
-                    failed_count += 1
-                    logger.error(f"Response building failed for offer {offer_id}: {e}")
-                    results.append(ErrorResponse(
-                        success=False,
-                        error=f"Response building error: {str(e)}",
-                        offer_id=offer_id
-                    ))
-        
-        # Build batch response
-        from app.models.schemas import ModelAPIStats
-        batch_response = BatchWeightEstimationResponse(
-            success=True,
-            total_offers=len(offer_ids),
-            successful_offers=successful_count,
-            failed_offers=failed_count,
-            results=results,
-            model_api_stats=ModelAPIStats(**api_stats) if all_preprocessed_data else ModelAPIStats(
-                api_calls_count=0,
-                input_tokens=0,
-                output_tokens=0,
-                total_tokens=0,
-                processing_time_seconds=0.0,
-                model_name=model_name
-            )
-        )
-        
-        logger.info(f"Batch processing complete: {successful_count} successful, {failed_count} failed")
-        return batch_response
-        
-    except Exception as e:
-        error_msg = f"Batch processing error: {str(e)}"
-        logger.error(error_msg, exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=error_msg
-        )
 
 
 if __name__ == "__main__":

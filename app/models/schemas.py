@@ -23,7 +23,7 @@ class WeightEstimationRequest(BaseModel):
 
 
 class BatchWeightEstimationRequest(BaseModel):
-    """Request model for batch weight estimation endpoint"""
+    """Request model for async batch weight estimation (50% cost savings)"""
     model_config = {"protected_namespaces": ()}
     
     offer_ids: List[str] = Field(..., description="List of offer IDs to process")
@@ -33,8 +33,30 @@ class BatchWeightEstimationRequest(BaseModel):
     )
     drop_similar_skus: bool = Field(
         default=True,
-        description="Whether to remove duplicate SKUs with identical dimensions"
+        description="Whether to remove duplicate SKUs with identical weight"
     )
+
+
+class BatchSubmissionResponse(BaseModel):
+    """Response after submitting a batch job"""
+    model_config = {"protected_namespaces": ()}
+    
+    success: bool
+    batch_id: str
+    total_requests: int
+    message: str
+    model_name: str
+    drop_similar_skus: bool
+
+
+class BatchStatusResponse(BaseModel):
+    """Response for batch job status check"""
+    success: bool
+    batch_id: str
+    status: str  # queued, in_progress, ended
+    request_counts: Dict[str, int]
+    ended_at: Optional[str] = None
+    expires_at: Optional[str] = None
     
 
 # ============ Response Models ============
@@ -117,20 +139,18 @@ class WeightEstimationResponse(BaseModel):
     error: Optional[str] = None
 
 
+class BatchResultsResponse(BaseModel):
+    """Response with batch processing results"""
+    success: bool
+    batch_id: str
+    total_offers: int
+    successful_offers: int
+    failed_offers: int
+    results: List[Union[WeightEstimationResponse, Dict[str, Any]]]
+
+
 class ErrorResponse(BaseModel):
     """Error response model"""
     success: bool = False
     error: str
     offer_id: Optional[str] = None
-
-
-class BatchWeightEstimationResponse(BaseModel):
-    """Response model for batch weight estimation"""
-    model_config = {"protected_namespaces": ()}
-    
-    success: bool
-    total_offers: int
-    successful_offers: int
-    failed_offers: int
-    results: List[Union[WeightEstimationResponse, ErrorResponse]]
-    model_api_stats: ModelAPIStats

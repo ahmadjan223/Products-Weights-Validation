@@ -6,6 +6,7 @@ from logging.handlers import RotatingFileHandler
 import os
 import json
 import csv
+import glob
 
 
 def setup_logging(log_file: str = "app.log", level: int = logging.INFO) -> None:
@@ -118,6 +119,17 @@ def save_model_response_as_csv(estimated_data: list, filename: str) -> None:
         logging.getLogger(__name__).info(f"Saved CSV snapshot to {filename}")
     except Exception as exc:
         logging.getLogger(__name__).error(f"Failed to save CSV to {filename}: {exc}")
+
+
+def remove_files_by_glob(patterns: list[str]) -> None:
+    """Delete files matching any glob pattern (best-effort)."""
+    for pattern in patterns:
+        for path in glob.glob(pattern):
+            try:
+                os.remove(path)
+                logging.getLogger(__name__).info(f"Removed old artifact: {path}")
+            except Exception as exc:
+                logging.getLogger(__name__).warning(f"Could not remove {path}: {exc}")
 
 
 def format_bytes(num_bytes: int) -> str:

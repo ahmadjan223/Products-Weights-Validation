@@ -221,3 +221,163 @@ Return only the processed JSON array with the specified structure."""
         except Exception as e:
             logger.error(f"Error in weight estimation: {e}")
             raise Exception(f"Weight estimation failed: {e}")
+    
+    def create_batch_job(
+        self,
+        requests_data: List[Dict[str, Any]]
+    ) -> str:
+        """
+        Create a Claude Batch API job for async processing (50% cost savings)
+        
+        Args:
+            requests_data: List of request dictionaries with custom_id and products
+            
+        Returns:
+            batch_id: ID to track the batch job
+        """
+        try:
+            # Prepare batch requests in Claude's format
+            batch_requests = []
+            
+            for req_data in requests_data:
+                offer_id = req_data["custom_id"]
+                products = req_data["products"]
+                
+                # Prepare product data
+                prepared_data = self.prepare_product_data(products)
+                
+                # Create user prompt
+                user_prompt = f"""Please process the following product data according to the system instructions:
+
+{json.dumps(prepared_data, indent=2, ensure_ascii=False)}
+
+Return only the processed JSON array with the specified structure."""
+                
+                # Format as batch request
+                batch_request = {
+                    "custom_id": offer_id,
+                    "params": {
+                        "model": self.model_name,
+                        "max_tokens": 8000,
+                        "temperature": 0.1,
+                        "system": SYSTEM_PROMPT,
+                        "messages": [
+                            {
+                                "role": "user",
+                                "content": user_prompt
+                            }
+                        ]
+                    }
+                }
+                batch_requests.append(batch_request)
+            
+            logger.info(f"Creating batch job with {len(batch_requests)} requests...")
+            
+            # Create batch job using beta API
+            message_batch = self.client.beta.messages.batches.create(
+                requests=batch_requests
+            )
+            
+            batch_id = message_batch.id
+            logger.info(f"✅ Batch job created: {batch_id}")
+            
+            return batch_id
+            
+        except Exception as e:
+            logger.error(f"Error creating batch job: {e}")
+            raise Exception(f"Failed to create batch job: {e}")
+    
+    def get_batch_status(self, batch_id: str) -> Dict[str, Any]:
+        """
+        Check status of a batch job
+        
+        Args:
+            batch_id: The batch job ID
+            
+        Returns:
+            Status information dictionary
+        """
+        try:
+            message_batch = self.client.beta.messages.batches.retrieve(batch_id)
+            
+            status_info = {
+                "id": message_batch.id,
+                "processing_status": message_batch.processing_status,
+                "request_counts": {
+                    "processing": message_batch.request_counts.processing,
+                    "succeeded": message_batch.request_counts.succeeded,
+                    "errored": message_batch.request_counts.errored,
+                    "canceled": message_batch.request_counts.canceled,
+                    "expired": message_batch.request_counts.expired
+                },
+                "ended_at": message_batch.ended_at,
+                "expires_at": message_batch.expires_at,
+                "results_url": message_batch.results_url if hasattr(message_batch, 'results_url') else None
+            }
+            
+            return status_info
+            
+        except Exception as e:
+            logger.error(f"Error retrieving batch status: {e}")
+            raise Exception(f"Failed to get batch status: {e}")
+    
+    def get_batch_results(self, batch_id: str) -> List[Dict[str, Any]]:
+        """
+        Retrieve results from a completed batch job
+        
+        Args:
+            batch_id: The batch job ID
+            
+        Returns:
+            List of results for each request
+        """
+        try:
+            # Get batch results
+            results = []
+            
+            for result in self.client.beta.messages.batches.results(batch_id):
+                custom_id = result.custom_id
+                
+                if result.result.type == "succeeded":
+                    # Parse successful response
+                    response_text = result.result.message.content[0].text.strip()
+                    
+                    # Remove markdown formatting if present
+                    if response_text.startswith('```json'):
+                        response_text = response_text[7:]
+                    if response_text.endswith('```'):
+                        response_text = response_text[:-3]
+                    response_text = response_text.strip()
+                    
+                    try:
+                        estimated_data = json.loads(response_text)
+                        results.append({
+                            "custom_id": custom_id,
+                            "success": True,
+                            "data": estimated_data,
+                            "usage": {
+                                "input_tokens": result.result.message.usage.input_tokens,
+                                "output_tokens": result.result.message.usage.output_tokens
+                            }
+                        })
+                    except json.JSONDecodeError as e:
+                        results.append({
+                            "custom_id": custom_id,
+                            "success": False,
+                            "error": f"Failed to parse response: {e}"
+                        })
+                else:
+                    # Handle error
+                    error_info = result.result.error if hasattr(result.result, 'error') else result.result
+                    error_msg = str(error_info) if error_info else "Unknown error"
+                    results.append({
+                        "custom_id": custom_id,
+                        "success": False,
+                        "error": error_msg
+                    })
+            
+            return results
+            
+        except Exception as e:
+            logger.error(f"Error retrieving batch results: {e}")
+            raise Exception(f"Failed to get batch results: {e}")
