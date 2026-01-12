@@ -61037,3 +61037,26 @@ expires_at
 2026-01-09 17:45:31 - watchfiles.main - INFO - 1 change detected
 2026-01-09 17:45:32 - watchfiles.main - INFO - 1 change detected
 2026-01-09 17:45:32 - watchfiles.main - INFO - 1 change detected
+2026-01-12 11:54:51 - main - INFO - Starting Weight Estimation API...
+2026-01-12 11:54:52 - app.modules.data_retrieval - INFO - ✅ Successfully connected to MongoDB
+2026-01-12 11:54:52 - main - INFO - MongoDB connection initialized
+2026-01-12 11:54:52 - main - INFO - Configuration loaded
+2026-01-12 11:54:52 - main - INFO - Application startup complete
+2026-01-12 11:55:02 - main - INFO - Shutting down application...
+2026-01-12 11:55:03 - app.modules.data_retrieval - INFO - MongoDB connection closed
+2026-01-12 11:55:03 - main - INFO - MongoDB connection closed
+2026-01-12 11:55:03 - main - INFO - Application shutdown complete
+2026-01-12 11:55:04 - main - INFO - Starting Weight Estimation API...
+2026-01-12 11:55:05 - app.modules.data_retrieval - INFO - ✅ Successfully connected to MongoDB
+2026-01-12 11:55:05 - main - INFO - MongoDB connection initialized
+2026-01-12 11:55:05 - main - INFO - Configuration loaded
+2026-01-12 11:55:05 - main - INFO - Application startup complete
+2026-01-12 11:55:17 - main - INFO - Shutting down application...
+2026-01-12 11:55:17 - app.modules.data_retrieval - INFO - MongoDB connection closed
+2026-01-12 11:55:17 - main - INFO - MongoDB connection closed
+2026-01-12 11:55:17 - main - INFO - Application shutdown complete
+2026-01-12 11:55:20 - main - INFO - Starting Weight Estimation API...
+2026-01-12 11:55:21 - app.modules.data_retrieval - INFO - ✅ Successfully connected to MongoDB
+2026-01-12 11:55:21 - main - INFO - MongoDB connection initialized
+2026-01-12 11:55:21 - main - INFO - Configuration loaded
+2026-01-12 11:55:21 - main - INFO - Application startup complete

@@ -163,7 +163,7 @@ Return only the processed JSON array with the specified structure."""
             
             response = self.client.messages.create(
                 model=self.model_name,
-                max_tokens=8000,
+                max_tokens=20000,
                 temperature=0.1,
                 system=SYSTEM_PROMPT,
                 messages=[
@@ -258,7 +258,7 @@ Return only the processed JSON array with the specified structure."""
                     "custom_id": offer_id,
                     "params": {
                         "model": self.model_name,
-                        "max_tokens": 8000,
+                        "max_tokens": 20000,
                         "temperature": 0.1,
                         "system": SYSTEM_PROMPT,
                         "messages": [

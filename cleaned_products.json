@@ -1,0 +1,63 @@
+{
+  "id": "68f9e17b5dc1e9728a133c05",
+  "categories": [
+    {
+      "categoryId": 10166,
+      "categoryName": "Women's Clothing"
+    },
+    {
+      "categoryId": 127386001,
+      "categoryName": "women's sweater"
+    }
+  ],
+  "name": "New Autumn and Winter Pullover Knitwear Women's Bottoming Shirt 2025Bf Loose Lazy Style Hong Kong Style Jacquard Quilted Knitwear Women",
+  "Product info": {
+    "length": null,
+    "weight": null,
+    "height": null,
+    "width": null,
+    "aiWeight": null
+  },
+  "skus": [
+    {
+      "skuId": "4712603881561",
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Beige + Orange"
+        },
+        {
+          "attributeId": 450,
+          "attributeName": "Size",
+          "value": "All yards"
+        }
+      ],
+      "length": null,
+      "weight": null,
+      "height": null,
+      "width": null,
+      "aiWeight": 0.487
+    },
+    {
+      "skuId": "4712603881563",
+      "skuAttributes": [
+        {
+          "attributeId": 3216,
+          "attributeName": "Color",
+          "value": "Gray + Wine Red"
+        },
+        {
+          "attributeId": 450,
+          "attributeName": "Size",
+          "value": "All yards"
+        }
+      ],
+      "length": null,
+      "weight": null,
+      "height": null,
+      "width": null,
+      "aiWeight": 0.499
+    }
+  ]
+}
