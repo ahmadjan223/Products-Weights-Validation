@@ -1,8 +1,12 @@
 """
 Model API Client Module
-Handles communication with Claude API for weight estimation
+Handles communication with AI APIs for weight estimation
+- Gemini (Vertex AI) for single requests
+- Claude (Anthropic) for batch processing
 """
 import anthropic
+import vertexai
+from vertexai.generative_models import GenerativeModel, GenerationConfig
 import json
 import time
 from typing import Dict, List, Any, Tuple
@@ -85,19 +89,42 @@ SYSTEM_PROMPT = """
 
 
 class ModelAPIClient:
-    """Handles communication with Claude API for weight estimation"""
+    """Handles communication with AI APIs for weight estimation"""
     
-    def __init__(self, api_key: str, model_name: str = "claude-haiku-4-5"):
+    def __init__(
+        self, 
+        anthropic_api_key: str = None,
+        vertex_project_id: str = None,
+        vertex_location: str = "us-central1",
+        model_name: str = "gemini-1.5-flash"
+    ):
         """
-        Initialize Claude API client
+        Initialize AI API client
         
         Args:
-            api_key: Anthropic API key
-            model_name: Claude model to use (default: claude-sonnet-4-5)
+            anthropic_api_key: Anthropic API key (for batch processing)
+            vertex_project_id: Google Cloud Project ID (for single requests)
+            vertex_location: Google Cloud region (default: us-central1)
+            model_name: Model to use (default: gemini-1.5-flash)
         """
-        self.client = anthropic.Anthropic(api_key=api_key)
+        # Initialize Anthropic for batch processing
+        if anthropic_api_key:
+            self.anthropic_client = anthropic.Anthropic(api_key=anthropic_api_key)
+            logger.info("Anthropic API client initialized for batch processing")
+        else:
+            self.anthropic_client = None
+            
+        # Initialize Vertex AI for single requests
+        if vertex_project_id:
+            vertexai.init(project=vertex_project_id, location=vertex_location)
+            self.vertex_project_id = vertex_project_id
+            self.vertex_location = vertex_location
+            logger.info(f"Vertex AI initialized with project: {vertex_project_id}")
+        else:
+            self.vertex_project_id = None
+            
         self.model_name = model_name
-        logger.info(f"Claude API client initialized with model: {model_name}")
+        logger.info(f"Model API client initialized with model: {model_name}")
     
     @staticmethod
     def prepare_product_data(products: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -134,7 +161,7 @@ class ModelAPIClient:
         products: List[Dict[str, Any]]
     ) -> Tuple[List[Dict[str, Any]], Dict[str, Any], str]:
         """
-        Call Claude API to estimate weights for products
+        Call Gemini API (Vertex AI) to estimate weights for products
         
         Args:
             products: List of preprocessed products
@@ -145,6 +172,9 @@ class ModelAPIClient:
         Raises:
             Exception: If API call fails
         """
+        if not self.vertex_project_id:
+            raise ValueError("Vertex AI not initialized. Provide vertex_project_id.")
+            
         try:
             # Prepare data
             prepared_data = self.prepare_product_data(products)
@@ -156,37 +186,41 @@ class ModelAPIClient:
 
 Return only the processed JSON array with the specified structure."""
 
-            logger.info(f"Processing {len(products)} products with Claude API...")
+            logger.info(f"Processing {len(products)} products with Gemini API...")
             
             # Make API call
             start_time = time.time()
             
-            response = self.client.messages.create(
-                model=self.model_name,
-                max_tokens=20000,
+            # Initialize Gemini model
+            model = GenerativeModel(self.model_name)
+            
+            # Configure generation settings
+            generation_config = GenerationConfig(
                 temperature=0.1,
-                system=SYSTEM_PROMPT,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": user_prompt
-                    }
-                ]
+                max_output_tokens=8000,
+            )
+            
+            # Combine system prompt and user prompt for Gemini
+            full_prompt = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
+            
+            response = model.generate_content(
+                full_prompt,
+                generation_config=generation_config,
             )
             
             end_time = time.time()
             processing_time = end_time - start_time
             
             # Extract usage stats
-            input_tokens = response.usage.input_tokens
-            output_tokens = response.usage.output_tokens
-            total_tokens = input_tokens + output_tokens
+            input_tokens = response.usage_metadata.prompt_token_count
+            output_tokens = response.usage_metadata.candidates_token_count
+            total_tokens = response.usage_metadata.total_token_count
             
             logger.info(f"API call completed in {processing_time:.2f}s")
             logger.info(f"Tokens - Input: {input_tokens}, Output: {output_tokens}, Total: {total_tokens}")
             
             # Parse response
-            raw_response_text = response.content[0].text
+            raw_response_text = response.text
             response_text = raw_response_text.strip()
             
             # Remove markdown formatting if present
@@ -215,10 +249,10 @@ Return only the processed JSON array with the specified structure."""
             
             return estimated_data, api_stats, raw_response_text
             
-        except anthropic.APIError as e:
-            logger.error(f"Claude API error: {e}")
-            raise Exception(f"Claude API error: {e}")
         except Exception as e:
+            if "vertex" in str(e).lower() or "gemini" in str(e).lower():
+                logger.error(f"Vertex AI API error: {e}")
+                raise Exception(f"Vertex AI API error: {e}")
             logger.error(f"Error in weight estimation: {e}")
             raise Exception(f"Weight estimation failed: {e}")
     
@@ -228,6 +262,7 @@ Return only the processed JSON array with the specified structure."""
     ) -> str:
         """
         Create a Claude Batch API job for async processing (50% cost savings)
+        Uses Anthropic Claude for batch operations
         
         Args:
             requests_data: List of request dictionaries with custom_id and products
@@ -235,6 +270,9 @@ Return only the processed JSON array with the specified structure."""
         Returns:
             batch_id: ID to track the batch job
         """
+        if not self.anthropic_client:
+            raise ValueError("Anthropic client not initialized. Provide anthropic_api_key for batch processing.")
+            
         try:
             # Prepare batch requests in Claude's format
             batch_requests = []
@@ -273,8 +311,8 @@ Return only the processed JSON array with the specified structure."""
             
             logger.info(f"Creating batch job with {len(batch_requests)} requests...")
             
-            # Create batch job using beta API
-            message_batch = self.client.beta.messages.batches.create(
+            # Create batch job using Anthropic beta API
+            message_batch = self.anthropic_client.beta.messages.batches.create(
                 requests=batch_requests
             )
             
@@ -298,7 +336,7 @@ Return only the processed JSON array with the specified structure."""
             Status information dictionary
         """
         try:
-            message_batch = self.client.beta.messages.batches.retrieve(batch_id)
+            message_batch = self.anthropic_client.beta.messages.batches.retrieve(batch_id)
             
             status_info = {
                 "id": message_batch.id,
@@ -335,7 +373,7 @@ Return only the processed JSON array with the specified structure."""
             # Get batch results
             results = []
             
-            for result in self.client.beta.messages.batches.results(batch_id):
+            for result in self.anthropic_client.beta.messages.batches.results(batch_id):
                 custom_id = result.custom_id
                 
                 if result.result.type == "succeeded":

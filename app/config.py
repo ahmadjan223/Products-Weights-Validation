@@ -14,8 +14,12 @@ class Settings(BaseSettings):
     mongodb_database_name: str = "markazmongodbprod"
     mongodb_collection_name: str = "productsV2"
     
-    # Claude API Configuration
+    # Claude API Configuration (for batch processing)
     anthropic_api_key: str
+    
+    # Vertex AI Configuration (for single request processing)
+    google_project_id: str
+    google_location: str = "us-central1"
     
     # API Configuration
     api_host: str = "0.0.0.0"

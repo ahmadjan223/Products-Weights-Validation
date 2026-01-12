@@ -162,10 +162,11 @@ async def estimate_weight(request: WeightEstimationRequest):
         logger.info(f"Preprocessing complete - {preprocessing_stats['skus_removed']} SKUs removed")
         # save_to_json(preprocessed_data, f"artifacts/deduped.json")
         
-        # Step 3: Initialize model client with user's choice and call API
+        # Step 3: Initialize model client with Vertex AI for single requests
         settings = get_settings()
         model_client = ModelAPIClient(
-            api_key=settings.anthropic_api_key,
+            vertex_project_id=settings.google_project_id,
+            vertex_location=settings.google_location,
             model_name=model_name
         )
         estimated_data, api_stats, raw_model_text = model_client.estimate_weights(preprocessed_data)
@@ -268,7 +269,7 @@ async def batch_submit(request: BatchWeightEstimationRequest):
             if active_batch_id:
                 settings = get_settings()
                 model_client_check = ModelAPIClient(
-                    api_key=settings.anthropic_api_key,
+                    anthropic_api_key=settings.anthropic_api_key,
                     model_name=model_name
                 )
                 status_info = model_client_check.get_batch_status(active_batch_id)
@@ -313,10 +314,10 @@ async def batch_submit(request: BatchWeightEstimationRequest):
         if not batch_requests:
             raise ValueError("No valid offers to process")
         
-        # Step 2: Create batch job
+        # Step 2: Create batch job with Anthropic
         settings = get_settings()
         model_client = ModelAPIClient(
-            api_key=settings.anthropic_api_key,
+            anthropic_api_key=settings.anthropic_api_key,
             model_name=model_name
         )
         
@@ -375,7 +376,7 @@ async def batch_status(batch_id: str):
     try:
         settings = get_settings()
         model_client = ModelAPIClient(
-            api_key=settings.anthropic_api_key,
+            anthropic_api_key=settings.anthropic_api_key,
             model_name="claude-haiku-4-5"
         )
         
@@ -427,7 +428,7 @@ async def batch_results(batch_id: str):
     try:
         settings = get_settings()
         model_client = ModelAPIClient(
-            api_key=settings.anthropic_api_key,
+            anthropic_api_key=settings.anthropic_api_key,
             model_name="claude-haiku-4-5"
         )
         
