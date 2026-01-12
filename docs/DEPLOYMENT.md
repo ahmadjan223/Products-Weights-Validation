@@ -80,29 +80,99 @@ curl -X POST http://localhost:8000/estimate-weight \
 
 ### 8. Docker Deployment (Optional)
 
-Create `Dockerfile`:
-```dockerfile
-FROM python:3.12-slim
+The project includes a `Dockerfile` configured for production:
 
-WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-EXPOSE 8000
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-Build and run:
 ```bash
+# Build locally
 docker build -t weight-estimation-api .
-docker run -d -p 8000:8000 --env-file .env weight-estimation-api
+
+# Run locally
+docker run -d -p 8080:8080 --env-file .env weight-estimation-api
 ```
 
-### 9. Performance Optimization
+### 9. Google Cloud Run Deployment
+
+#### Prerequisites
+- Google Cloud Project with billing enabled
+- `gcloud` CLI installed and authenticated
+- `.env` file with production credentials
+
+#### Quick Deploy
+```bash
+# Make deployment script executable
+chmod +x deploy-cloud-run.sh
+
+# Set your GCP project ID
+export GCP_PROJECT_ID="your-project-id"
+export GCP_REGION="us-central1"  # Optional, defaults to us-central1
+export SERVICE_NAME="weight-estimation-api"  # Optional
+
+# Deploy to Cloud Run
+./deploy-cloud-run.sh
+```
+
+#### Manual Deployment Steps
+
+1. **Enable Required APIs:**
+```bash
+gcloud services enable cloudbuild.googleapis.com run.googleapis.com containerregistry.googleapis.com
+```
+
+2. **Build Docker Image:**
+```bash
+PROJECT_ID="your-project-id"
+IMAGE_NAME="gcr.io/${PROJECT_ID}/weight-estimation-api"
+gcloud builds submit --tag $IMAGE_NAME --project=$PROJECT_ID
+```
+
+3. **Deploy to Cloud Run:**
+```bash
+gcloud run deploy weight-estimation-api \
+  --image $IMAGE_NAME \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --port 8080 \
+  --memory 2Gi \
+  --cpu 2 \
+  --timeout 300 \
+  --max-instances 10 \
+  --set-env-vars "MONGODB_CONNECTION_STRING=your_connection_string" \
+  --set-env-vars "MONGODB_DATABASE_NAME=your_database" \
+  --set-env-vars "MONGODB_COLLECTION_NAME=your_collection" \
+  --set-env-vars "ANTHROPIC_API_KEY=your_api_key"
+```
+
+4. **Configure Custom Domain (Optional):**
+```bash
+gcloud run domain-mappings create --service weight-estimation-api --domain your-domain.com
+```
+
+#### Cloud Run Configuration Options
+
+- **Memory**: 2Gi (adjust based on your needs)
+- **CPU**: 2 vCPUs (increase for higher concurrency)
+- **Timeout**: 300 seconds (max for weight estimation requests)
+- **Max Instances**: 10 (auto-scaling limit)
+- **Min Instances**: 0 (scales to zero when idle to save costs)
+
+#### Cost Optimization
+- Service scales to zero when idle (no charges for idle time)
+- Set `--min-instances=1` for always-warm instances (faster response but costs more)
+- Monitor usage in GCP Console > Cloud Run
+
+#### Security Best Practices
+```bash
+# Option 1: Require authentication
+gcloud run deploy weight-estimation-api --no-allow-unauthenticated
+
+# Option 2: Use Secret Manager for sensitive data
+gcloud secrets create anthropic-api-key --data-file=- <<< "your-api-key"
+gcloud run deploy weight-estimation-api \
+  --set-secrets="ANTHROPIC_API_KEY=anthropic-api-key:latest"
+```
+
+### 10. Performance Optimization
 
 Current Configuration:
 - Async/await for I/O operations
@@ -116,7 +186,7 @@ Scaling Options:
 - Implement request queuing for high loads
 - Add CDN for static documentation
 
-### 10. Troubleshooting
+### 11. Troubleshooting
 
 #### MongoDB Connection Issues
 ```python
@@ -134,7 +204,7 @@ curl http://localhost:8000/health
 - Implement request rate limiting
 - Clear logs periodically
 
-### 11. Production Environment Variables
+### 12. Production Environment Variables
 
 ```bash
 # .env file for production
@@ -147,7 +217,7 @@ API_PORT=8000
 API_DEBUG=False
 ```
 
-### 12. Backup and Recovery
+### 13. Backup and Recovery
 
 - MongoDB: Regular backups of product collection
 - Logs: Archive old logs periodically
