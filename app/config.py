@@ -17,9 +17,8 @@ class Settings(BaseSettings):
     # Claude API Configuration (for batch processing)
     anthropic_api_key: str
     
-    # Vertex AI Configuration (for single request processing)
-    google_project_id: str
-    google_location: str = "us-central1"
+    # Gemini API Configuration (for single request processing)
+    gemini_api_key: str
     
     # API Configuration
     api_host: str = "0.0.0.0"

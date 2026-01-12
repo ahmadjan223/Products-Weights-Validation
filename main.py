@@ -162,11 +162,10 @@ async def estimate_weight(request: WeightEstimationRequest):
         logger.info(f"Preprocessing complete - {preprocessing_stats['skus_removed']} SKUs removed")
         # save_to_json(preprocessed_data, f"artifacts/deduped.json")
         
-        # Step 3: Initialize model client with Vertex AI for single requests
+        # Step 3: Initialize model client with Gemini API for single requests
         settings = get_settings()
         model_client = ModelAPIClient(
-            vertex_project_id=settings.google_project_id,
-            vertex_location=settings.google_location,
+            gemini_api_key=settings.gemini_api_key,
             model_name=model_name
         )
         estimated_data, api_stats, raw_model_text = model_client.estimate_weights(preprocessed_data)

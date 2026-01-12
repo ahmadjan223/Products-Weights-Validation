@@ -1,12 +1,11 @@
 """
 Model API Client Module
 Handles communication with AI APIs for weight estimation
-- Gemini (Vertex AI) for single requests
+- Gemini (Google AI) for single requests
 - Claude (Anthropic) for batch processing
 """
 import anthropic
-import vertexai
-from vertexai.generative_models import GenerativeModel, GenerationConfig
+import google.generativeai as genai
 import json
 import time
 from typing import Dict, List, Any, Tuple
@@ -94,18 +93,16 @@ class ModelAPIClient:
     def __init__(
         self, 
         anthropic_api_key: str = None,
-        vertex_project_id: str = None,
-        vertex_location: str = "us-central1",
-        model_name: str = "gemini-1.5-flash"
+        gemini_api_key: str = None,
+        model_name: str = "gemini-2.5-flash"
     ):
         """
         Initialize AI API client
         
         Args:
             anthropic_api_key: Anthropic API key (for batch processing)
-            vertex_project_id: Google Cloud Project ID (for single requests)
-            vertex_location: Google Cloud region (default: us-central1)
-            model_name: Model to use (default: gemini-1.5-flash)
+            gemini_api_key: Google Gemini API key (for single requests)
+            model_name: Model to use (default: gemini-2.5-flash)
         """
         # Initialize Anthropic for batch processing
         if anthropic_api_key:
@@ -114,14 +111,13 @@ class ModelAPIClient:
         else:
             self.anthropic_client = None
             
-        # Initialize Vertex AI for single requests
-        if vertex_project_id:
-            vertexai.init(project=vertex_project_id, location=vertex_location)
-            self.vertex_project_id = vertex_project_id
-            self.vertex_location = vertex_location
-            logger.info(f"Vertex AI initialized with project: {vertex_project_id}")
+        # Store Gemini API key for single requests
+        if gemini_api_key:
+            genai.configure(api_key=gemini_api_key)
+            self.gemini_api_key = gemini_api_key
+            logger.info("Google Gemini API initialized with API key")
         else:
-            self.vertex_project_id = None
+            self.gemini_api_key = None
             
         self.model_name = model_name
         logger.info(f"Model API client initialized with model: {model_name}")
@@ -161,7 +157,7 @@ class ModelAPIClient:
         products: List[Dict[str, Any]]
     ) -> Tuple[List[Dict[str, Any]], Dict[str, Any], str]:
         """
-        Call Gemini API (Vertex AI) to estimate weights for products
+        Call Gemini API to estimate weights for products
         
         Args:
             products: List of preprocessed products
@@ -172,8 +168,8 @@ class ModelAPIClient:
         Raises:
             Exception: If API call fails
         """
-        if not self.vertex_project_id:
-            raise ValueError("Vertex AI not initialized. Provide vertex_project_id.")
+        if not self.gemini_api_key:
+            raise ValueError("Gemini API not initialized. Provide gemini_api_key.")
             
         try:
             # Prepare data
@@ -191,21 +187,17 @@ Return only the processed JSON array with the specified structure."""
             # Make API call
             start_time = time.time()
             
-            # Initialize Gemini model
-            model = GenerativeModel(self.model_name)
-            
-            # Configure generation settings
-            generation_config = GenerationConfig(
-                temperature=0.1,
-                max_output_tokens=8000,
-            )
-            
             # Combine system prompt and user prompt for Gemini
             full_prompt = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
             
+            # Initialize Gemini client
+            model = genai.GenerativeModel(self.model_name)
             response = model.generate_content(
                 full_prompt,
-                generation_config=generation_config,
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.1,
+                    max_output_tokens=8000,
+                ),
             )
             
             end_time = time.time()
@@ -250,9 +242,9 @@ Return only the processed JSON array with the specified structure."""
             return estimated_data, api_stats, raw_response_text
             
         except Exception as e:
-            if "vertex" in str(e).lower() or "gemini" in str(e).lower():
-                logger.error(f"Vertex AI API error: {e}")
-                raise Exception(f"Vertex AI API error: {e}")
+            if "gemini" in str(e).lower() or "api" in str(e).lower():
+                logger.error(f"Gemini API error: {e}")
+                raise Exception(f"Gemini API error: {e}")
             logger.error(f"Error in weight estimation: {e}")
             raise Exception(f"Weight estimation failed: {e}")
     
