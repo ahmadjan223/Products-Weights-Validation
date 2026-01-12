@@ -87,7 +87,7 @@ SYSTEM_PROMPT = """
 class ModelAPIClient:
     """Handles communication with Claude API for weight estimation"""
     
-    def __init__(self, api_key: str, model_name: str = "claude-sonnet-4-5"):
+    def __init__(self, api_key: str, model_name: str = "claude-haiku-4-5"):
         """
         Initialize Claude API client
         

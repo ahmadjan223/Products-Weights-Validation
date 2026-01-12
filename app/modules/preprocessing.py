@@ -2,7 +2,7 @@
 Preprocessing Module
 Handles data cleaning, filtering, and duplicate removal
 """
-from typing import Dict, List, Any, Tuple, Optional
+from typing import Dict, List, Any, Tuple, Optional, Union
 from copy import deepcopy
 import logging
 
@@ -13,15 +13,30 @@ class DataPreprocessor:
     """Handles all preprocessing operations on product data"""
     
     @staticmethod
-    def filter_product_data(product_json: Dict[Any, Any]) -> Optional[Dict[str, Any]]:
+    def filter_product_data(product_data) -> Union[Optional[Dict[str, Any]], Dict[str, Optional[Dict[str, Any]]]]:
         """
-        Extract shipping, ID, and attribute information from product JSON
+        Extract shipping, ID, and attribute information from product data
         
         Args:
-            product_json: Raw product data from MongoDB
+            product_data: Single raw product (Dict) or bulk products (Dict[str, Dict])
             
         Returns:
-            Filtered product dict or None if invalid
+            Single mode: Filtered product dict or None if invalid
+            Bulk mode: Dict mapping offer_id to filtered product data
+        """
+        # Handle bulk mode (dict of offer_id -> raw_product)
+        if isinstance(product_data, dict) and all(isinstance(k, str) and isinstance(v, (dict, type(None))) for k, v in product_data.items()):
+            # Check if this looks like bulk data (string keys with dict/None values)
+            if any(v is None or ('_id' in v and 'offerId' in v) for v in product_data.values() if v is not None):
+                return DataPreprocessor._filter_bulk(product_data)
+        
+        # Handle single mode (direct product dict)
+        return DataPreprocessor._filter_single(product_data)
+    
+    @staticmethod
+    def _filter_single(product_json: Dict[Any, Any]) -> Optional[Dict[str, Any]]:
+        """
+        Internal method for single product filtering
         """
         # Safety check
         if not isinstance(product_json, dict):
@@ -98,19 +113,55 @@ class DataPreprocessor:
         return output_data
     
     @staticmethod
+    def _filter_bulk(products_data: Dict[str, Optional[Dict[Any, Any]]]) -> Dict[str, Optional[Dict[str, Any]]]:
+        """
+        Internal method for bulk product filtering
+        """
+        result = {}
+        for offer_id, raw_data in products_data.items():
+            if raw_data is None:
+                result[offer_id] = None
+            else:
+                try:
+                    filtered = DataPreprocessor._filter_single(raw_data)
+                    result[offer_id] = filtered
+                except Exception as e:
+                    logger.error(f"Error filtering offer ID {offer_id}: {e}")
+                    result[offer_id] = None
+        
+        return result
+    
+    @staticmethod
     def remove_duplicate_skus(
-        data: List[Dict[str, Any]], 
+        data, 
         drop_duplicates: bool = True
-    ) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
+    ):
         """
         Remove duplicate SKUs when all SKUs have identical physical properties
         
         Args:
-            data: List of processed product dicts
+            data: Single mode: List of product dicts
+                  Bulk mode: Dict[str, Optional[List[Dict]]] mapping offer_id to product list
             drop_duplicates: Whether to remove duplicate SKUs (default: True)
             
         Returns:
-            Tuple of (processed_data, stats_dict)
+            Single mode: Tuple of (processed_data, stats_dict)
+            Bulk mode: Tuple of (processed_products_dict, all_stats_dict)
+        """
+        # Handle bulk mode (dict of offer_id -> product list)
+        if isinstance(data, dict):
+            return DataPreprocessor._remove_duplicates_bulk(data, drop_duplicates)
+        
+        # Handle single mode (list of products)
+        return DataPreprocessor._remove_duplicates_single(data, drop_duplicates)
+    
+    @staticmethod
+    def _remove_duplicates_single(
+        data: List[Dict[str, Any]], 
+        drop_duplicates: bool = True
+    ) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
+        """
+        Internal method for single mode duplicate removal
         """
         processed_data = deepcopy(data)
         
@@ -178,6 +229,42 @@ class DataPreprocessor:
         stats["skus_removed"] = stats["total_skus_before"] - stats["total_skus_after"]
         
         return processed_data, stats
+    
+    @staticmethod
+    def _remove_duplicates_bulk(
+        filtered_products: Dict[str, Optional[List[Dict[str, Any]]]], 
+        drop_duplicates: bool = True
+    ) -> Tuple[Dict[str, Optional[List[Dict[str, Any]]]], Dict[str, Dict[str, int]]]:
+        """
+        Internal method for bulk duplicate removal
+        """
+        processed_products = {}
+        all_stats = {}
+        
+        for offer_id, product_data in filtered_products.items():
+            if product_data is None:
+                processed_products[offer_id] = None
+                all_stats[offer_id] = {
+                    "total_skus_before": 0,
+                    "total_skus_after": 0,
+                    "skus_removed": 0
+                }
+            else:
+                try:
+                    # Convert single product to list for processing
+                    processed_data, stats = DataPreprocessor._remove_duplicates_single([product_data], drop_duplicates)
+                    processed_products[offer_id] = processed_data
+                    all_stats[offer_id] = stats
+                except Exception as e:
+                    logger.error(f"Error processing duplicates for offer ID {offer_id}: {e}")
+                    processed_products[offer_id] = None
+                    all_stats[offer_id] = {
+                        "total_skus_before": 0,
+                        "total_skus_after": 0,
+                        "skus_removed": 0
+                    }
+        
+        return processed_products, all_stats
     
     @classmethod
     def preprocess_pipeline(

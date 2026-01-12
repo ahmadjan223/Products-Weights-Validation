@@ -8,6 +8,7 @@ from contextlib import asynccontextmanager
 import logging
 import time
 import asyncio
+from typing import Dict, Any
 
 from app.config import get_settings
 from app.models.schemas import (
@@ -39,6 +40,7 @@ logger = logging.getLogger(__name__)
 data_retriever = None
 active_batch_id: str | None = None
 batch_lock = asyncio.Lock()
+batch_preprocessing_stats: Dict[str, Dict[str, Any]] = {}  # Store preprocessing stats by batch_id
 
 
 @asynccontextmanager
@@ -281,42 +283,32 @@ async def batch_submit(request: BatchWeightEstimationRequest):
             # keep only latest results by removing old batch result artifacts
             remove_files_by_glob(["artifacts/batch_*_results.json"])
 
-        # Step 1: Fetch and preprocess all offers
+        # Step 1: Fetch all products in bulk
+        raw_products = data_retriever.fetch_by_offer_id(offer_ids)
+        
+        # Step 2: Filter all products in bulk  
+        filtered_products = DataPreprocessor.filter_product_data(raw_products)
+        
+        # Step 3: Remove duplicates in bulk
+        preprocessed_products, preprocessing_stats = DataPreprocessor.remove_duplicate_skus(
+            filtered_products, drop_duplicates=drop_similar_skus
+        )
+        
+        # Step 4: Build batch requests only for successful products
         batch_requests = []
         failed_offers = []
         
         for offer_id in offer_ids:
-            try:
-                # Retrieve data
-                raw_data = data_retriever.fetch_by_offer_id(offer_id)
-                if not raw_data:
-                    logger.warning(f"No product found for offer ID: {offer_id}")
-                    failed_offers.append(offer_id)
-                    continue
-                
-                # Preprocess
-                filtered_data = DataPreprocessor.filter_product_data(raw_data)
-                if not filtered_data:
-                    logger.warning(f"Failed to filter data for offer ID: {offer_id}")
-                    failed_offers.append(offer_id)
-                    continue
-                
-                preprocessed_data, _ = DataPreprocessor.remove_duplicate_skus(
-                    [filtered_data], drop_duplicates=drop_similar_skus
-                )
-                
-                # Add to batch requests
-                batch_requests.append({
-                    "custom_id": offer_id,
-                    "products": preprocessed_data
-                })
-                
-                # Save preprocessed data
-                # save_to_json(preprocessed_data, f"artifacts/batch_{offer_id}_preprocessed.json")
-                
-            except Exception as e:
-                logger.error(f"Error preprocessing offer ID {offer_id}: {e}")
+            if preprocessed_products.get(offer_id) is None:
+                logger.warning(f"Failed to process offer ID: {offer_id}")
                 failed_offers.append(offer_id)
+                continue
+            
+            # Add to batch requests
+            batch_requests.append({
+                "custom_id": offer_id,
+                "products": preprocessed_products[offer_id]
+            })
         
         if not batch_requests:
             raise ValueError("No valid offers to process")
@@ -329,6 +321,10 @@ async def batch_submit(request: BatchWeightEstimationRequest):
         )
         
         batch_id = model_client.create_batch_job(batch_requests)
+        
+        # Store preprocessing stats for this batch
+        global batch_preprocessing_stats
+        batch_preprocessing_stats[batch_id] = preprocessing_stats
         
         logger.info(f"✅ Batch job created: {batch_id} ({len(batch_requests)} requests)")
 
@@ -380,7 +376,7 @@ async def batch_status(batch_id: str):
         settings = get_settings()
         model_client = ModelAPIClient(
             api_key=settings.anthropic_api_key,
-            model_name="claude-sonnet-4-5"
+            model_name="claude-haiku-4-5"
         )
         
         global active_batch_id
@@ -432,7 +428,7 @@ async def batch_results(batch_id: str):
         settings = get_settings()
         model_client = ModelAPIClient(
             api_key=settings.anthropic_api_key,
-            model_name="claude-sonnet-4-5"
+            model_name="claude-haiku-4-5"
         )
         
         # Ensure batch is finished before fetching results
@@ -443,9 +439,12 @@ async def batch_results(batch_id: str):
                 detail=f"Batch is not finished yet (status={status_info.get('processing_status')}). Retry after it ends."
             )
         
-        global active_batch_id
+        global active_batch_id, batch_preprocessing_stats
         # Get batch results
         batch_results_data = model_client.get_batch_results(batch_id)
+        
+        # Load preprocessing stats from global storage
+        preprocessing_stats = batch_preprocessing_stats.get(batch_id, {})
         
         # Build response for each offer
         results = []
@@ -456,11 +455,21 @@ async def batch_results(batch_id: str):
             offer_id = result["custom_id"]
             
             if result["success"]:
-                # Build success response (simplified - you may want to load preprocessing stats)
+                # Flatten the estimated weights for batch response
+                flattened_weights = []
+                for product in result["data"]:
+                    if 'skus' in product:
+                        flattened_weights.extend(product['skus'])
+                
+                # Get preprocessing stats for this offer
+                offer_stats = preprocessing_stats.get(offer_id, {})
+                skus_were_identical = offer_stats.get("skus_were_identical", False)
+                
                 results.append({
                     "success": True,
                     "offer_id": offer_id,
-                    "estimated_weights": result["data"],
+                    "skus_were_identical": skus_were_identical,
+                    "skus": flattened_weights,
                     "usage": result["usage"]
                 })
                 successful_count += 1
@@ -478,6 +487,9 @@ async def batch_results(batch_id: str):
         async with batch_lock:
             if active_batch_id == batch_id:
                 active_batch_id = None
+            # Clean up preprocessing stats for completed batch
+            if batch_id in batch_preprocessing_stats:
+                del batch_preprocessing_stats[batch_id]
         
         return BatchResultsResponse(
             success=True,

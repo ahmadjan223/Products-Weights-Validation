@@ -63,17 +63,18 @@ class ResponseBuilder:
             model_name=api_stats.get("model_name", "claude-sonnet-4-5")
         )
         
-        # Parse estimated data into ProcessedProduct objects
-        processed_products = [
-            ProcessedProduct(**product) for product in estimated_data
-        ]
+        # Flatten estimated data - extract SKUs directly from nested structure
+        flattened_skus = []
+        for product in estimated_data:
+            if 'skus' in product:
+                flattened_skus.extend(product['skus'])
         
         # Build complete response
         response = WeightEstimationResponse(
             success=True,
             offer_id=offer_id,
             skus_were_identical=preprocessing_stats.get("skus_were_identical", False),
-            estimated_weights=processed_products,
+            skus=flattened_skus,
             preprocessing_stats=prep_stats,
             model_api_stats=model_stats,
             raw_data_size_chars=raw_data_size,

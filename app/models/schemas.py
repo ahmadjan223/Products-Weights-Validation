@@ -28,7 +28,7 @@ class BatchWeightEstimationRequest(BaseModel):
     
     offer_ids: List[str] = Field(..., description="List of offer IDs to process")
     model_name: Optional[str] = Field(
-        default="claude-sonnet-4-5",
+        default="claude-haiku-4-5",
         description="Claude model to use for estimation"
     )
     drop_similar_skus: bool = Field(
@@ -110,7 +110,7 @@ class ModelAPIStats(BaseModel):
     output_tokens: int
     total_tokens: int
     processing_time_seconds: float
-    model_name: str = "claude-sonnet-4-5"
+    model_name: str = "claude-haiku-4-5"
 
 
 class WeightEstimationResponse(BaseModel):
@@ -125,7 +125,7 @@ class WeightEstimationResponse(BaseModel):
     )
     
     # Main data
-    estimated_weights: List[ProcessedProduct]
+    skus: List[SKUDimensions]
     
     # Metadata
     preprocessing_stats: PreprocessingStats
