@@ -13,7 +13,7 @@
 ```json
 {
   "offer_id": "624730890959",
-  "model_name": "claude-haiku-4-5",
+  "model_name": "gemini-2.5-flash",
   "drop_similar_skus": true
 }
 ```
@@ -49,7 +49,7 @@
     "output_tokens": 350,
     "total_tokens": 1600,
     "processing_time_seconds": 2.34,
-    "model_name": "claude-haiku-4-5"
+    "model_name": "gemini-2.5-flash"
   },
   "raw_data_size_chars": 15420,
   "preprocessed_data_size_chars": 8230
@@ -79,7 +79,7 @@
     "737556902735",
     "640832010181"
   ],
-  "model_name": "claude-haiku-4-5",
+  "model_name": "gemini-2.5-flash",
   "drop_similar_skus": true
 }
 ```
@@ -88,10 +88,10 @@
 ```json
 {
   "success": true,
-  "batch_id": "msgbatch_01Bm9q5kzNiF4X4QCoa7za42",
+  "batch_id": "batches/kfrhexhyiypuv14901v314a6fkn9f6mju5ks",
   "total_requests": 5,
   "message": "Batch job submitted successfully. 0 offers failed preprocessing.",
-  "model_name": "claude-haiku-4-5",
+  "model_name": "gemini-2.5-flash",
   "drop_similar_skus": true
 }
 ```
@@ -231,4 +231,4 @@
 - **Batch processing**: Use for bulk (5+ offers) to save 50% on API costs
 - **Only one batch** can run at a time
 - **Batch timing**: Typically takes 30-90 seconds to complete
-- **Valid model names**: `claude-haiku-4-5`, `claude-sonnet-4-5`
+- **Valid model names**: `gemini-2.5-flash`, `gemini-2.0-flash`, `gemini-2.0-pro`

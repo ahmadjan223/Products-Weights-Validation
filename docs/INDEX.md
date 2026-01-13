@@ -203,7 +203,7 @@
 
 **FastAPI Documentation**: https://fastapi.tiangolo.com/  
 **Pydantic Documentation**: https://docs.pydantic.dev/  
-**Anthropic API**: https://docs.anthropic.com/  
+**Google Gemini API**: https://ai.google.dev/api  
 **MongoDB Python**: https://pymongo.readthedocs.io/  
 
 **Interactive API Docs**: http://localhost:8000/docs (when running)

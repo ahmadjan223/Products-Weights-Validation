@@ -1,6 +1,6 @@
 # Weight Estimation API
 
-A modular FastAPI application for estimating product weights using AI (Claude API) with comprehensive preprocessing and metadata tracking.
+A modular FastAPI application for estimating product weights using AI (Google Gemini API) with comprehensive preprocessing and metadata tracking.
 
 ## 🏗️ Architecture
 
@@ -12,7 +12,7 @@ weight estimation/
 │   ├── modules/
 │   │   ├── data_retrieval.py    # MongoDB data fetching
 │   │   ├── preprocessing.py     # Data cleaning & filtering
-│   │   ├── model_api.py         # Claude API integration
+│   │   ├── model_api.py         # Gemini API integration
 │   │   └── response_builder.py  # Response formatting
 │   ├── models/
 │   │   └── schemas.py           # Pydantic models
@@ -36,7 +36,7 @@ weight estimation/
 
 - Python 3.8+
 - MongoDB access
-- Anthropic API key (Claude)
+- Google Gemini API key
 
 ## 🔧 Installation
 
@@ -66,7 +66,7 @@ weight estimation/
    MONGODB_CONNECTION_STRING=mongodb://...
    MONGODB_DATABASE_NAME=markazmongodbprod
    MONGODB_COLLECTION_NAME=productsV2
-   ANTHROPIC_API_KEY=sk-ant-api03-...
+   GEMINI_API_KEY=your-gemini-api-key-here
    ```
 
 ## 🎯 Usage
@@ -124,7 +124,7 @@ Response:
     "output_tokens": 350,
     "total_tokens": 1600,
     "processing_time_seconds": 2.34,
-    "model_name": "claude-sonnet-4-5"
+    "model_name": "gemini-2.5-flash"
   },
   "raw_data_size_chars": 15420,
   "preprocessed_data_size_chars": 8230
@@ -155,7 +155,7 @@ Basic health check endpoint.
 - Tracks preprocessing statistics
 
 ### 3. Model API Client (`app/modules/model_api.py`)
-- Integrates with Claude API (Anthropic)
+- Integrates with Google Gemini API
 - Prepares data in required format
 - Handles API errors and rate limiting
 - Tracks token usage and timing

@@ -268,14 +268,14 @@ async def batch_submit(request: BatchWeightEstimationRequest):
             if active_batch_id:
                 settings = get_settings()
                 model_client_check = ModelAPIClient(
-                    anthropic_api_key=settings.anthropic_api_key,
+                    gemini_api_key=settings.gemini_api_key,
                     model_name=model_name
                 )
                 status_info = model_client_check.get_batch_status(active_batch_id)
-                if status_info.get("processing_status") not in {"ended", "expired", "canceled"}:
+                if status_info.get("state") not in {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"}:
                     raise HTTPException(
                         status_code=status.HTTP_409_CONFLICT,
-                        detail=f"Another batch is running (batch_id={active_batch_id}, status={status_info.get('processing_status')}). Wait until it ends."
+                        detail=f"Another batch is running (batch_id={active_batch_id}, status={status_info.get('state')}). Wait until it ends."
                     )
                 # clear stale marker
                 active_batch_id = None
@@ -313,10 +313,10 @@ async def batch_submit(request: BatchWeightEstimationRequest):
         if not batch_requests:
             raise ValueError("No valid offers to process")
         
-        # Step 2: Create batch job with Anthropic
+        # Step 2: Create batch job with Gemini
         settings = get_settings()
         model_client = ModelAPIClient(
-            anthropic_api_key=settings.anthropic_api_key,
+            gemini_api_key=settings.gemini_api_key,
             model_name=model_name
         )
         
@@ -375,24 +375,24 @@ async def batch_status(batch_id: str):
     try:
         settings = get_settings()
         model_client = ModelAPIClient(
-            anthropic_api_key=settings.anthropic_api_key,
-            model_name="claude-haiku-4-5"
+            gemini_api_key=settings.gemini_api_key,
+            model_name="gemini-2.5-flash"
         )
         
         global active_batch_id
         status_info = model_client.get_batch_status(batch_id)
 
-        if status_info.get("processing_status") == "ended" and active_batch_id == batch_id:
+        if status_info.get("state") in {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"} and active_batch_id == batch_id:
             async with batch_lock:
                 active_batch_id = None
         
         return BatchStatusResponse(
             success=True,
-            batch_id=status_info["id"],
-            status=status_info["processing_status"],
-            request_counts=status_info["request_counts"],
-            ended_at=str(status_info["ended_at"]) if status_info["ended_at"] else None,
-            expires_at=str(status_info["expires_at"]) if status_info["expires_at"] else None
+            batch_id=status_info["name"],
+            status=status_info["state"],
+            request_counts={},  # Gemini doesn't provide detailed request counts
+            ended_at=status_info.get("update_time"),
+            expires_at=None
         )
         
     except Exception as e:
@@ -427,16 +427,16 @@ async def batch_results(batch_id: str):
     try:
         settings = get_settings()
         model_client = ModelAPIClient(
-            anthropic_api_key=settings.anthropic_api_key,
-            model_name="claude-haiku-4-5"
+            gemini_api_key=settings.gemini_api_key,
+            model_name="gemini-2.5-flash"
         )
         
         # Ensure batch is finished before fetching results
         status_info = model_client.get_batch_status(batch_id)
-        if status_info.get("processing_status") != "ended":
+        if status_info.get("state") != "JOB_STATE_SUCCEEDED":
             raise HTTPException(
                 status_code=status.HTTP_409_CONFLICT,
-                detail=f"Batch is not finished yet (status={status_info.get('processing_status')}). Retry after it ends."
+                detail=f"Batch is not finished yet (status={status_info.get('state')}). Retry after it ends."
             )
         
         global active_batch_id, batch_preprocessing_stats
@@ -469,8 +469,8 @@ async def batch_results(batch_id: str):
                     "success": True,
                     "offer_id": offer_id,
                     "skus_were_identical": skus_were_identical,
-                    "skus": flattened_weights,
-                    "usage": result["usage"]
+                    "skus": flattened_weights
+                    # Note: Gemini batch API doesn't provide usage stats per request
                 })
                 successful_count += 1
             else:
@@ -534,7 +534,7 @@ async def health_check():
     
     # Check Model API configuration
     settings = get_settings()
-    if settings.anthropic_api_key:
+    if settings.gemini_api_key:
         health_status["components"]["model_api"] = "configured"
     else:
         health_status["components"]["model_api"] = "not configured"

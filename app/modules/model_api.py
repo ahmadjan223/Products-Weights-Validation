@@ -92,7 +92,6 @@ class ModelAPIClient:
     
     def __init__(
         self, 
-        anthropic_api_key: str = None,
         gemini_api_key: str = None,
         model_name: str = "gemini-2.5-flash"
     ):
@@ -100,22 +99,14 @@ class ModelAPIClient:
         Initialize AI API client
         
         Args:
-            anthropic_api_key: Anthropic API key (for batch processing)
-            gemini_api_key: Google Gemini API key (for single requests)
+            gemini_api_key: Google Gemini API key (for single and batch requests)
             model_name: Model to use (default: gemini-2.5-flash)
         """
-        # Initialize Anthropic for batch processing
-        if anthropic_api_key:
-            self.anthropic_client = anthropic.Anthropic(api_key=anthropic_api_key)
-            logger.info("Anthropic API client initialized for batch processing")
-        else:
-            self.anthropic_client = None
-            
-        # Store Gemini API key for single requests
+        # Initialize Gemini for single and batch requests
         if gemini_api_key:
             self.gemini_client = genai.Client(api_key=gemini_api_key)
             self.gemini_api_key = gemini_api_key
-            logger.info("Google Gemini API initialized with API key")
+            logger.info("Google Gemini API initialized for single and batch processing")
         else:
             self.gemini_client = None
             self.gemini_api_key = None
@@ -254,21 +245,21 @@ Return only the processed JSON array with the specified structure."""
         requests_data: List[Dict[str, Any]]
     ) -> str:
         """
-        Create a Claude Batch API job for async processing (50% cost savings)
-        Uses Anthropic Claude for batch operations
+        Create a Gemini Batch API job for async processing
+        Uses Google Gemini for batch operations
         
         Args:
             requests_data: List of request dictionaries with custom_id and products
             
         Returns:
-            batch_id: ID to track the batch job
+            batch_name: Name to track the batch job (e.g., batches/...)
         """
-        if not self.anthropic_client:
-            raise ValueError("Anthropic client not initialized. Provide anthropic_api_key for batch processing.")
+        if not self.gemini_client:
+            raise ValueError("Gemini client not initialized. Provide gemini_api_key for batch processing.")
             
         try:
-            # Prepare batch requests in Claude's format
-            batch_requests = []
+            # Prepare batch requests in Gemini's format
+            inline_requests = []
             
             for req_data in requests_data:
                 offer_id = req_data["custom_id"]
@@ -277,138 +268,163 @@ Return only the processed JSON array with the specified structure."""
                 # Prepare product data
                 prepared_data = self.prepare_product_data(products)
                 
-                # Create user prompt
-                user_prompt = f"""Please process the following product data according to the system instructions:
+                # Create user prompt combining system and user instructions
+                full_prompt = f"""{SYSTEM_PROMPT}
+
+Please process the following product data according to the system instructions:
 
 {json.dumps(prepared_data, indent=2, ensure_ascii=False)}
 
 Return only the processed JSON array with the specified structure."""
                 
-                # Format as batch request
+                # Format as Gemini batch request
                 batch_request = {
-                    "custom_id": offer_id,
-                    "params": {
-                        "model": self.model_name,
-                        "max_tokens": 20000,
-                        "temperature": 0.1,
-                        "system": SYSTEM_PROMPT,
-                        "messages": [
-                            {
-                                "role": "user",
-                                "content": user_prompt
-                            }
-                        ]
-                    }
+                    'contents': [{
+                        'parts': [{'text': full_prompt}],
+                        'role': 'user'
+                    }],
+                    'custom_id': offer_id  # Store custom_id for result mapping
                 }
-                batch_requests.append(batch_request)
+                inline_requests.append(batch_request)
             
-            logger.info(f"Creating batch job with {len(batch_requests)} requests...")
+            logger.info(f"Creating Gemini batch job with {len(inline_requests)} requests...")
             
-            # Create batch job using Anthropic beta API
-            message_batch = self.anthropic_client.beta.messages.batches.create(
-                requests=batch_requests
+            # Create batch job using Gemini API
+            inline_batch_job = self.gemini_client.batches.create(
+                model=f"models/{self.model_name}",
+                src=inline_requests,
+                config={
+                    'display_name': f"weight-estimation-batch-{int(time.time())}",
+                },
             )
             
-            batch_id = message_batch.id
-            logger.info(f"✅ Batch job created: {batch_id}")
+            batch_name = inline_batch_job.name
+            logger.info(f"✅ Gemini batch job created: {batch_name}")
             
-            return batch_id
+            return batch_name
             
         except Exception as e:
-            logger.error(f"Error creating batch job: {e}")
+            logger.error(f"Error creating Gemini batch job: {e}")
             raise Exception(f"Failed to create batch job: {e}")
     
-    def get_batch_status(self, batch_id: str) -> Dict[str, Any]:
+    def get_batch_status(self, batch_name: str) -> Dict[str, Any]:
         """
-        Check status of a batch job
+        Check status of a Gemini batch job
         
         Args:
-            batch_id: The batch job ID
+            batch_name: The batch job name (e.g., batches/...)
             
         Returns:
             Status information dictionary
         """
         try:
-            message_batch = self.anthropic_client.beta.messages.batches.retrieve(batch_id)
+            batch_job = self.gemini_client.batches.get(name=batch_name)
             
             status_info = {
-                "id": message_batch.id,
-                "processing_status": message_batch.processing_status,
-                "request_counts": {
-                    "processing": message_batch.request_counts.processing,
-                    "succeeded": message_batch.request_counts.succeeded,
-                    "errored": message_batch.request_counts.errored,
-                    "canceled": message_batch.request_counts.canceled,
-                    "expired": message_batch.request_counts.expired
-                },
-                "ended_at": message_batch.ended_at,
-                "expires_at": message_batch.expires_at,
-                "results_url": message_batch.results_url if hasattr(message_batch, 'results_url') else None
+                "name": batch_job.name,
+                "state": batch_job.state.name,
+                "create_time": str(batch_job.create_time) if hasattr(batch_job, 'create_time') else None,
+                "update_time": str(batch_job.update_time) if hasattr(batch_job, 'update_time') else None,
+                "error": str(batch_job.error) if hasattr(batch_job, 'error') and batch_job.error else None
             }
             
             return status_info
             
         except Exception as e:
-            logger.error(f"Error retrieving batch status: {e}")
+            logger.error(f"Error retrieving Gemini batch status: {e}")
             raise Exception(f"Failed to get batch status: {e}")
     
-    def get_batch_results(self, batch_id: str) -> List[Dict[str, Any]]:
+    def get_batch_results(self, batch_name: str) -> List[Dict[str, Any]]:
         """
-        Retrieve results from a completed batch job
+        Retrieve results from a completed Gemini batch job
         
         Args:
-            batch_id: The batch job ID
+            batch_name: The batch job name (e.g., batches/...)
             
         Returns:
             List of results for each request
         """
         try:
-            # Get batch results
+            batch_job = self.gemini_client.batches.get(name=batch_name)
+            
+            if batch_job.state.name != 'JOB_STATE_SUCCEEDED':
+                raise ValueError(f"Batch job not successful. State: {batch_job.state.name}")
+            
             results = []
             
-            for result in self.anthropic_client.beta.messages.batches.results(batch_id):
-                custom_id = result.custom_id
-                
-                if result.result.type == "succeeded":
-                    # Parse successful response
-                    response_text = result.result.message.content[0].text.strip()
+            # Check if results are inline
+            if batch_job.dest and batch_job.dest.inlined_responses:
+                for i, inline_response in enumerate(batch_job.dest.inlined_responses):
+                    # Extract custom_id (stored in request at same index)
+                    custom_id = f"request_{i}"  # Default fallback
                     
-                    # Remove markdown formatting if present
-                    if response_text.startswith('```json'):
-                        response_text = response_text[7:]
-                    if response_text.endswith('```'):
-                        response_text = response_text[:-3]
-                    response_text = response_text.strip()
-                    
-                    try:
-                        estimated_data = json.loads(response_text)
-                        results.append({
-                            "custom_id": custom_id,
-                            "success": True,
-                            "data": estimated_data,
-                            "usage": {
-                                "input_tokens": result.result.message.usage.input_tokens,
-                                "output_tokens": result.result.message.usage.output_tokens
-                            }
-                        })
-                    except json.JSONDecodeError as e:
+                    if inline_response.response:
+                        try:
+                            # Get response text
+                            response_text = inline_response.response.text.strip()
+                            
+                            # Remove markdown formatting if present
+                            if response_text.startswith('```json'):
+                                response_text = response_text[7:]
+                            if response_text.endswith('```'):
+                                response_text = response_text[:-3]
+                            response_text = response_text.strip()
+                            
+                            estimated_data = json.loads(response_text)
+                            results.append({
+                                "custom_id": custom_id,
+                                "success": True,
+                                "data": estimated_data
+                            })
+                        except (AttributeError, json.JSONDecodeError) as e:
+                            results.append({
+                                "custom_id": custom_id,
+                                "success": False,
+                                "error": f"Failed to parse response: {e}"
+                            })
+                    elif inline_response.error:
                         results.append({
                             "custom_id": custom_id,
                             "success": False,
-                            "error": f"Failed to parse response: {e}"
+                            "error": str(inline_response.error)
                         })
-                else:
-                    # Handle error
-                    error_info = result.result.error if hasattr(result.result, 'error') else result.result
-                    error_msg = str(error_info) if error_info else "Unknown error"
-                    results.append({
-                        "custom_id": custom_id,
-                        "success": False,
-                        "error": error_msg
-                    })
+            
+            # Check if results are in a file
+            elif batch_job.dest and batch_job.dest.file_name:
+                result_file_name = batch_job.dest.file_name
+                logger.info(f"Downloading results from file: {result_file_name}")
+                
+                file_content = self.gemini_client.files.download(file=result_file_name)
+                file_text = file_content.decode('utf-8')
+                
+                # Parse JSONL format (one JSON object per line)
+                for line in file_text.strip().split('\n'):
+                    if line.strip():
+                        try:
+                            result_obj = json.loads(line)
+                            custom_id = result_obj.get('custom_id', 'unknown')
+                            
+                            if 'response' in result_obj:
+                                response_text = result_obj['response'].get('text', '')
+                                estimated_data = json.loads(response_text)
+                                results.append({
+                                    "custom_id": custom_id,
+                                    "success": True,
+                                    "data": estimated_data
+                                })
+                            else:
+                                results.append({
+                                    "custom_id": custom_id,
+                                    "success": False,
+                                    "error": result_obj.get('error', 'Unknown error')
+                                })
+                        except json.JSONDecodeError as e:
+                            logger.error(f"Failed to parse result line: {e}")
+            else:
+                raise ValueError("No results found (neither file nor inline)")
             
             return results
             
         except Exception as e:
-            logger.error(f"Error retrieving batch results: {e}")
+            logger.error(f"Error retrieving Gemini batch results: {e}")
             raise Exception(f"Failed to get batch results: {e}")

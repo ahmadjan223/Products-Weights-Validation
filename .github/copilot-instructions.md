@@ -42,7 +42,7 @@ Required `.env` variables (loaded via pydantic-settings):
 MONGODB_CONNECTION_STRING=mongodb://...
 MONGODB_DATABASE_NAME=markazmongodbprod
 MONGODB_COLLECTION_NAME=productsV2
-ANTHROPIC_API_KEY=sk-ant-api03-...
+GEMINI_API_KEY=your-gemini-api-key-here
 ```
 
 Configuration lives in `app/config.py` using `@lru_cache()` for singleton pattern.
@@ -62,15 +62,15 @@ Products in MongoDB have **nested SKU arrays** with inconsistent field presence:
 
 ## AI Model Integration Pattern
 
-The Claude API system prompt (see `model_api.py:SYSTEM_PROMPT`) is **engineered for logistics data cleaning**, not general Q&A:
+The Gemini API system prompt (see `model_api.py:SYSTEM_PROMPT`) is **engineered for logistics data cleaning**, not general Q&A:
 - Input: JSON list of products with messy/missing dimensions
 - Output: Standardized dimensions in cm/g with imputation statistics
-- Prompt instructs Claude to use product categories + SKU attributes to detect unit errors (e.g., "3kg for a phone case")
+- Prompt instructs Gemini to use product categories + SKU attributes to detect unit errors (e.g., "3kg for a phone case")
 
 **When modifying the AI logic:**
 - Don't alter the strict JSON output format - ResponseBuilder expects specific field names
 - Preserve the 4-step reasoning process in the system prompt
-- Model name configurable per-request via `WeightEstimationRequest.model_name` (default: `claude-sonnet-4-5`)
+- Model name configurable per-request via `WeightEstimationRequest.model_name` (default: `gemini-2.5-flash`)
 
 ## Pydantic Validation Patterns
 

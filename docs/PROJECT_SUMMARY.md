@@ -16,7 +16,7 @@ A complete, production-ready FastAPI application that estimates product weights 
 1. **config.py** - Configuration management
 2. **modules/data_retrieval.py** - MongoDB integration
 3. **modules/preprocessing.py** - Data cleaning & filtering
-4. **modules/model_api.py** - Claude API integration
+4. **modules/model_api.py** - Gemini API integration
 5. **modules/response_builder.py** - Response formatting
 6. **models/schemas.py** - Pydantic data models
 7. **utils/helpers.py** - Logging & utilities
@@ -46,7 +46,7 @@ A complete, production-ready FastAPI application that estimates product weights 
 ✅ Track preprocessing statistics  
 
 ### 3. Model API Integration (Step 3)
-✅ Claude API integration (Sonnet 4.5)  
+✅ Gemini API integration (Gemini 2.5 Flash)  
 ✅ Intelligent weight estimation  
 ✅ Token usage tracking  
 ✅ Processing time measurement  
@@ -114,7 +114,7 @@ The API returns rich metadata alongside results:
     "output_tokens": 350,
     "total_tokens": 1600,
     "processing_time_seconds": 2.34,
-    "model_name": "claude-sonnet-4-5"
+    "model_name": "gemini-2.5-flash"
   },
   
   "raw_data_size_chars": 15420,
@@ -146,7 +146,7 @@ python start.py
 Edit `app/modules/data_retrieval.py` to use PostgreSQL, Redis, or REST API instead of MongoDB.
 
 ### Change AI Model
-Edit `app/modules/model_api.py` to use OpenAI, Gemini, or local models instead of Claude.
+Edit `app/modules/model_api.py` to use OpenAI, Claude, or local models instead of Gemini.
 
 ### Add Preprocessing Steps
 Edit `app/modules/preprocessing.py` to add validation, normalization, or other transformations.

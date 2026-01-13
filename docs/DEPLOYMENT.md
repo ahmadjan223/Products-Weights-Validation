@@ -5,7 +5,7 @@
 ### 1. Environment Setup
 - Ensure `.env` file is present with production credentials
 - Verify MongoDB connection string is valid
-- Verify Anthropic API key is active
+- Verify Gemini API key is active
 - Set `API_DEBUG=False` for production
 
 ### 2. Dependencies
@@ -49,7 +49,7 @@ curl -X POST http://localhost:8000/estimate-weight \
   -H "Content-Type: application/json" \
   -d '{
     "offer_id": "your_offer_id",
-    "model_name": "claude-sonnet-4-5",
+    "model_name": "gemini-2.5-flash",
     "drop_similar_skus": true
   }'
 ```
@@ -140,7 +140,7 @@ gcloud run deploy weight-estimation-api \
   --set-env-vars "MONGODB_CONNECTION_STRING=your_connection_string" \
   --set-env-vars "MONGODB_DATABASE_NAME=your_database" \
   --set-env-vars "MONGODB_COLLECTION_NAME=your_collection" \
-  --set-env-vars "ANTHROPIC_API_KEY=your_api_key"
+  --set-env-vars "GEMINI_API_KEY=your_api_key"
 ```
 
 4. **Configure Custom Domain (Optional):**
@@ -167,9 +167,9 @@ gcloud run domain-mappings create --service weight-estimation-api --domain your-
 gcloud run deploy weight-estimation-api --no-allow-unauthenticated
 
 # Option 2: Use Secret Manager for sensitive data
-gcloud secrets create anthropic-api-key --data-file=- <<< "your-api-key"
+gcloud secrets create gemini-api-key --data-file=- <<< "your-api-key"
 gcloud run deploy weight-estimation-api \
-  --set-secrets="ANTHROPIC_API_KEY=anthropic-api-key:latest"
+  --set-secrets="GEMINI_API_KEY=gemini-api-key:latest"
 ```
 
 ### 10. Performance Optimization
@@ -211,7 +211,7 @@ curl http://localhost:8000/health
 MONGODB_CONNECTION_STRING=mongodb://user:pass@host:port/db?authSource=db
 MONGODB_DATABASE_NAME=markazmongodbprod
 MONGODB_COLLECTION_NAME=products
-ANTHROPIC_API_KEY=your-production-api-key
+GEMINI_API_KEY=your-production-api-key
 API_HOST=0.0.0.0
 API_PORT=8000
 API_DEBUG=False

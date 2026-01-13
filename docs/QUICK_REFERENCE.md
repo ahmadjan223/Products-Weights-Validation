@@ -145,7 +145,7 @@ kill -9 <PID>
 - Verify network access to MongoDB
 
 **API key error:**
-- Check `.env` ANTHROPIC_API_KEY
+- Check `.env` GEMINI_API_KEY
 - Verify key is valid
 
 ## 📦 Dependencies
@@ -232,7 +232,7 @@ Edit `app/models/schemas.py` + `app/modules/response_builder.py`
 → Verify .env credentials
 
 **Model API error?**
-→ Check ANTHROPIC_API_KEY
+→ Check GEMINI_API_KEY
 
 **Need examples?**
 → See API_EXAMPLES.md

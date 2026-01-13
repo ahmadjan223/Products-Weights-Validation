@@ -14,10 +14,7 @@ class Settings(BaseSettings):
     mongodb_database_name: str = "markazmongodbprod"
     mongodb_collection_name: str = "productsV2"
     
-    # Claude API Configuration (for batch processing)
-    anthropic_api_key: str
-    
-    # Gemini API Configuration (for single request processing)
+    # Gemini API Configuration (for single and batch request processing)
     gemini_api_key: str
     
     # API Configuration

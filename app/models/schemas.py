@@ -28,8 +28,8 @@ class BatchWeightEstimationRequest(BaseModel):
     
     offer_ids: List[str] = Field(..., description="List of offer IDs to process")
     model_name: Optional[str] = Field(
-        default="claude-haiku-4-5",
-        description="Claude model to use for estimation"
+        default="gemini-2.5-pro",
+        description="Gemini model to use for estimation"
     )
     drop_similar_skus: bool = Field(
         default=True,
@@ -110,7 +110,7 @@ class ModelAPIStats(BaseModel):
     output_tokens: int
     total_tokens: int
     processing_time_seconds: float
-    model_name: str = "claude-haiku-4-5"
+    model_name: str = "gemini-2.5-pro"
 
 
 class WeightEstimationResponse(BaseModel):
