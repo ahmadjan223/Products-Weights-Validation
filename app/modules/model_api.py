@@ -5,7 +5,7 @@ Handles communication with AI APIs for weight estimation
 - Claude (Anthropic) for batch processing
 """
 import anthropic
-import google.generativeai as genai
+from google import genai
 import json
 import time
 from typing import Dict, List, Any, Tuple
@@ -113,10 +113,11 @@ class ModelAPIClient:
             
         # Store Gemini API key for single requests
         if gemini_api_key:
-            genai.configure(api_key=gemini_api_key)
+            self.gemini_client = genai.Client(api_key=gemini_api_key)
             self.gemini_api_key = gemini_api_key
             logger.info("Google Gemini API initialized with API key")
         else:
+            self.gemini_client = None
             self.gemini_api_key = None
             
         self.model_name = model_name
@@ -190,23 +191,23 @@ Return only the processed JSON array with the specified structure."""
             # Combine system prompt and user prompt for Gemini
             full_prompt = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
             
-            # Initialize Gemini client
-            model = genai.GenerativeModel(self.model_name)
-            response = model.generate_content(
-                full_prompt,
-                generation_config=genai.types.GenerationConfig(
-                    temperature=0.1,
-                    max_output_tokens=8000,
-                ),
+            # Call Gemini API using new client
+            response = self.gemini_client.models.generate_content(
+                model=self.model_name,
+                contents=full_prompt,
+                config={
+                    "temperature": 0.1,
+                    "max_output_tokens": 8000,
+                }
             )
             
             end_time = time.time()
             processing_time = end_time - start_time
             
             # Extract usage stats
-            input_tokens = response.usage_metadata.prompt_token_count
-            output_tokens = response.usage_metadata.candidates_token_count
-            total_tokens = response.usage_metadata.total_token_count
+            input_tokens = getattr(response, 'prompt_token_count', 0)
+            output_tokens = getattr(response, 'candidates_token_count', 0)
+            total_tokens = input_tokens + output_tokens
             
             logger.info(f"API call completed in {processing_time:.2f}s")
             logger.info(f"Tokens - Input: {input_tokens}, Output: {output_tokens}, Total: {total_tokens}")
