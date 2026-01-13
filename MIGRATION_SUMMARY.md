@@ -3,8 +3,8 @@
 ## Changes Made
 
 ### ✅ Single Request Processing: Now uses **Vertex AI Gemini**
-- Default model: `gemini-1.5-flash`
-- Supports: `gemini-1.5-flash`, `gemini-2.0-flash`, `gemini-2.0-pro`, etc.
+- Default model: `gemini-2.5-flash`
+- Supports: `gemini-2.5-flash`, `gemini-2.0-flash`, `gemini-2.0-pro`, etc.
 - Uses Application Default Credentials (ADC) for authentication
 
 ### ✅ Batch Processing: Still uses **Anthropic Claude**
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 POST /estimate-weight
 {
   "offer_id": "123456",
-  "model_name": "gemini-1.5-flash",  # Changed from claude-sonnet-4-5
+  "model_name": "gemini-2.5-flash",  # Changed from claude-sonnet-4-5
   "drop_similar_skus": true
 }
 ```

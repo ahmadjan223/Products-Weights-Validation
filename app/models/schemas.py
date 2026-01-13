@@ -13,7 +13,7 @@ class WeightEstimationRequest(BaseModel):
     
     offer_id: str = Field(..., description="The offer ID to process")
     model_name: Optional[str] = Field(
-        default="gemini-1.5-flash",
+        default="gemini-2.5-flash",
         description="Gemini model to use for estimation (e.g., gemini-1.5-flash, gemini-2.0-flash)"
     )
     drop_similar_skus: bool = Field(
