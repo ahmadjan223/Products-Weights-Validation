@@ -1,0 +1,58 @@
+[
+  {
+    "success": true,
+    "offer_id": "request_0",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4359441073920",
+        "length_cm": 3.0,
+        "width_cm": 3.0,
+        "height_cm": 1.0,
+        "weight_g": 15.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "request_1",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4300726956045",
+        "length_cm": 3.11,
+        "width_cm": 2.89,
+        "height_cm": 1.56,
+        "weight_g": 5.44
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "request_2",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5261864627889",
+        "length_cm": 16.0,
+        "width_cm": 14.0,
+        "height_cm": 1.0,
+        "weight_g": 18.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "request_3",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4885153021997",
+        "length_cm": 8.0,
+        "width_cm": 8.0,
+        "height_cm": 2.0,
+        "weight_g": 40.0
+      }
+    ]
+  }
+]

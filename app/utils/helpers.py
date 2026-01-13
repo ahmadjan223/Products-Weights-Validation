@@ -52,6 +52,10 @@ def setup_logging(log_file: str = "app.log", level: int = logging.INFO) -> None:
     )
     file_handler.setFormatter(file_formatter)
     logger.addHandler(file_handler)
+    
+    # Suppress noisy loggers
+    logging.getLogger('watchfiles.main').setLevel(logging.WARNING)
+    logging.getLogger('watchfiles').setLevel(logging.WARNING)
 
 
 def save_to_json(data, filename: str) -> None:

@@ -60,7 +60,7 @@ class ResponseBuilder:
             output_tokens=api_stats.get("output_tokens", 0),
             total_tokens=api_stats.get("total_tokens", 0),
             processing_time_seconds=api_stats.get("processing_time_seconds", 0.0),
-            model_name=api_stats.get("model_name", "claude-sonnet-4-5")
+            model_name=api_stats.get("model_name", "gemini-2.5-flash")
         )
         
         # Flatten estimated data - extract SKUs directly from nested structure

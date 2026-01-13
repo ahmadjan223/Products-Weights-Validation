@@ -41,6 +41,7 @@ data_retriever = None
 active_batch_id: str | None = None
 batch_lock = asyncio.Lock()
 batch_preprocessing_stats: Dict[str, Dict[str, Any]] = {}  # Store preprocessing stats by batch_id
+batch_request_mappings: Dict[str, Dict[int, str]] = {}  # Store request index -> offer_id mappings by batch_id
 
 
 @asynccontextmanager
@@ -320,11 +321,12 @@ async def batch_submit(request: BatchWeightEstimationRequest):
             model_name=model_name
         )
         
-        batch_id = model_client.create_batch_job(batch_requests)
+        batch_id, request_id_mapping = model_client.create_batch_job(batch_requests)
         
-        # Store preprocessing stats for this batch
-        global batch_preprocessing_stats
+        # Store preprocessing stats and request mapping for this batch
+        global batch_preprocessing_stats, batch_request_mappings
         batch_preprocessing_stats[batch_id] = preprocessing_stats
+        batch_request_mappings[batch_id] = request_id_mapping
         
         logger.info(f"✅ Batch job created: {batch_id} ({len(batch_requests)} requests)")
 
@@ -350,7 +352,7 @@ async def batch_submit(request: BatchWeightEstimationRequest):
 
 
 @app.get(
-    "/batch-status/{batch_id}",
+    "/batch-status/{batch_id:path}",
     response_model=BatchStatusResponse,
     responses={
         200: {"description": "Batch status retrieved"},
@@ -380,12 +382,15 @@ async def batch_status(batch_id: str):
         )
         
         global active_batch_id
+        
+        logger.info(f"🔍 Checking batch status for: {batch_id}")
         status_info = model_client.get_batch_status(batch_id)
 
         if status_info.get("state") in {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"} and active_batch_id == batch_id:
             async with batch_lock:
                 active_batch_id = None
         
+        logger.info(f"✅ Batch status: {status_info['state']}")
         return BatchStatusResponse(
             success=True,
             batch_id=status_info["name"],
@@ -397,7 +402,8 @@ async def batch_status(batch_id: str):
         
     except Exception as e:
         error_msg = f"Error checking batch status: {str(e)}"
-        logger.error(error_msg)
+        logger.error(f"❌ {error_msg}")
+        logger.exception("Full traceback:")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=error_msg
@@ -405,7 +411,7 @@ async def batch_status(batch_id: str):
 
 
 @app.get(
-    "/batch-results/{batch_id}",
+    "/batch-results/{batch_id:path}",
     response_model=BatchResultsResponse,
     responses={
         200: {"description": "Batch results retrieved"},
@@ -439,9 +445,10 @@ async def batch_results(batch_id: str):
                 detail=f"Batch is not finished yet (status={status_info.get('state')}). Retry after it ends."
             )
         
-        global active_batch_id, batch_preprocessing_stats
-        # Get batch results
-        batch_results_data = model_client.get_batch_results(batch_id)
+        global active_batch_id, batch_preprocessing_stats, batch_request_mappings
+        # Get batch results with request mapping
+        request_id_mapping = batch_request_mappings.get(batch_id, {})
+        batch_results_data = model_client.get_batch_results(batch_id, request_id_mapping)
         
         # Load preprocessing stats from global storage
         preprocessing_stats = batch_preprocessing_stats.get(batch_id, {})

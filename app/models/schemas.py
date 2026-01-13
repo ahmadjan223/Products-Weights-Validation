@@ -110,7 +110,7 @@ class ModelAPIStats(BaseModel):
     output_tokens: int
     total_tokens: int
     processing_time_seconds: float
-    model_name: str = "gemini-2.5-pro"
+    model_name: str = "gemini-2.5-flash"
 
 
 class WeightEstimationResponse(BaseModel):

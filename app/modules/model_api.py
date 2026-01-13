@@ -243,7 +243,7 @@ Return only the processed JSON array with the specified structure."""
     def create_batch_job(
         self,
         requests_data: List[Dict[str, Any]]
-    ) -> str:
+    ) -> tuple[str, Dict[int, str]]:
         """
         Create a Gemini Batch API job for async processing
         Uses Google Gemini for batch operations
@@ -252,7 +252,9 @@ Return only the processed JSON array with the specified structure."""
             requests_data: List of request dictionaries with custom_id and products
             
         Returns:
-            batch_name: Name to track the batch job (e.g., batches/...)
+            tuple: (batch_name, request_id_mapping)
+                - batch_name: Name to track the batch job (e.g., batches/...)
+                - request_id_mapping: Dict mapping request index to offer_id
         """
         if not self.gemini_client:
             raise ValueError("Gemini client not initialized. Provide gemini_api_key for batch processing.")
@@ -260,10 +262,15 @@ Return only the processed JSON array with the specified structure."""
         try:
             # Prepare batch requests in Gemini's format
             inline_requests = []
+            # Store mapping of request index to offer_id for result processing
+            request_id_mapping = {}
             
-            for req_data in requests_data:
+            for idx, req_data in enumerate(requests_data):
                 offer_id = req_data["custom_id"]
                 products = req_data["products"]
+                
+                # Store the mapping (request index -> offer_id)
+                request_id_mapping[idx] = offer_id
                 
                 # Prepare product data
                 prepared_data = self.prepare_product_data(products)
@@ -277,13 +284,12 @@ Please process the following product data according to the system instructions:
 
 Return only the processed JSON array with the specified structure."""
                 
-                # Format as Gemini batch request
+                # Format as Gemini batch request (no custom_id - not supported)
                 batch_request = {
                     'contents': [{
                         'parts': [{'text': full_prompt}],
                         'role': 'user'
-                    }],
-                    'custom_id': offer_id  # Store custom_id for result mapping
+                    }]
                 }
                 inline_requests.append(batch_request)
             
@@ -301,7 +307,7 @@ Return only the processed JSON array with the specified structure."""
             batch_name = inline_batch_job.name
             logger.info(f"✅ Gemini batch job created: {batch_name}")
             
-            return batch_name
+            return batch_name, request_id_mapping
             
         except Exception as e:
             logger.error(f"Error creating Gemini batch job: {e}")
@@ -318,6 +324,7 @@ Return only the processed JSON array with the specified structure."""
             Status information dictionary
         """
         try:
+            logger.info(f"🔍 Fetching batch status from Gemini API: {batch_name}")
             batch_job = self.gemini_client.batches.get(name=batch_name)
             
             status_info = {
@@ -328,18 +335,21 @@ Return only the processed JSON array with the specified structure."""
                 "error": str(batch_job.error) if hasattr(batch_job, 'error') and batch_job.error else None
             }
             
+            logger.info(f"✅ Batch state: {status_info['state']}")
             return status_info
             
         except Exception as e:
-            logger.error(f"Error retrieving Gemini batch status: {e}")
+            logger.error(f"❌ Error retrieving Gemini batch status for {batch_name}: {e}")
+            logger.exception("Full traceback:")
             raise Exception(f"Failed to get batch status: {e}")
     
-    def get_batch_results(self, batch_name: str) -> List[Dict[str, Any]]:
+    def get_batch_results(self, batch_name: str, request_id_mapping: Dict[int, str] = None) -> List[Dict[str, Any]]:
         """
         Retrieve results from a completed Gemini batch job
         
         Args:
             batch_name: The batch job name (e.g., batches/...)
+            request_id_mapping: Dict mapping request index to offer_id (optional)
             
         Returns:
             List of results for each request
@@ -355,8 +365,8 @@ Return only the processed JSON array with the specified structure."""
             # Check if results are inline
             if batch_job.dest and batch_job.dest.inlined_responses:
                 for i, inline_response in enumerate(batch_job.dest.inlined_responses):
-                    # Extract custom_id (stored in request at same index)
-                    custom_id = f"request_{i}"  # Default fallback
+                    # Get offer_id from mapping or fallback to request index
+                    custom_id = request_id_mapping.get(i, f"request_{i}") if request_id_mapping else f"request_{i}"
                     
                     if inline_response.response:
                         try:

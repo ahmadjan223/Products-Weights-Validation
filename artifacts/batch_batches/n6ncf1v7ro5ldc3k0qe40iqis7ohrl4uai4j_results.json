@@ -1,0 +1,3348 @@
+[
+  {
+    "success": true,
+    "offer_id": "824023039251",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5708402914228",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 8.0,
+        "weight_g": 511.5
+      },
+      {
+        "skuId": "5708402914229",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 8.0,
+        "weight_g": 511.5
+      },
+      {
+        "skuId": "5708402914227",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 8.0,
+        "weight_g": 511.5
+      },
+      {
+        "skuId": "5708402914226",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 8.0,
+        "weight_g": 511.5
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "587874692986",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4006839708747",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 111.0
+      },
+      {
+        "skuId": "4006839708750",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 119.0
+      },
+      {
+        "skuId": "4006839708749",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 135.0
+      },
+      {
+        "skuId": "4006839708751",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 167.0
+      },
+      {
+        "skuId": "4006839708748",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 194.0
+      },
+      {
+        "skuId": "4006839708746",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 150.0
+      },
+      {
+        "skuId": "4006839708753",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 111.0
+      },
+      {
+        "skuId": "4006839708756",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 128.0
+      },
+      {
+        "skuId": "4006839708755",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 133.0
+      },
+      {
+        "skuId": "4006839708757",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 163.0
+      },
+      {
+        "skuId": "4006839708754",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 204.0
+      },
+      {
+        "skuId": "4006839708752",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 157.0
+      },
+      {
+        "skuId": "4006839708759",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 118.0
+      },
+      {
+        "skuId": "4006839708762",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 121.0
+      },
+      {
+        "skuId": "4006839708761",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 136.0
+      },
+      {
+        "skuId": "4006839708763",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 164.0
+      },
+      {
+        "skuId": "4006839708760",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 198.0
+      },
+      {
+        "skuId": "4006839708758",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 148.0
+      },
+      {
+        "skuId": "4006839708765",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 115.0
+      },
+      {
+        "skuId": "4006839708768",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 118.0
+      },
+      {
+        "skuId": "4006839708767",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 135.0
+      },
+      {
+        "skuId": "4006839708769",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 159.0
+      },
+      {
+        "skuId": "4006839708766",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 192.0
+      },
+      {
+        "skuId": "4006839708764",
+        "length_cm": 15.73,
+        "width_cm": 10.57,
+        "height_cm": 5.81,
+        "weight_g": 149.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "598615967048",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4170489541837",
+        "length_cm": 52.27,
+        "width_cm": 23.23,
+        "height_cm": 57.38,
+        "weight_g": 645.0
+      },
+      {
+        "skuId": "4170489541838",
+        "length_cm": 52.27,
+        "width_cm": 23.23,
+        "height_cm": 57.38,
+        "weight_g": 642.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "737556902735",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5090016360151",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 154.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "620006879545",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4378649509913",
+        "length_cm": 21.0,
+        "width_cm": 13.0,
+        "height_cm": 3.0,
+        "weight_g": 254.4
+      },
+      {
+        "skuId": "4378649509914",
+        "length_cm": 21.0,
+        "width_cm": 13.0,
+        "height_cm": 3.0,
+        "weight_g": 254.4
+      },
+      {
+        "skuId": "4378649509915",
+        "length_cm": 21.0,
+        "width_cm": 13.0,
+        "height_cm": 3.0,
+        "weight_g": 254.4
+      },
+      {
+        "skuId": "4378649509916",
+        "length_cm": 21.0,
+        "width_cm": 13.0,
+        "height_cm": 3.0,
+        "weight_g": 254.4
+      },
+      {
+        "skuId": "4378649509917",
+        "length_cm": 21.0,
+        "width_cm": 13.0,
+        "height_cm": 3.0,
+        "weight_g": 254.4
+      },
+      {
+        "skuId": "4378649509918",
+        "length_cm": 21.0,
+        "width_cm": 13.0,
+        "height_cm": 3.0,
+        "weight_g": 254.4
+      },
+      {
+        "skuId": "4378649509919",
+        "length_cm": 21.0,
+        "width_cm": 13.0,
+        "height_cm": 3.0,
+        "weight_g": 254.4
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "545051103991",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5813130204217",
+        "length_cm": 18.88,
+        "width_cm": 17.69,
+        "height_cm": 1.81,
+        "weight_g": 233.56
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "739692173700",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5105256497570",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 309.0
+      },
+      {
+        "skuId": "5105256497571",
+        "length_cm": 26.0,
+        "width_cm": 21.0,
+        "height_cm": 4.0,
+        "weight_g": 331.0
+      },
+      {
+        "skuId": "5105256497572",
+        "length_cm": 28.0,
+        "width_cm": 22.0,
+        "height_cm": 5.0,
+        "weight_g": 367.5
+      },
+      {
+        "skuId": "5105256497573",
+        "length_cm": 30.0,
+        "width_cm": 23.0,
+        "height_cm": 5.0,
+        "weight_g": 386.5
+      },
+      {
+        "skuId": "5105256497574",
+        "length_cm": 32.0,
+        "width_cm": 24.0,
+        "height_cm": 5.0,
+        "weight_g": 410.5
+      },
+      {
+        "skuId": "5105256497575",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 309.0
+      },
+      {
+        "skuId": "5105256497576",
+        "length_cm": 26.0,
+        "width_cm": 21.0,
+        "height_cm": 4.0,
+        "weight_g": 331.0
+      },
+      {
+        "skuId": "5105256497577",
+        "length_cm": 28.0,
+        "width_cm": 22.0,
+        "height_cm": 5.0,
+        "weight_g": 367.5
+      },
+      {
+        "skuId": "5105256497578",
+        "length_cm": 30.0,
+        "width_cm": 23.0,
+        "height_cm": 5.0,
+        "weight_g": 386.5
+      },
+      {
+        "skuId": "5105256497579",
+        "length_cm": 32.0,
+        "width_cm": 24.0,
+        "height_cm": 5.0,
+        "weight_g": 410.5
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "669640002259",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4992503503684",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 217.0
+      },
+      {
+        "skuId": "4992503503688",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 218.0
+      },
+      {
+        "skuId": "4992503503692",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 226.0
+      },
+      {
+        "skuId": "4992503503696",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 233.0
+      },
+      {
+        "skuId": "4992503503700",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 240.0
+      },
+      {
+        "skuId": "4992503503685",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 215.0
+      },
+      {
+        "skuId": "4992503503689",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 217.0
+      },
+      {
+        "skuId": "4992503503693",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 225.0
+      },
+      {
+        "skuId": "4992503503697",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 232.0
+      },
+      {
+        "skuId": "4992503503701",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 240.0
+      },
+      {
+        "skuId": "4992503503686",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 217.0
+      },
+      {
+        "skuId": "4992503503690",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 218.0
+      },
+      {
+        "skuId": "4992503503694",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 226.0
+      },
+      {
+        "skuId": "4992503503698",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 233.0
+      },
+      {
+        "skuId": "4992503503702",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 240.0
+      },
+      {
+        "skuId": "4992503503687",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 216.0
+      },
+      {
+        "skuId": "4992503503691",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 218.0
+      },
+      {
+        "skuId": "4992503503695",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 225.0
+      },
+      {
+        "skuId": "4992503503699",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 233.0
+      },
+      {
+        "skuId": "4992503503703",
+        "length_cm": 40.83,
+        "width_cm": 31.64,
+        "height_cm": 5.76,
+        "weight_g": 240.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "805468056645",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5648667991658",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 8.0,
+        "weight_g": 427.5
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "771540089376",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5456716259444",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 5.0,
+        "weight_g": 330.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "847621988310",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5862621010235",
+        "length_cm": 5.0,
+        "width_cm": 5.0,
+        "height_cm": 5.0,
+        "weight_g": 150.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "754879268059",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5207951657866",
+        "length_cm": 29.67,
+        "width_cm": 37.67,
+        "height_cm": 3.85,
+        "weight_g": 263.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "583974917849",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4875388892823",
+        "length_cm": 29.0,
+        "width_cm": 9.0,
+        "height_cm": 40.0,
+        "weight_g": 500.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "827880216806",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5555587525066",
+        "length_cm": 22.22,
+        "width_cm": 18.21,
+        "height_cm": 5.08,
+        "weight_g": 740.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "549738460941",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4681915533718",
+        "length_cm": 8.0,
+        "width_cm": 20.0,
+        "height_cm": 15.0,
+        "weight_g": 200.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "693455986132",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4919642220379",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 3.0,
+        "weight_g": 247.3
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "630683162551",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4489534565372",
+        "length_cm": 11.0,
+        "width_cm": 29.0,
+        "height_cm": 43.0,
+        "weight_g": 780.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "678317366028",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4864844864552",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 799.0
+      },
+      {
+        "skuId": "4864844864553",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 855.0
+      },
+      {
+        "skuId": "4864844864554",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 921.0
+      },
+      {
+        "skuId": "4864844864555",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 10.0,
+        "weight_g": 986.0
+      },
+      {
+        "skuId": "4864844864556",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 10.0,
+        "weight_g": 1033.0
+      },
+      {
+        "skuId": "4864844864557",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 12.0,
+        "weight_g": 1072.0
+      },
+      {
+        "skuId": "5120191442887",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 12.0,
+        "weight_g": 1098.0
+      },
+      {
+        "skuId": "4864844864566",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 792.0
+      },
+      {
+        "skuId": "4864844864567",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 843.0
+      },
+      {
+        "skuId": "4864844864568",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 904.0
+      },
+      {
+        "skuId": "4864844864569",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 10.0,
+        "weight_g": 960.0
+      },
+      {
+        "skuId": "4864844864570",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 10.0,
+        "weight_g": 1018.0
+      },
+      {
+        "skuId": "4864844864571",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 12.0,
+        "weight_g": 1050.0
+      },
+      {
+        "skuId": "5120191442888",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 12.0,
+        "weight_g": 1082.0
+      },
+      {
+        "skuId": "4864844864573",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 753.0
+      },
+      {
+        "skuId": "4864844864574",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 806.0
+      },
+      {
+        "skuId": "4864844864575",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 8.0,
+        "weight_g": 848.0
+      },
+      {
+        "skuId": "4864844864576",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 10.0,
+        "weight_g": 890.0
+      },
+      {
+        "skuId": "4864844864577",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 10.0,
+        "weight_g": 935.0
+      },
+      {
+        "skuId": "4864844864578",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 12.0,
+        "weight_g": 973.0
+      },
+      {
+        "skuId": "5120191442889",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 12.0,
+        "weight_g": 1068.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "531805692335",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "3171827512051",
+        "length_cm": 33.44,
+        "width_cm": 28.12,
+        "height_cm": 5.85,
+        "weight_g": 500.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "742398944294",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5340522724747",
+        "length_cm": 24.0,
+        "width_cm": 18.67,
+        "height_cm": 1.67,
+        "weight_g": 900.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "641089297866",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4610297701373",
+        "length_cm": 25.0,
+        "width_cm": 24.0,
+        "height_cm": 4.0,
+        "weight_g": 400.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "773267615192",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5291142728953",
+        "length_cm": 29.63,
+        "width_cm": 25.4,
+        "height_cm": 1.27,
+        "weight_g": 260.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "635036042569",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5310204407058",
+        "length_cm": 50.0,
+        "width_cm": 45.0,
+        "height_cm": 8.0,
+        "weight_g": 600.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "631851358936",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4673158450051",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4500428500451",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4500428500452",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4500428500453",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4500428500454",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4500428500455",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4500428500456",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4500428500457",
+        "length_cm": 21.3,
+        "width_cm": 14.8,
+        "height_cm": 2.0,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "4673158450048",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450060",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450055",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450059",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450056",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450050",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450045",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450057",
+        "length_cm": 24.5,
+        "width_cm": 19.5,
+        "height_cm": 4.0,
+        "weight_g": 622.0
+      },
+      {
+        "skuId": "4673158450058",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      },
+      {
+        "skuId": "4673158450053",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      },
+      {
+        "skuId": "4673158450044",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      },
+      {
+        "skuId": "4673158450052",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      },
+      {
+        "skuId": "4673158450049",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      },
+      {
+        "skuId": "4673158450046",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      },
+      {
+        "skuId": "4673158450054",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      },
+      {
+        "skuId": "4673158450047",
+        "length_cm": 21.0,
+        "width_cm": 14.5,
+        "height_cm": 1.5,
+        "weight_g": 242.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "800042875431",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5622184075286",
+        "length_cm": 30.0,
+        "width_cm": 28.0,
+        "height_cm": 5.0,
+        "weight_g": 300.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "559543186227",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5152264292949",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 264.0
+      },
+      {
+        "skuId": "5152264292967",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 328.0
+      },
+      {
+        "skuId": "5152264292985",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 354.0
+      },
+      {
+        "skuId": "5323474894003",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 374.0
+      },
+      {
+        "skuId": "5323474894021",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 474.0
+      },
+      {
+        "skuId": "5152264292948",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 284.0
+      },
+      {
+        "skuId": "5152264292966",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 313.0
+      },
+      {
+        "skuId": "5152264292984",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 355.0
+      },
+      {
+        "skuId": "5323474894002",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 382.0
+      },
+      {
+        "skuId": "5323474894020",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 453.0
+      },
+      {
+        "skuId": "5152264292944",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 270.0
+      },
+      {
+        "skuId": "5152264292962",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 303.0
+      },
+      {
+        "skuId": "5152264292980",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 352.0
+      },
+      {
+        "skuId": "5152264292998",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 378.0
+      },
+      {
+        "skuId": "5323474894016",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 458.0
+      },
+      {
+        "skuId": "5152264292946",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 277.0
+      },
+      {
+        "skuId": "5152264292964",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 311.0
+      },
+      {
+        "skuId": "5152264292982",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 354.0
+      },
+      {
+        "skuId": "5152264293000",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 376.0
+      },
+      {
+        "skuId": "5323474894018",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 479.0
+      },
+      {
+        "skuId": "5152264292943",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 263.0
+      },
+      {
+        "skuId": "5152264292961",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 320.0
+      },
+      {
+        "skuId": "5152264292979",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 342.0
+      },
+      {
+        "skuId": "5152264292997",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 362.0
+      },
+      {
+        "skuId": "5323474894015",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 458.0
+      },
+      {
+        "skuId": "5152264292945",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 281.0
+      },
+      {
+        "skuId": "5152264292963",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 328.0
+      },
+      {
+        "skuId": "5152264292981",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 353.0
+      },
+      {
+        "skuId": "5152264292999",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 388.0
+      },
+      {
+        "skuId": "5323474894017",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 477.0
+      },
+      {
+        "skuId": "5152264292960",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 327.0
+      },
+      {
+        "skuId": "5152264292978",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 325.0
+      },
+      {
+        "skuId": "5152264292996",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 370.0
+      },
+      {
+        "skuId": "5323474894014",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 416.0
+      },
+      {
+        "skuId": "5323474894032",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 493.0
+      },
+      {
+        "skuId": "5152264292953",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 317.0
+      },
+      {
+        "skuId": "5152264292971",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 337.0
+      },
+      {
+        "skuId": "5152264292989",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 381.0
+      },
+      {
+        "skuId": "5323474894007",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 411.0
+      },
+      {
+        "skuId": "5323474894025",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 505.0
+      },
+      {
+        "skuId": "5152264292947",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 288.0
+      },
+      {
+        "skuId": "5152264292965",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 314.0
+      },
+      {
+        "skuId": "5152264292983",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 356.0
+      },
+      {
+        "skuId": "5323474894001",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 383.0
+      },
+      {
+        "skuId": "5323474894019",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 479.0
+      },
+      {
+        "skuId": "5152264292951",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 320.0
+      },
+      {
+        "skuId": "5152264292969",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 351.0
+      },
+      {
+        "skuId": "5152264292987",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 381.0
+      },
+      {
+        "skuId": "5323474894005",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 422.0
+      },
+      {
+        "skuId": "5323474894023",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 505.0
+      },
+      {
+        "skuId": "5152264292950",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 293.0
+      },
+      {
+        "skuId": "5152264292968",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 321.0
+      },
+      {
+        "skuId": "5152264292986",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 363.0
+      },
+      {
+        "skuId": "5323474894004",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 387.0
+      },
+      {
+        "skuId": "5323474894022",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 486.0
+      },
+      {
+        "skuId": "5152264292952",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 306.0
+      },
+      {
+        "skuId": "5152264292970",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 353.0
+      },
+      {
+        "skuId": "5152264292988",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 378.0
+      },
+      {
+        "skuId": "5323474894006",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 401.0
+      },
+      {
+        "skuId": "5323474894024",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 483.0
+      },
+      {
+        "skuId": "5152264292957",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 307.0
+      },
+      {
+        "skuId": "5152264292975",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 343.0
+      },
+      {
+        "skuId": "5152264292993",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 375.0
+      },
+      {
+        "skuId": "5323474894011",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 400.0
+      },
+      {
+        "skuId": "5323474894029",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 490.0
+      },
+      {
+        "skuId": "5152264292954",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 308.0
+      },
+      {
+        "skuId": "5152264292972",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 340.0
+      },
+      {
+        "skuId": "5152264292990",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 375.0
+      },
+      {
+        "skuId": "5323474894008",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 400.0
+      },
+      {
+        "skuId": "5323474894026",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 507.0
+      },
+      {
+        "skuId": "5152264292956",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 305.0
+      },
+      {
+        "skuId": "5152264292974",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 326.0
+      },
+      {
+        "skuId": "5152264292992",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 371.0
+      },
+      {
+        "skuId": "5323474894010",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 398.0
+      },
+      {
+        "skuId": "5323474894028",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 474.0
+      },
+      {
+        "skuId": "5152264292955",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 309.0
+      },
+      {
+        "skuId": "5152264292973",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 337.0
+      },
+      {
+        "skuId": "5152264292991",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 371.0
+      },
+      {
+        "skuId": "5323474894009",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 414.0
+      },
+      {
+        "skuId": "5323474894027",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 518.0
+      },
+      {
+        "skuId": "5152264292958",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 303.0
+      },
+      {
+        "skuId": "5152264292976",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 326.0
+      },
+      {
+        "skuId": "5152264292994",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 361.0
+      },
+      {
+        "skuId": "5323474894012",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 392.0
+      },
+      {
+        "skuId": "5323474894030",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 495.0
+      },
+      {
+        "skuId": "5152264292959",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 302.0
+      },
+      {
+        "skuId": "5152264292977",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 336.0
+      },
+      {
+        "skuId": "5152264292995",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 367.0
+      },
+      {
+        "skuId": "5323474894013",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 398.0
+      },
+      {
+        "skuId": "5323474894031",
+        "length_cm": 13.5,
+        "width_cm": 9.66,
+        "height_cm": 6.26,
+        "weight_g": 499.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "709250264216",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4975632656273",
+        "length_cm": 60.0,
+        "width_cm": 30.0,
+        "height_cm": 5.0,
+        "weight_g": 700.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "827025740439",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5552013037130",
+        "length_cm": 37.0,
+        "width_cm": 28.0,
+        "height_cm": 2.0,
+        "weight_g": 280.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "596398080930",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4147710160064",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 169.0
+      },
+      {
+        "skuId": "4147710160065",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 179.0
+      },
+      {
+        "skuId": "4147710160066",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 188.0
+      },
+      {
+        "skuId": "4147710160067",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 191.0
+      },
+      {
+        "skuId": "4147710160068",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 192.0
+      },
+      {
+        "skuId": "4147710160069",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 167.0
+      },
+      {
+        "skuId": "4147710160070",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 179.0
+      },
+      {
+        "skuId": "4147710160071",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 185.0
+      },
+      {
+        "skuId": "4147710160072",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 186.0
+      },
+      {
+        "skuId": "4147710160073",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 194.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "825964048710",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5713806458116",
+        "length_cm": 43.38,
+        "width_cm": 39.6,
+        "height_cm": 24.69,
+        "weight_g": 700.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "626246386387",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4607377898119",
+        "length_cm": 37.0,
+        "width_cm": 26.0,
+        "height_cm": 1.5,
+        "weight_g": 85.0
+      },
+      {
+        "skuId": "4607377898120",
+        "length_cm": 37.0,
+        "width_cm": 26.0,
+        "height_cm": 1.5,
+        "weight_g": 96.0
+      },
+      {
+        "skuId": "4607377898121",
+        "length_cm": 36.15,
+        "width_cm": 25.1,
+        "height_cm": 1.8,
+        "weight_g": 103.5
+      },
+      {
+        "skuId": "4607377898122",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 1.5,
+        "weight_g": 118.0
+      },
+      {
+        "skuId": "4607377898123",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 1.5,
+        "weight_g": 131.0
+      },
+      {
+        "skuId": "4607377898124",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 1.5,
+        "weight_g": 143.0
+      },
+      {
+        "skuId": "4607377898125",
+        "length_cm": 37.0,
+        "width_cm": 26.0,
+        "height_cm": 1.5,
+        "weight_g": 85.0
+      },
+      {
+        "skuId": "4607377898126",
+        "length_cm": 37.0,
+        "width_cm": 26.0,
+        "height_cm": 1.5,
+        "weight_g": 96.0
+      },
+      {
+        "skuId": "4607377898127",
+        "length_cm": 36.15,
+        "width_cm": 25.1,
+        "height_cm": 1.8,
+        "weight_g": 103.5
+      },
+      {
+        "skuId": "4607377898128",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 1.5,
+        "weight_g": 118.0
+      },
+      {
+        "skuId": "4607377898129",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 1.5,
+        "weight_g": 131.0
+      },
+      {
+        "skuId": "4607377898130",
+        "length_cm": 40.0,
+        "width_cm": 30.0,
+        "height_cm": 1.5,
+        "weight_g": 143.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "813571923566",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5507506840795",
+        "length_cm": 48.61,
+        "width_cm": 41.01,
+        "height_cm": 19.49,
+        "weight_g": 800.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "788564742793",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5733258556940",
+        "length_cm": 24.0,
+        "width_cm": 16.0,
+        "height_cm": 10.0,
+        "weight_g": 547.5
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "739344828324",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5104258969888",
+        "length_cm": 28.0,
+        "width_cm": 36.0,
+        "height_cm": 3.0,
+        "weight_g": 250.0
+      },
+      {
+        "skuId": "5104258969889",
+        "length_cm": 30.0,
+        "width_cm": 38.0,
+        "height_cm": 3.0,
+        "weight_g": 275.0
+      },
+      {
+        "skuId": "5104258969890",
+        "length_cm": 32.0,
+        "width_cm": 40.0,
+        "height_cm": 3.0,
+        "weight_g": 300.0
+      },
+      {
+        "skuId": "5104258969891",
+        "length_cm": 34.0,
+        "width_cm": 43.0,
+        "height_cm": 3.0,
+        "weight_g": 325.0
+      },
+      {
+        "skuId": "5104258969892",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 3.0,
+        "weight_g": 350.0
+      },
+      {
+        "skuId": "5979876300402",
+        "length_cm": 38.0,
+        "width_cm": 47.0,
+        "height_cm": 3.0,
+        "weight_g": 375.0
+      },
+      {
+        "skuId": "5104258969893",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 15.0,
+        "weight_g": 1500.0
+      },
+      {
+        "skuId": "5104258969894",
+        "length_cm": 28.0,
+        "width_cm": 36.0,
+        "height_cm": 3.0,
+        "weight_g": 250.0
+      },
+      {
+        "skuId": "5104258969895",
+        "length_cm": 30.0,
+        "width_cm": 38.0,
+        "height_cm": 3.0,
+        "weight_g": 275.0
+      },
+      {
+        "skuId": "5104258969896",
+        "length_cm": 32.0,
+        "width_cm": 40.0,
+        "height_cm": 3.0,
+        "weight_g": 300.0
+      },
+      {
+        "skuId": "5104258969897",
+        "length_cm": 34.0,
+        "width_cm": 43.0,
+        "height_cm": 3.0,
+        "weight_g": 325.0
+      },
+      {
+        "skuId": "5104258969898",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 3.0,
+        "weight_g": 350.0
+      },
+      {
+        "skuId": "5979876300403",
+        "length_cm": 38.0,
+        "width_cm": 47.0,
+        "height_cm": 3.0,
+        "weight_g": 375.0
+      },
+      {
+        "skuId": "5104258969899",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 15.0,
+        "weight_g": 1500.0
+      },
+      {
+        "skuId": "5104258969900",
+        "length_cm": 28.0,
+        "width_cm": 36.0,
+        "height_cm": 3.0,
+        "weight_g": 250.0
+      },
+      {
+        "skuId": "5104258969901",
+        "length_cm": 30.0,
+        "width_cm": 38.0,
+        "height_cm": 3.0,
+        "weight_g": 275.0
+      },
+      {
+        "skuId": "5104258969902",
+        "length_cm": 32.0,
+        "width_cm": 40.0,
+        "height_cm": 3.0,
+        "weight_g": 300.0
+      },
+      {
+        "skuId": "5104258969903",
+        "length_cm": 34.0,
+        "width_cm": 43.0,
+        "height_cm": 3.0,
+        "weight_g": 325.0
+      },
+      {
+        "skuId": "5104258969904",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 3.0,
+        "weight_g": 350.0
+      },
+      {
+        "skuId": "5979876300404",
+        "length_cm": 38.0,
+        "width_cm": 47.0,
+        "height_cm": 3.0,
+        "weight_g": 375.0
+      },
+      {
+        "skuId": "5104258969905",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 15.0,
+        "weight_g": 1500.0
+      },
+      {
+        "skuId": "5791491731504",
+        "length_cm": 28.0,
+        "width_cm": 36.0,
+        "height_cm": 3.5,
+        "weight_g": 300.0
+      },
+      {
+        "skuId": "5791491731500",
+        "length_cm": 30.0,
+        "width_cm": 38.0,
+        "height_cm": 3.5,
+        "weight_g": 325.0
+      },
+      {
+        "skuId": "5791491731502",
+        "length_cm": 32.0,
+        "width_cm": 40.0,
+        "height_cm": 3.5,
+        "weight_g": 350.0
+      },
+      {
+        "skuId": "5791491731503",
+        "length_cm": 34.0,
+        "width_cm": 43.0,
+        "height_cm": 3.5,
+        "weight_g": 400.0
+      },
+      {
+        "skuId": "5791491731501",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 3.5,
+        "weight_g": 450.0
+      },
+      {
+        "skuId": "5979876300405",
+        "length_cm": 38.0,
+        "width_cm": 47.0,
+        "height_cm": 3.5,
+        "weight_g": 500.0
+      },
+      {
+        "skuId": "5791491731499",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 17.5,
+        "weight_g": 2000.0
+      },
+      {
+        "skuId": "5791491731516",
+        "length_cm": 28.0,
+        "width_cm": 36.0,
+        "height_cm": 3.5,
+        "weight_g": 300.0
+      },
+      {
+        "skuId": "5791491731512",
+        "length_cm": 30.0,
+        "width_cm": 38.0,
+        "height_cm": 3.5,
+        "weight_g": 325.0
+      },
+      {
+        "skuId": "5791491731514",
+        "length_cm": 32.0,
+        "width_cm": 40.0,
+        "height_cm": 3.5,
+        "weight_g": 350.0
+      },
+      {
+        "skuId": "5791491731515",
+        "length_cm": 34.0,
+        "width_cm": 43.0,
+        "height_cm": 3.5,
+        "weight_g": 400.0
+      },
+      {
+        "skuId": "5791491731513",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 3.5,
+        "weight_g": 450.0
+      },
+      {
+        "skuId": "5979876300407",
+        "length_cm": 38.0,
+        "width_cm": 47.0,
+        "height_cm": 3.5,
+        "weight_g": 500.0
+      },
+      {
+        "skuId": "5791491731511",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 17.5,
+        "weight_g": 2000.0
+      },
+      {
+        "skuId": "5791491731510",
+        "length_cm": 28.0,
+        "width_cm": 36.0,
+        "height_cm": 3.5,
+        "weight_g": 300.0
+      },
+      {
+        "skuId": "5791491731506",
+        "length_cm": 30.0,
+        "width_cm": 38.0,
+        "height_cm": 3.5,
+        "weight_g": 325.0
+      },
+      {
+        "skuId": "5791491731508",
+        "length_cm": 32.0,
+        "width_cm": 40.0,
+        "height_cm": 3.5,
+        "weight_g": 350.0
+      },
+      {
+        "skuId": "5791491731509",
+        "length_cm": 34.0,
+        "width_cm": 43.0,
+        "height_cm": 3.5,
+        "weight_g": 400.0
+      },
+      {
+        "skuId": "5791491731507",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 3.5,
+        "weight_g": 450.0
+      },
+      {
+        "skuId": "5979876300406",
+        "length_cm": 38.0,
+        "width_cm": 47.0,
+        "height_cm": 3.5,
+        "weight_g": 500.0
+      },
+      {
+        "skuId": "5791491731505",
+        "length_cm": 36.0,
+        "width_cm": 45.0,
+        "height_cm": 17.5,
+        "weight_g": 2000.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "641366591134",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4774616702647",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 289.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "775413186223",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5305311541288",
+        "length_cm": 23.82,
+        "width_cm": 20.84,
+        "height_cm": 6.17,
+        "weight_g": 180.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "659954985840",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4758972388498",
+        "length_cm": 32.67,
+        "width_cm": 23.67,
+        "height_cm": 1.13,
+        "weight_g": 430.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "739780798061",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5105140345788",
+        "length_cm": 36.0,
+        "width_cm": 25.0,
+        "height_cm": 1.5,
+        "weight_g": 391.0
+      },
+      {
+        "skuId": "5105140345789",
+        "length_cm": 36.0,
+        "width_cm": 25.0,
+        "height_cm": 1.5,
+        "weight_g": 429.0
+      },
+      {
+        "skuId": "5105140345790",
+        "length_cm": 36.0,
+        "width_cm": 25.0,
+        "height_cm": 1.5,
+        "weight_g": 480.0
+      },
+      {
+        "skuId": "5105140345791",
+        "length_cm": 36.0,
+        "width_cm": 25.0,
+        "height_cm": 1.5,
+        "weight_g": 525.0
+      },
+      {
+        "skuId": "5105140345792",
+        "length_cm": 36.0,
+        "width_cm": 25.0,
+        "height_cm": 1.5,
+        "weight_g": 562.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "624721496139",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4601300947728",
+        "length_cm": 23.0,
+        "width_cm": 17.5,
+        "height_cm": 2.5,
+        "weight_g": 480.5
+      },
+      {
+        "skuId": "4601300947729",
+        "length_cm": 23.0,
+        "width_cm": 17.5,
+        "height_cm": 2.5,
+        "weight_g": 480.5
+      },
+      {
+        "skuId": "4601300947730",
+        "length_cm": 23.0,
+        "width_cm": 17.5,
+        "height_cm": 2.5,
+        "weight_g": 480.5
+      },
+      {
+        "skuId": "4601300947731",
+        "length_cm": 23.0,
+        "width_cm": 17.5,
+        "height_cm": 2.5,
+        "weight_g": 480.5
+      },
+      {
+        "skuId": "4601300947733",
+        "length_cm": 23.0,
+        "width_cm": 17.5,
+        "height_cm": 2.5,
+        "weight_g": 480.5
+      },
+      {
+        "skuId": "4601300947734",
+        "length_cm": 23.0,
+        "width_cm": 17.5,
+        "height_cm": 2.5,
+        "weight_g": 480.5
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "638846727287",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4748433406592",
+        "length_cm": 25.0,
+        "width_cm": 20.0,
+        "height_cm": 3.0,
+        "weight_g": 148.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "822524379461",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5602561804214",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 380.0
+      },
+      {
+        "skuId": "5602561804220",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 378.0
+      },
+      {
+        "skuId": "5602561804226",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 409.0
+      },
+      {
+        "skuId": "5602561804232",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 418.0
+      },
+      {
+        "skuId": "5602561804250",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 440.0
+      },
+      {
+        "skuId": "5602561804238",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 486.0
+      },
+      {
+        "skuId": "5602561804244",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 497.0
+      },
+      {
+        "skuId": "5602561804210",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 385.0
+      },
+      {
+        "skuId": "5602561804216",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 382.0
+      },
+      {
+        "skuId": "5602561804222",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 409.0
+      },
+      {
+        "skuId": "5602561804228",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 415.0
+      },
+      {
+        "skuId": "5602561804246",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 460.0
+      },
+      {
+        "skuId": "5602561804234",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 491.0
+      },
+      {
+        "skuId": "5602561804212",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 391.0
+      },
+      {
+        "skuId": "5602561804218",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 385.0
+      },
+      {
+        "skuId": "5602561804224",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 410.0
+      },
+      {
+        "skuId": "5602561804230",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 416.0
+      },
+      {
+        "skuId": "5602561804248",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 459.0
+      },
+      {
+        "skuId": "5602561804236",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 495.0
+      },
+      {
+        "skuId": "5602561804213",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 345.0
+      },
+      {
+        "skuId": "5602561804219",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 337.0
+      },
+      {
+        "skuId": "5602561804225",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 353.0
+      },
+      {
+        "skuId": "5602561804231",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 372.0
+      },
+      {
+        "skuId": "5602561804249",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 430.0
+      },
+      {
+        "skuId": "5602561804237",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 468.0
+      },
+      {
+        "skuId": "5602561804211",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 343.0
+      },
+      {
+        "skuId": "5602561804217",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 337.0
+      },
+      {
+        "skuId": "5602561804223",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 372.0
+      },
+      {
+        "skuId": "5602561804229",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 385.0
+      },
+      {
+        "skuId": "5602561804247",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 417.0
+      },
+      {
+        "skuId": "5602561804235",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 469.0
+      },
+      {
+        "skuId": "5602561804209",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 345.0
+      },
+      {
+        "skuId": "5602561804215",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 338.0
+      },
+      {
+        "skuId": "5602561804221",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 370.0
+      },
+      {
+        "skuId": "5602561804227",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 385.0
+      },
+      {
+        "skuId": "5602561804245",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 416.0
+      },
+      {
+        "skuId": "5602561804233",
+        "length_cm": 25.0,
+        "width_cm": 17.0,
+        "height_cm": 11.0,
+        "weight_g": 469.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "635178839878",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4712822867697",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 373.0
+      },
+      {
+        "skuId": "4712822867698",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 331.0
+      },
+      {
+        "skuId": "4712822867699",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 397.0
+      },
+      {
+        "skuId": "4712822867700",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 393.0
+      },
+      {
+        "skuId": "4712822867701",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 401.0
+      },
+      {
+        "skuId": "4712822867702",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 430.0
+      },
+      {
+        "skuId": "4712822867703",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 365.0
+      },
+      {
+        "skuId": "4712822867704",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 323.0
+      },
+      {
+        "skuId": "4712822867705",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 388.0
+      },
+      {
+        "skuId": "4712822867706",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 387.0
+      },
+      {
+        "skuId": "4712822867707",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 391.0
+      },
+      {
+        "skuId": "4712822867708",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 4.0,
+        "weight_g": 427.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "797273042319",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5437032969325",
+        "length_cm": 36.0,
+        "width_cm": 26.0,
+        "height_cm": 13.0,
+        "weight_g": 360.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "738058916230",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5265251122537",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 751.0
+      },
+      {
+        "skuId": "5265251122538",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 781.0
+      },
+      {
+        "skuId": "5265251122539",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 784.0
+      },
+      {
+        "skuId": "5265251122540",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 829.0
+      },
+      {
+        "skuId": "5265251122541",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 844.0
+      },
+      {
+        "skuId": "5265251122542",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 891.0
+      },
+      {
+        "skuId": "5265251122543",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 729.0
+      },
+      {
+        "skuId": "5265251122544",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 817.0
+      },
+      {
+        "skuId": "5265251122545",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 850.0
+      },
+      {
+        "skuId": "5265251122546",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 877.0
+      },
+      {
+        "skuId": "5265251122547",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 882.0
+      },
+      {
+        "skuId": "5265251122548",
+        "length_cm": 38.78,
+        "width_cm": 28.28,
+        "height_cm": 9.41,
+        "weight_g": 905.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "701144792711",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5121509719094",
+        "length_cm": 31.0,
+        "width_cm": 30.0,
+        "height_cm": 8.75,
+        "weight_g": 800.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "718540891067",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5438869263976",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 260.0
+      },
+      {
+        "skuId": "5438869263977",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 280.0
+      },
+      {
+        "skuId": "5438869263978",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 320.0
+      },
+      {
+        "skuId": "5438869263975",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 340.0
+      },
+      {
+        "skuId": "5180294190299",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 342.0
+      },
+      {
+        "skuId": "5438869263984",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 260.0
+      },
+      {
+        "skuId": "5438869263985",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 280.0
+      },
+      {
+        "skuId": "5438869263986",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 320.0
+      },
+      {
+        "skuId": "5438869263983",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 340.0
+      },
+      {
+        "skuId": "5180294190304",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 360.0
+      },
+      {
+        "skuId": "5438869263980",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 260.0
+      },
+      {
+        "skuId": "5438869263981",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 280.0
+      },
+      {
+        "skuId": "5438869263982",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 320.0
+      },
+      {
+        "skuId": "5438869263979",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 340.0
+      },
+      {
+        "skuId": "5180294190309",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 360.0
+      },
+      {
+        "skuId": "5438869263988",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 260.0
+      },
+      {
+        "skuId": "5438869263989",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 280.0
+      },
+      {
+        "skuId": "5438869263990",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 320.0
+      },
+      {
+        "skuId": "5438869263987",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 340.0
+      },
+      {
+        "skuId": "5180294190314",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 360.0
+      },
+      {
+        "skuId": "5438869263972",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 260.0
+      },
+      {
+        "skuId": "5438869263973",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 280.0
+      },
+      {
+        "skuId": "5438869263974",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 320.0
+      },
+      {
+        "skuId": "5438869263971",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 340.0
+      },
+      {
+        "skuId": "5180294190319",
+        "length_cm": 24.0,
+        "width_cm": 25.0,
+        "height_cm": 4.0,
+        "weight_g": 360.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "638798882664",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4969736404743",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 110.0
+      },
+      {
+        "skuId": "4969736404740",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 103.0
+      },
+      {
+        "skuId": "4969736404746",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 107.0
+      },
+      {
+        "skuId": "4969736404737",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 105.0
+      },
+      {
+        "skuId": "4969736404742",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 101.0
+      },
+      {
+        "skuId": "4969736404739",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 102.0
+      },
+      {
+        "skuId": "4969736404745",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 105.0
+      },
+      {
+        "skuId": "4969736404736",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 103.0
+      },
+      {
+        "skuId": "4969736404744",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 103.0
+      },
+      {
+        "skuId": "4969736404741",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 109.0
+      },
+      {
+        "skuId": "4969736404747",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 105.0
+      },
+      {
+        "skuId": "4969736404738",
+        "length_cm": 37.0,
+        "width_cm": 22.0,
+        "height_cm": 4.0,
+        "weight_g": 110.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "563083555868",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "3708367099010",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 8.0,
+        "weight_g": 500.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "623699827087",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "4409536157203",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 283.0
+      },
+      {
+        "skuId": "4409536157204",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 304.0
+      },
+      {
+        "skuId": "4409536157205",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 328.0
+      },
+      {
+        "skuId": "4409536157206",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 350.0
+      },
+      {
+        "skuId": "4409536157207",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 368.0
+      },
+      {
+        "skuId": "4409536157208",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 368.0
+      },
+      {
+        "skuId": "4409536157209",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 377.0
+      },
+      {
+        "skuId": "4409536157211",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 275.0
+      },
+      {
+        "skuId": "4409536157212",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 295.0
+      },
+      {
+        "skuId": "4409536157213",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 322.0
+      },
+      {
+        "skuId": "4409536157214",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 342.0
+      },
+      {
+        "skuId": "4409536157215",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 362.0
+      },
+      {
+        "skuId": "4409536157216",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 355.0
+      },
+      {
+        "skuId": "4409536157217",
+        "length_cm": 30.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 370.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "588032787046",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "4003409969420",
+        "length_cm": 20.0,
+        "width_cm": 15.0,
+        "height_cm": 3.0,
+        "weight_g": 200.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "819749347741",
+    "skus_were_identical": false,
+    "skus": [
+      {
+        "skuId": "5693235478549",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 445.0
+      },
+      {
+        "skuId": "5693235478550",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 462.0
+      },
+      {
+        "skuId": "5693235478551",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 441.0
+      },
+      {
+        "skuId": "5693235478552",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 444.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "824447771542",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5543971433905",
+        "length_cm": 30.0,
+        "width_cm": 20.0,
+        "height_cm": 5.0,
+        "weight_g": 174.0
+      }
+    ]
+  },
+  {
+    "success": true,
+    "offer_id": "611048278531",
+    "skus_were_identical": true,
+    "skus": [
+      {
+        "skuId": "5107318680351",
+        "length_cm": 35.0,
+        "width_cm": 25.0,
+        "height_cm": 5.0,
+        "weight_g": 336.0
+      }
+    ]
+  }
+]
