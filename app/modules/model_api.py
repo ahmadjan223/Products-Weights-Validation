@@ -2,9 +2,7 @@
 Model API Client Module
 Handles communication with AI APIs for weight estimation
 - Gemini (Google AI) for single requests
-- Claude (Anthropic) for batch processing
 """
-import anthropic
 from google import genai
 import json
 import time
